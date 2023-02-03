@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+</head>
+<body>
+    <!-- Header  -->
+    <header class="header" id="header">
+        <!-- Nav  -->
+        <nav class="nav container padd-15">
+            <a href="/" class="nav-logo">
+                <h2>Jude Miracle</h2>
+            </a>
+            <!-- Nav Menu  -->
+            <div class="nav-menu" id="nav-menu">
+                <!-- Nav List  -->
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#experience" class="nav-link">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Nav btn  -->
+            <div class="nav-btns">
+                <i class="lni lni-pallet change-theme" id="theme-button"></i>
+                <!-- toggle btn  -->
+                <div class="nav-toggle" id="nav-toggle">
+                    <i class="lni lni-grid-alt"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main  -->
+
+    <main class="main-content" id="main">
+        <!-- Home  -->
+        <section class="home" id="home">
+            <div class="container">
+                <div class="intro">
+                    <!-- avatar image  -->
+                    <figure>
+                        <img src="/static/assets/avatar-1.svg" alt="A pic of Jude">
+                    </figure>
+                    <figcaption>
+                        <h1>Jude Miracle</h1>
+                        <span>I'm a <span class="info-text">Front-End developer</span></span>
+                    </figcaption>
+                    <!-- Social icons  -->
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="lni lni-instagram-original"></i></a></li>
+                        <li><a href="#"><i class="lni lni-facebook-original"></i></a></li>
+                        <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                        <li><a href="#"><i class="lni lni-github-original"></i></a></li>
+                    </ul>
+                    <!-- Button  -->
+                    <div>
+                        <a href="#" class="btn btn-default">Hire me</a>
+                    </div>
+                    <!-- scroll down mouse wheel  -->
+                    <div class="scroll-down">
+                        <a href="#" class="mouse-wrapper">
+                            <span>Scroll Down</span>
+                            <span class="mouse">
+                                <span class="wheel"></span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About  -->
+        <section class="about section" id="about">
+            <div class="container">
+                <!-- Section title  -->
+                <h2 class="section-title padd-15">About Me</h2>
+                <div class="row">
+                    <figure class="about-img padd-15">
+                        <!-- avatar img  -->
+                        <img src="/static/assets/avatar-2.svg" alt="my head shot pic">
+                    </figure>
+                    <div class="about-content padd-15">
+                        <div class="rounded">
+                            <div class="row">
+                                <div class="about-text padd-15">
+                                    <!-- about text  -->
+                                    <p>
+                                        I'm a Jude Miracle, web developer from Port-harcourt, Nigeria. I have rich experience in web design and building and customization, also I am good at API documentation
+                                    </p>
+                                    <div>
+                                        <a href="#" class="btn btn-default">Download CV</a>
+                                    </div>
+                                </div>
+                                <div class="skills padd-15">
+                                    <div class="row">
+                                        <!-- Skill item  -->
+                                        <div class="skill-item">
+                                            <h4>Front-End</h4>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 95%; background: rgb(225, 209, 92)">
+                                                    <div class="skill-percent">95%</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item">
+                                            <h4>API Documentation</h4>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 75%; background: rgb(225, 76, 96)">
+                                                    <div class="skill-percent">75%</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item">
+                                            <h4>Backend</h4>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 85%; background: rgb(108, 108, 229)">
+                                                    <div class="skill-percent">85%</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- fact item  -->
+                    <div class="fact-item padd-15">
+                        <i class="lni lni-thumbs-up"></i>
+                        <div class="details">
+                            <h3>198</h3>
+                            <p>Project done</p>
+                        </div>
+                    </div>
+                    <!-- fact item  -->
+                    <div class="fact-item padd-15">
+                        <i class="lni lni-coffee-cup"></i>
+                        <div class="details">
+                            <h3>6798</h3>
+                            <p>Cup of coffee</p>
+                        </div>
+                    </div>
+                    <!-- fact item  -->
+                    <div class="fact-item padd-15">
+                        <i class="lni lni-users"></i>
+                        <div class="details">
+                            <h3>428</h3>
+                            <p>Satisfied client</p>
+                        </div>
+                    </div>
+                    <!-- fact item  -->
+                    <div class="fact-item padd-15">
+                        <i class="lni lni-cup"></i>
+                        <div class="details">
+                            <h3>28</h3>
+                            <p>Nominees winner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services  -->
+        <section class="services section">
+            <div class="container">
+                <!-- section title  -->
+                <h2 class="section-title padd-15">Services</h2>
+                <div class="row">
+                    <!-- service item  -->
+                    <div class="service-item padd15">
+                        <figure class="service-item-inner" style="background: rgb(108, 108, 229);">
+                            <img src="/static/assets/service-1.svg" alt="">
+                            <h3>Front-end Developer</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, voluptatem? dolore</p>
+                        </figure>
+                    </div>
+                    <!-- service item  -->
+                    <div class="service-item padd15">
+                        <figure class="service-item-inner" style="background: rgb(108, 215, 76);">
+                            <img src="/static/assets/service-2.svg" alt="">
+                            <h3>API Documentation</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, voluptatem? dolore</p>
+                        </figure>
+                    </div>
+                    <!-- service item  -->
+                    <div class="service-item padd15">
+                        <figure class="service-item-inner" style="background: rgb(249, 123,139);">
+                            <img src="/static/assets/service-3.svg" alt="">
+                            <h3>Technical writing</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, voluptatem? dolore</p>
+                        </figure>
+                    </div>
+                </div>
+                <div class="text padd-15">
+                    <p>Looking for a customization job? <a href="#">Click here</a> to contact me!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio section" id="portfolio">
+            <div class="container">
+                <!-- section title  -->
+                <h2 class="section-title padd-15">Portfolio</h2>
+                <div class="row">
+                    <div class="portfolio-filter padd-15">
+                        <div class="portfolio-filter-inner">
+                            <button type="submit" class="active">All</button>
+                            <button type="submit">Art</button>
+                            <button type="submit">Creative</button>
+                            <button type="submit">Design</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- portfolio item  -->
+                    <div class="portfolio-item padd-15">
+                        <div class="portfolio-item-inner">
+                            <figure class="portfolio-item-thumbnail">
+                                <img src="/static/assets/1.svg" alt="">
+                                <div class="mask"></div>
+                            </figure>
+                            <span class="term">Art, design</span>
+                            <h3 class="portfolio-item-title">Project Management Illustration</h3>
+                            <span class="more-button">&hellip;</span>
+                        </div>
+                    </div>
+                    <!-- portfolio item  -->
+                    <div class="portfolio-item padd-15">
+                        <div class="portfolio-item-inner">
+                            <figure class="portfolio-item-thumbnail">
+                                <img src="/static/assets/2.svg" alt="">
+                                <div class="mask"></div>
+                            </figure>
+                            <span class="term">Art, design</span>
+                            <h3 class="portfolio-item-title">IMac mockup design</h3>
+                            <span class="more-button">&hellip;</span>
+                        </div>
+                    </div>
+                    <!-- portfolio item  -->
+                    <div class="portfolio-item padd-15">
+                        <div class="portfolio-item-inner">
+                            <figure class="portfolio-item-thumbnail">
+                                <img src="/static/assets/3.svg" alt="">
+                                <div class="mask"></div>
+                            </figure>
+                            <span class="term">Creative</span>
+                            <h3 class="portfolio-item-title">Onboarding Motivation</h3>
+                            <span class="more-button">&hellip;</span>
+                        </div>
+                    </div>
+                    <!-- portfolio item  -->
+                    <div class="portfolio-item padd-15">
+                        <div class="portfolio-item-inner">
+                            <figure class="portfolio-item-thumbnail">
+                                <img src="/static/assets/4.svg" alt="">
+                                <div class="mask"></div>
+                            </figure>
+                            <span class="term">Creative</span>
+                            <h3 class="portfolio-item-title">Game store App Concept</h3>
+                            <span class="more-button">&hellip;</span>
+                        </div>
+                    </div>
+                    <!-- portfolio item  -->
+                    <div class="portfolio-item padd-15">
+                        <div class="portfolio-item-inner">
+                            <figure class="portfolio-item-thumbnail">
+                                <img src="/static/assets/5.svg" alt="">
+                                <div class="mask"></div>
+                            </figure>
+                            <span class="term">Creative</span>
+                            <h3 class="portfolio-item-title">Guest App Concept</h3>
+                            <span class="more-button">&hellip;</span>
+                        </div>
+                    </div>
+                    <!-- portfolio item  -->
+                    <div class="portfolio-item padd-15">
+                        <div class="portfolio-item-inner">
+                            <figure class="portfolio-item-thumbnail">
+                                <img src="/static/assets/6.svg" alt="">
+                                <div class="mask"></div>
+                            </figure>
+                            <span class="term">Design</span>
+                            <h3 class="portfolio-item-title">Delivery App Wireframe</h3>
+                            <span class="more-button">&hellip;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog  -->
+        <section class="section" id="blog">
+            <div class="container">
+                <!-- Blog title  -->
+                <h2 class="section-title padd-15">Articles</h2>
+                <div class="row">
+                    <!-- blog item  -->
+                    <div class="blog-item padd-15">
+                        <div class="inner">
+                            <div class="thumb">
+                                <a href="#"><span class="category">Reviews</span></a>
+                                <a href="#"><img src="/static/assets/1.svg" alt=""></a>
+                            </div>
+                            <div class="details">
+                                <h3 class="title"><a href="#">5 Best App Development Tool for your Projects</a></h3>
+                                <ul class="meta">
+                                    <li>09 February, 2021</li>
+                                    <li>Jude</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- blog item  -->
+                    <div class="blog-item padd-15">
+                        <div class="inner">
+                            <div class="thumb">
+                                <a href="#"><span class="category">Tutorial</span></a>
+                                <a href="#"><img src="/static/assets/2.svg" alt=""></a>
+                            </div>
+                            <div class="details">
+                                <h3 class="title"><a href="#">Common Misconceptions about Payment</a></h3>
+                                <ul class="meta">
+                                    <li>09 February, 2021</li>
+                                    <li>Jude</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- blog item  -->
+                    <div class="blog-item padd-15">
+                        <div class="inner">
+                            <div class="thumb">
+                                <a href="#"><span class="category">Business</span></a>
+                                <a href="#"><img src="/static/assets/3.svg" alt=""></a>
+                            </div>
+                            <div class="details">
+                                <h3 class="title"><a href="#">3 Things to know about startup business</a></h3>
+                                <ul class="meta">
+                                    <li>07 February, 2021</li>
+                                    <li>Jude</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact  -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <!-- section title  -->
+                <h2 class="section-title padd-15">Contact us</h2>
+                <div class="row">
+                    <!-- contact row  -->
+                    <div class="contact-box padd-15">
+                        <div class="contact-data">
+                            <!-- contact information  -->
+                            <div class="contact-information">
+                                <h3 class="contact-subtitle">Call us for instant support</h3>
+                                <span class="contact-description">
+                                    <i class="lni lni-phone contact-icon"></i>
+                                    +92 345 5676
+                                </span>
+                            </div>
+                            <!-- contact information  -->
+                            <div class="contact-information">
+                                <h3 class="contact-subtitle">Write us by mail</h3>
+                                <span class="contact-description">
+                                    <i class="lni lni-user contact-icon"></i>
+                                    kcam@gmail.com
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- contact form  -->
+                    <form action="" class="contact-form padd-15">
+                        <div class="contact-inputs">
+                            <!-- contact content  -->
+                            <div class="contact-content">
+                                <input type="email" class="contact-input">
+                                <label for="" class="contact-label">Email</label>
+                                <span></span>
+                            </div>
+                            <!-- contact content  -->
+                            <div class="contact-content">
+                                <input type="text" class="contact-input">
+                                <label for="" class="contact-label">Subject</label>
+                                <span></span>
+                            </div>
+                            <!-- contact content  -->
+                            <div class="contact-content content-area">
+                                <textarea name="" id="" cols="30" rows="10" class="contact-input"></textarea>
+                                <label for="" class="contact-label">Message</label>
+                                <span></span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-default">Send Message</a>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- footer  -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-text padd-15">
+                <p>&copy; Jude Miracle &LeftDownVector;</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Theme customization  -->
+    <div class="customize-theme">
+        <div class="card">
+            <h2>Customize your view</h2>
+            <p>Manage your font size, color, and background</p>
+            <!-- font size  -->
+            <div class="font-size">
+                <h3>Font size</h3>
+                <div>
+                    <h6>Aa</h6>
+                    <div class="choose-size">
+                        <span class="font-size-1"></span>
+                        <span class="font-size-2"></span>
+                        <span class="font-size-3 active"></span>
+                        <span class="font-size-4"></span>
+                    </div>
+                    <h3>Aa</h3>
+                </div>
+            </div>
+            <!-- color  -->
+            <div class="color">
+                <h3>Color</h3>
+                <div class="choose-color">
+                    <span class="color-1"></span>
+                    <span class="color-2"></span>
+                    <span class="color-3 active"></span>
+                    <span class="color-4"></span>
+                    <span class="color-5"></span>
+                </div>
+            </div>
+            <!-- background  -->
+            <div class="background">
+                <h3>Background</h3>
+                <div class="choose-bg">
+                    <div class="bg-1 active">
+                        <span></span>
+                        <h5 for="bg-1">Light</h5>
+                    </div>
+                    <div class="bg-2">
+                        <span></span>
+                        <h5 for="bg-2">Dim</h5>
+                    </div>
+                    <div class="bg-3">
+                        <span></span>
+                        <h5 for="bg-3">Dark</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="/static/js/index.js"></script>
+</body>
+</html>
