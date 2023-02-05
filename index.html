@@ -4,93 +4,204 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <meta name="description" content="Jude Miracle is a Front End Developer based in Port-Harcourt, Nigeria.">
+
     <link rel="stylesheet" href="/static/css/index.css">
     <link rel="stylesheet" href="/static/css/main.css">
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+      <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.google.com">
+    <style>
+        /* open-sans-300 - vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.woff2') format('woff2'); /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.eot'), /* IE9 Compat Modes */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.woff') format('woff'), /* Modern Browsers */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.ttf') format('truetype'), /* Safari, Android, iOS */
+        }
+        /* open-sans-regular - vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff2') format('woff2'); /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.eot'), /* IE9 Compat Modes */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+        }
+        /* open-sans-600 - vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.woff2') format('woff2'); /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.eot'), /* IE9 Compat Modes */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.woff') format('woff'), /* Modern Browsers */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.ttf') format('truetype'), /* Safari, Android, iOS */
+        }
+
+
+        /* MONTSERRAT */
+
+        /* montserrat-500 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.woff2') format('woff2'); /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.eot'), /* IE9 Compat Modes */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.woff') format('woff'), /* Modern Browsers */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.ttf') format('truetype'), /* Safari, Android, iOS */
+        }
+        /* montserrat-600 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.woff2') format('woff2'); /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.eot'), /* IE9 Compat Modes */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.woff') format('woff'), /* Modern Browsers */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.ttf') format('truetype'), /* Safari, Android, iOS */
+        }
+        /* montserrat-700 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.woff2') format('woff2'); /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.woff') format('woff'), /* Modern Browsers */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.eot'), /* IE9 Compat Modes */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.ttf') format('truetype'), /* Safari, Android, iOS */
+        }
+        /* montserrat-800 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.woff2') format('woff2'); /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.eot'), /* IE9 Compat Modes */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.woff') format('woff'), /* Modern Browsers */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.ttf') format('truetype'), /* Safari, Android, iOS */
+        }
+                /* montserrat-900 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.woff2') format('woff2'); /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.eot'), /* IE9 Compat Modes */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.woff') format('woff'), /* Modern Browsers */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.ttf') format('truetype'), /* Safari, Android, iOS */
+        }
+    </style>
+    <title>Jude Miracle: Software Developer</title>
 </head>
 <body>
     <!-- Header  -->
     <header class="header" id="header">
-        <!-- Nav  -->
-        <nav class="nav container padd-15">
-            <a href="/" class="nav-logo">
-                <h2>Jude Miracle</h2>
-            </a>
-            <!-- Nav Menu  -->
-            <div class="nav-menu" id="nav-menu">
-                <!-- Nav List  -->
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link active-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#experience" class="nav-link">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#portfolio" class="nav-link">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- Nav btn  -->
-            <div class="nav-btns">
-                <i class="lni lni-pallet change-theme" id="theme-button"></i>
-                <!-- toggle btn  -->
-                <div class="nav-toggle" id="nav-toggle">
-                    <i class="lni lni-grid-alt"></i>
+        <div class="fixed-header">
+            <div class="container header-container">
+                <div class="logo-container">
+                    <span class="logo">Jude Miracle</span>
+                </div>
+                <div class="header-text">
+                    <h1>
+                        <p>Software Developer &</p>
+                        <p>Understudy Computer Science</p>
+                    </h1>
+                </div>
+                <h2>
+                    A developer with passion for Web3 ecosystem.
+                </h2>
+                <!-- scroll down mouse wheel  -->
+                <div class="scroll-down" title="scroll down">
+                    <a href="#" class="mouse-wrapper">
+                        <span>Scroll Down</span>
+                        <span class="mouse">
+                            <span class="wheel"></span>
+                        </span>
+                    </a>
                 </div>
             </div>
-        </nav>
+        </div>
     </header>
-    
+    <!-- Home  -->
+    <nav class="nav container padd-15" id="nav">
+        <a href="/" class="nav-logo">
+            <h2>Jude</h2>
+        </a>
+        <!-- Nav Menu  -->
+        <div class="nav-menu" id="nav-menu">
+            <!-- Nav List  -->
+            <ul class="nav-list">
+                <!-- <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="#about" class="nav-link active-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#project" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#article" class="nav-link">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <!-- nav close  -->
+            <div class="nav-close" id="nav-close">
+                <i class="lni lni-close"></i>
+            </div>
+        </div>
+        <!-- Nav btn  -->
+        <div class="nav-btns">
+            <i class="lni lni-pallet change-theme" id="theme-button"></i>
+            <!-- toggle btn  -->
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="lni lni-grid-alt"></i>
+            </div>
+        </div>
+    </nav>
+
     <!-- Main  -->
 
     <main class="main-content" id="main">
-        <!-- Home  -->
-        <section class="home" id="home">
-            <div class="container">
-                <div class="intro">
-                    <!-- avatar image  -->
-                    <figure>
-                        <img src="/static/assets/avatar-1.svg" alt="A pic of Jude">
-                    </figure>
-                    <figcaption>
-                        <h1>Jude Miracle</h1>
-                        <span>I'm a <span class="info-text">Front-End developer</span></span>
-                    </figcaption>
-                    <!-- Social icons  -->
-                    <ul class="social-icons">
-                        <li><a href="#"><i class="lni lni-instagram-original"></i></a></li>
-                        <li><a href="#"><i class="lni lni-facebook-original"></i></a></li>
-                        <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
-                        <li><a href="#"><i class="lni lni-github-original"></i></a></li>
-                    </ul>
-                    <!-- Button  -->
-                    <div>
-                        <a href="#" class="btn btn-default">Hire me</a>
-                    </div>
-                    <!-- scroll down mouse wheel  -->
-                    <div class="scroll-down">
-                        <a href="#" class="mouse-wrapper">
-                            <span>Scroll Down</span>
-                            <span class="mouse">
-                                <span class="wheel"></span>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- About  -->
         <section class="about section" id="about">
             <div class="container">
@@ -183,7 +294,7 @@
             </div>
         </section>
         <!-- Services  -->
-        <section class="services section">
+        <section class="services section" id="services">
             <div class="container">
                 <!-- section title  -->
                 <h2 class="section-title padd-15">Services</h2>
@@ -219,98 +330,168 @@
             </div>
         </section>
 
-        <section class="portfolio section" id="portfolio">
+         <!-- projects  -->
+         <section class="project section" id="project">
             <div class="container">
                 <!-- section title  -->
-                <h2 class="section-title padd-15">Portfolio</h2>
+                <h2 class="section-title padd-15">Projects</h2>
                 <div class="row">
-                    <div class="portfolio-filter padd-15">
-                        <div class="portfolio-filter-inner">
-                            <button type="submit" class="active">All</button>
-                            <button type="submit">Art</button>
-                            <button type="submit">Creative</button>
-                            <button type="submit">Design</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- portfolio item  -->
-                    <div class="portfolio-item padd-15">
-                        <div class="portfolio-item-inner">
-                            <figure class="portfolio-item-thumbnail">
-                                <img src="/static/assets/1.svg" alt="">
-                                <div class="mask"></div>
+                    <!-- project item  -->
+                    <div class="project-item padd-15">
+                        <div class="project-item-inner">
+                            <figure class="project-item-thumbnail">
+                                <img src="/static/assets/images/easybank.webp" alt="">
                             </figure>
-                            <span class="term">Art, design</span>
-                            <h3 class="portfolio-item-title">Project Management Illustration</h3>
-                            <span class="more-button">&hellip;</span>
+                            <div class="project-detail">
+                                <h3 class="project-site">
+                                    <a href="https://easybankingapp.netlify.app">Easy Banking</a>
+                                </h3>
+                                <div class="project-description">
+                                    <p>I built this website from a challenge from frontend mentor. i used it to test my knowledge on React. how to map items creating components and routing them to the correct source.
+                                    </p>
+                                    <ul class="project-tags" title="Technologies used">
+                                        <li class="tag">React</li>
+                                        <li class="tag">CSS</li>
+                                    </ul>
+                                    <div class="project-links">
+                                        <a href="https://easybankingapp.netlify.app" target="_blank" rel="noopener" class="btn btn-default">visit site</a>
+                                        <!-- <a href="" target="_blank" rel="noopener" class="link-btn">s.code</a> -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- portfolio item  -->
-                    <div class="portfolio-item padd-15">
-                        <div class="portfolio-item-inner">
-                            <figure class="portfolio-item-thumbnail">
-                                <img src="/static/assets/2.svg" alt="">
-                                <div class="mask"></div>
+                    <!-- project item  -->
+                    <div class="project-item padd-15">
+                        <div class="project-item-inner">
+                            <figure class="project-item-thumbnail">
+                                <img src="/static/assets/images/easybank.webp" alt="">
                             </figure>
-                            <span class="term">Art, design</span>
-                            <h3 class="portfolio-item-title">IMac mockup design</h3>
-                            <span class="more-button">&hellip;</span>
+                            <div class="project-detail">
+                                <h3 class="project-site">
+                                    <a href="https://easybankingapp.netlify.app">Easy Banking</a>
+                                </h3>
+                                <div class="project-description">
+                                    <p>I built this website from a challenge from frontend mentor. i used it to test my knowledge on React. how to map items creating components and routing them to the correct source.
+                                    </p>
+                                    <ul class="project-tags" title="Technologies used">
+                                        <li class="tag">React</li>
+                                        <li class="tag">CSS</li>
+                                    </ul>
+                                    <div class="project-links">
+                                        <a href="https://easybankingapp.netlify.app" target="_blank" rel="noopener" class="btn btn-default">visit site</a>
+                                        <!-- <a href="" target="_blank" rel="noopener" class="link-btn">s.code</a> -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- portfolio item  -->
-                    <div class="portfolio-item padd-15">
-                        <div class="portfolio-item-inner">
-                            <figure class="portfolio-item-thumbnail">
-                                <img src="/static/assets/3.svg" alt="">
-                                <div class="mask"></div>
+                    <!-- project item  -->
+                    <div class="project-item padd-15">
+                        <div class="project-item-inner">
+                            <figure class="project-item-thumbnail">
+                                <img src="/static/assets/images/easybank.webp" alt="">
                             </figure>
-                            <span class="term">Creative</span>
-                            <h3 class="portfolio-item-title">Onboarding Motivation</h3>
-                            <span class="more-button">&hellip;</span>
+                            <div class="project-detail">
+                                <h3 class="project-site">
+                                    <a href="https://easybankingapp.netlify.app">Easy Banking</a>
+                                </h3>
+                                <div class="project-description">
+                                    <p>I built this website from a challenge from frontend mentor. i used it to test my knowledge on React. how to map items creating components and routing them to the correct source.
+                                    </p>
+                                    <ul class="project-tags" title="Technologies used">
+                                        <li class="tag">React</li>
+                                        <li class="tag">CSS</li>
+                                    </ul>
+                                    <div class="project-links">
+                                        <a href="https://easybankingapp.netlify.app" target="_blank" rel="noopener" class="btn btn-default">visit site</a>
+                                        <!-- <a href="" target="_blank" rel="noopener" class="link-btn">s.code</a> -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- portfolio item  -->
-                    <div class="portfolio-item padd-15">
-                        <div class="portfolio-item-inner">
-                            <figure class="portfolio-item-thumbnail">
-                                <img src="/static/assets/4.svg" alt="">
-                                <div class="mask"></div>
+                    <!-- project item  -->
+                    <!-- <div class="project-item padd-15">
+                        <div class="project-item-inner">
+                            <figure class="project-item-thumbnail">
+                                <img src="/static/assets/images/easybank.webp" alt="">
                             </figure>
-                            <span class="term">Creative</span>
-                            <h3 class="portfolio-item-title">Game store App Concept</h3>
-                            <span class="more-button">&hellip;</span>
+                            <div class="project-detail">
+                                <h3 class="project-site">
+                                    <a href="https://easybankingapp.netlify.app">Easy Banking</a>
+                                </h3>
+                                <div class="project-description">
+                                    <p>I built this website from a challenge from frontend mentor. i used it to test my knowledge on React. how to map items creating components and routing them to the correct source.
+                                    </p>
+                                    <ul class="project-tags" title="Technologies used">
+                                        <li class="tag">React</li>
+                                        <li class="tag">CSS</li>
+                                    </ul>
+                                    <div class="project-links">
+                                        <a href="https://easybankingapp.netlify.app" target="_blank" rel="noopener" class="btn btn-default">visit site</a> -->
+                                        <!-- <a href="" target="_blank" rel="noopener" class="link-btn">s.code</a> -->
+                                    <!-- </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <!-- portfolio item  -->
-                    <div class="portfolio-item padd-15">
-                        <div class="portfolio-item-inner">
-                            <figure class="portfolio-item-thumbnail">
-                                <img src="/static/assets/5.svg" alt="">
-                                <div class="mask"></div>
+                    </div> -->
+                    <!-- project item  -->
+                    <!-- <div class="project-item padd-15">
+                        <div class="project-item-inner">
+                            <figure class="project-item-thumbnail">
+                                <img src="/static/assets/images/easybank.webp" alt="">
                             </figure>
-                            <span class="term">Creative</span>
-                            <h3 class="portfolio-item-title">Guest App Concept</h3>
-                            <span class="more-button">&hellip;</span>
+                            <div class="project-detail">
+                                <h3 class="project-site">
+                                    <a href="https://easybankingapp.netlify.app">Easy Banking</a>
+                                </h3>
+                                <div class="project-description">
+                                    <p>I built this website from a challenge from frontend mentor. i used it to test my knowledge on React. how to map items creating components and routing them to the correct source.
+                                    </p>
+                                    <ul class="project-tags" title="Technologies used">
+                                        <li class="tag">React</li>
+                                        <li class="tag">CSS</li>
+                                    </ul>
+                                    <div class="project-links">
+                                        <a href="https://easybankingapp.netlify.app" target="_blank" rel="noopener" class="btn btn-default">visit site</a>
+                                        <a href="" target="_blank" rel="noopener" class="link-btn">s.code</a> -->
+                                    <!-- </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <!-- portfolio item  -->
-                    <div class="portfolio-item padd-15">
-                        <div class="portfolio-item-inner">
-                            <figure class="portfolio-item-thumbnail">
-                                <img src="/static/assets/6.svg" alt="">
-                                <div class="mask"></div>
+                    </div> -->
+                    <!-- project item  -->
+                    <!-- <div class="project-item padd-15">
+                        <div class="project-item-inner">
+                            <figure class="project-item-thumbnail">
+                                <img src="/static/assets/images/easybank.webp" alt="">
                             </figure>
-                            <span class="term">Design</span>
-                            <h3 class="portfolio-item-title">Delivery App Wireframe</h3>
-                            <span class="more-button">&hellip;</span>
+                            <div class="project-detail">
+                                <h3 class="project-site">
+                                    <a href="https://easybankingapp.netlify.app">Easy Banking</a>
+                                </h3>
+                                <div class="project-description">
+                                    <p>I built this website from a challenge from frontend mentor. i used it to test my knowledge on React. how to map items creating components and routing them to the correct source.
+                                    </p>
+                                    <ul class="project-tags" title="Technologies used">
+                                        <li class="tag">React</li>
+                                        <li class="tag">CSS</li>
+                                    </ul>
+                                    <div class="project-links">
+                                        <a href="https://easybankingapp.netlify.app" target="_blank" rel="noopener" class="btn btn-default">visit site</a>
+                                        <a href="" target="_blank" rel="noopener" class="link-btn">s.code</a> -->
+                                    <!-- </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
+
         <!-- Blog  -->
-        <section class="section" id="blog">
+        <section class="section" id="article">
             <div class="container">
                 <!-- Blog title  -->
                 <h2 class="section-title padd-15">Articles</h2>
@@ -319,15 +500,12 @@
                     <div class="blog-item padd-15">
                         <div class="inner">
                             <div class="thumb">
-                                <a href="#"><span class="category">Reviews</span></a>
+                                <a href="#"><span class="category">LOGROCKET</span></a>
                                 <a href="#"><img src="/static/assets/1.svg" alt=""></a>
                             </div>
                             <div class="details">
                                 <h3 class="title"><a href="#">5 Best App Development Tool for your Projects</a></h3>
-                                <ul class="meta">
-                                    <li>09 February, 2021</li>
-                                    <li>Jude</li>
-                                </ul>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vitae natus nemo cumque alias culpa?</p>
                             </div>
                         </div>
                     </div>
@@ -335,15 +513,12 @@
                     <div class="blog-item padd-15">
                         <div class="inner">
                             <div class="thumb">
-                                <a href="#"><span class="category">Tutorial</span></a>
+                                <a href="#"><span class="category">OPENREPLAY</span></a>
                                 <a href="#"><img src="/static/assets/2.svg" alt=""></a>
                             </div>
                             <div class="details">
                                 <h3 class="title"><a href="#">Common Misconceptions about Payment</a></h3>
-                                <ul class="meta">
-                                    <li>09 February, 2021</li>
-                                    <li>Jude</li>
-                                </ul>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vitae natus nemo cumque alias culpa?</p>
                             </div>
                         </div>
                     </div>
@@ -351,15 +526,12 @@
                     <div class="blog-item padd-15">
                         <div class="inner">
                             <div class="thumb">
-                                <a href="#"><span class="category">Business</span></a>
+                                <a href="#"><span class="category">PIECES</span></a>
                                 <a href="#"><img src="/static/assets/3.svg" alt=""></a>
                             </div>
                             <div class="details">
                                 <h3 class="title"><a href="#">3 Things to know about startup business</a></h3>
-                                <ul class="meta">
-                                    <li>07 February, 2021</li>
-                                    <li>Jude</li>
-                                </ul>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vitae natus nemo cumque alias culpa?</p>
                             </div>
                         </div>
                     </div>
@@ -422,10 +594,35 @@
         </section>
     </main>
     <!-- footer  -->
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="container">
             <div class="footer-text padd-15">
                 <p>&copy; Jude Miracle &LeftDownVector;</p>
+            </div>
+        </div>
+    </footer> -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-media">
+                    <a href="https://www.github.com/am-miracle" title="Github">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>                            </a>
+                    <a href="https://www.twitter.com/miraclejudeiv" title="Twitter">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+                    </a>
+                    <a href="https://codepen.io/judeiv" title="Codepen">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="codepen" class="svg-inline--fa fa-codepen fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.285 159.704l-234-156c-7.987-4.915-16.511-4.96-24.571 0l-234 156C3.714 163.703 0 170.847 0 177.989v155.999c0 7.143 3.714 14.286 9.715 18.286l234 156.022c7.987 4.915 16.511 4.96 24.571 0l234-156.022c6-3.999 9.715-11.143 9.715-18.286V177.989c-.001-7.142-3.715-14.286-9.716-18.285zM278 63.131l172.286 114.858-76.857 51.429L278 165.703V63.131zm-44 0v102.572l-95.429 63.715-76.857-51.429L234 63.131zM44 219.132l55.143 36.857L44 292.846v-73.714zm190 229.715L61.714 333.989l76.857-51.429L234 346.275v102.572zm22-140.858l-77.715-52 77.715-52 77.715 52-77.715 52zm22 140.858V346.275l95.429-63.715 76.857 51.429L278 448.847zm190-156.001l-55.143-36.857L468 219.132v73.714z"></path></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/miraclejude" title="LinkedIn">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+                    </a>
+                    <a href="https://www.instagram.com/in/judeiv" title="LinkedIn">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" class="svg-inline--fa fa-instagram fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+                    </a>
+                </div>
+                <div class="copyright">
+                    © designed & built by Jude Miracle with ♥
+                </div>
             </div>
         </div>
     </footer>

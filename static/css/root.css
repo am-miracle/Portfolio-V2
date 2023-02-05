@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap'); */
 
 :root{
     --header-height: 3.5rem;
@@ -12,16 +12,23 @@
     --color-dark: hsl(252, 30%, 17%);
 
     /* Font and typography */
-    --body-font: 'Rubik', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+    --title-font: 'Montserrat', sans-serif;
     --h1--font-size: 2.25rem;
     --h2-font-size: 1.75rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
     --small-font-size: .875rem;
 
+    /* custom */
+    --logo-font-size: 1.25rem;
+    --header-font-size-h1: 4rem;
+
     /* Font weight  */
+    --font-small: 200;
     --font-medium: 400;
     --font-semi-bold: 600;
+    --font-bold: 800;
 
     /* Margins Bottom  */
     --m-0-5: .5rem;
@@ -40,7 +47,29 @@
     /* Box shadow  */
     --box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1)
 }
-@media screen and (max-wi)
+/* Responsive typopgraghy  */
+@media screen and (max-width: 992px){
+    :root {
+        --h1--font-size: 1.75rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1rem;
+        --normal-font-size: .938rem;
+        --small-font-size: .813rem;
+        
+
+        /* custom  */
+        --logo-font-size: 1rem;
+        --header-font-size-h1: 3rem;
+        --header-font-size-h2: 1.5rem;
+    }
+}
+@media screen and (max-width: 720px){
+    :root {
+        /* custom  */
+        --header-font-size-h1: 2.5rem;
+        --header-font-size-h2: 1.25rem;
+    }
+}
 
 *{
     margin: 0;
@@ -95,9 +124,10 @@ h3{
     padding-bottom: 4.75rem;
 }
 .section-title{
-    font-size: var(--h1-font-size);
+    font-size: var(--h1--font-size);
     margin-left: var(--m-0-75);
     margin-bottom: var(--m-2-5);
+    font-family: var(--title-font);
 }
 .padd-15{
     padding: 0 15px;
@@ -109,9 +139,9 @@ h3{
 
 /* Layout  */
 .container{
-    max-width: 968px;
-    /* width: 90%;
-    max-width: 1280px; */
+    /* max-width: 968px; */
+    width: 90%;
+    max-width: 1280px;
     margin: auto;
     /* overflow: hidden; */
 }
