@@ -273,7 +273,10 @@
 }
 
 /* Contact  */
-
+/* .contact-box{
+    flex: 0 0 50%;
+    max-width: 50%;
+} */
 .contact-form{
     flex: 0 0 50%;
     max-width: 50%;
@@ -303,6 +306,7 @@
 }
 .contact-input{
     position: absolute;
+    caret-color: var(--color-primary);
     top: 0;
     left: 0;
     width: 100%;

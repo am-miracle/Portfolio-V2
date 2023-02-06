@@ -93,6 +93,7 @@ body{
     background-color: var(--color-light);
     color: var(--color-dark);
     line-height: 1.7;
+    height: 100%;
     font-weight: var(--font-medium);
 }
 

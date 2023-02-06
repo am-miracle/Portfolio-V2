@@ -181,42 +181,14 @@ nav.scroll-down {
     border-radius: 50%;
 }
 
-/* Home  */
-.home{
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    min-height: 100vh;
-}
-.home .intro{
-    max-width: 540px;
-    text-align: center;
-}
-
-.home .intro img{
-    margin-bottom: var(--m-1);
-}
-.home .intro .social-icons{
-    margin-top: var(--m-1-5);
-    margin-bottom: var(--m-2);
-}
-.home .intro .social-icons li{
-    display: inline-flex;
-}
-.home .intro .social-icons li:not(:last-child){
-    margin-right: var(--m-1-5);
-}
-.home .intro .social-icons a{
-    font-size: var(--h3-font-size);
-}
-
 /* Scroll down  */
-.scroll-down{
+.scroll-button{
     position: absolute;
     bottom: var(--m-2-5);
     left: 0;
     width: 100%;
 }
+
 .mouse-wrapper{
     font-size: var(--small-font-size);
     display: block;

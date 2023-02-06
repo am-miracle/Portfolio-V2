@@ -10,11 +10,18 @@ const theme = document.querySelector("#theme-button");
 const themeModal = document.querySelector('.customize-theme');
 const fontSizes = document.querySelectorAll('.choose-size span');
 const colorPalette = document.querySelectorAll('.choose-color span');
+const scrollButton = document.getElementById('scroll-button');
+const topOfMain = main.getBoundingClientRect().top;
 var root = document.querySelector(":root");
 const Bg1 = document.querySelector(".bg-1");
 const Bg2 = document.querySelector(".bg-2");
 const Bg3 = document.querySelector(".bg-3");
 
+
+// scroll page
+scrollButton.addEventListener("click", () => {
+  window.scroll({ top: topOfMain, behavior: "smooth" });
+})
 
 let previousScrollPosition = 0;
 
@@ -96,7 +103,24 @@ window.addEventListener("scroll", () => {
   // scrollHeader()
 });
 
-// Scroll sections active link
+// contact message count
+const handleMessageCount = () => {
+  let msg = document.getElementById("message").value;
+  let msgCount = document.getElementById("message-count")
+  let msgLength = msg.length;
+  const maxLength = 1000;
+  let charLeft = maxLength - msgLength;
+  msgCount.innerText = charLeft;
+};
+
+message.addEventListener("input", handleMessageCount);
+
+const contactMessage = document.querySelector('.success-message');
+  if (window.location.search.includes('success')) {
+  contactMessage.innerHTML = "Thank you for your message, I'll get back to you as soon as I can &#128578;"
+}
+
+// ==== Scroll sections active link =====
 
 // get all sections that have an id defined
 const sections = document.querySelectorAll('section[id]');
