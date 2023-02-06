@@ -100,7 +100,7 @@ header .fixed-header {
     position: sticky;
     top: 0;
     transition: top 500ms ease-in-out;
-    z-index: 1000;
+    z-index: 100;
 }
 nav.scroll-up,
 nav:focus-within {
@@ -262,6 +262,10 @@ nav.scroll-down {
     display: block;
     animation: ani-mouse 1s linear infinite;
 }
+
+/* .scroll-header{
+    box-shadow: 0 1px 4px rgba(165, 125, 125, .02);
+} */
 
 /* Footer */
 footer{

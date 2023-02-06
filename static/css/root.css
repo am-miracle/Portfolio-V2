@@ -5,11 +5,16 @@
 
     /* COLORS  */
     /* COLO MODE HSL(hue, saturation, lightness) */
-    --color-white: hsl(252, 30%, 100%);
-    --color-light: hsl(252, 30%, 92%);
+    --primary-color-hue: 352;
+    --dark-color-lightness: 17%;
+    --light-color-lightness: 92%;
+    --white-color-lightness: 100%;
+
+    --color-white: hsl(252, 30%, var(--white-color-lightness));
+    --color-light: hsl(252, 30%, var(--light-color-lightness));
     --color-gray: hsl(252, 15%, 65%);
-    --color-primary: hsl(352, 52%, 52%);
-    --color-dark: hsl(252, 30%, 17%);
+    --color-primary: hsl(var(--primary-color-hue), 52%, 52%);
+    --color-dark: hsl(252, 30%, var(--dark-color-lightness));
 
     /* Font and typography */
     --body-font: 'Open Sans', sans-serif;
@@ -55,7 +60,6 @@
         --h3-font-size: 1rem;
         --normal-font-size: .938rem;
         --small-font-size: .813rem;
-        
 
         /* custom  */
         --logo-font-size: 1rem;
@@ -70,11 +74,13 @@
         --header-font-size-h2: 1.25rem;
     }
 }
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
 }
 body,
 button,
@@ -120,7 +126,7 @@ h3{
 
 /* reusable classes  */
 .section .container{
-    padding-top: 3.75rem;
+    padding-top: 3.90rem;
     padding-bottom: 4.75rem;
 }
 .section-title{

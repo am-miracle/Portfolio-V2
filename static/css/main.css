@@ -183,7 +183,7 @@
 .project-site{
     text-transform: uppercase;
     color: var(--grey-text);
-    font-size: 0.9rem;
+    font-size: var(--small-font-size);
     transition: color 500ms;
     font-family: "Montserrat";
 }
@@ -273,38 +273,19 @@
 }
 
 /* Contact  */
-.contact-box{
-    flex: 0 0 40%;
-    max-width: 40%;
-}
+
 .contact-form{
-    flex: 0 0 60%;
-    max-width: 60%;
-}
-.contact-data{
-    display: grid;
-    row-gap: 2rem;
-}
-.contact-subtitle{
-    margin-bottom: var(--m-0-5);
-}
-.contact-description{
-    display: inline-flex;
-    align-items: center;
-    column-gap: .5rem;
-    color: var(--color-dark);
-}
-.contact-icon{
-    font-size: 1.2rem;
+    flex: 0 0 50%;
+    max-width: 50%;
 }
 .contact-inputs{
     display: grid;
-    row-gap: 2rem;
+    /* row-gap: 2rem; */
     margin-bottom: var(--m-2-5);
 }
 .contact-content{
     position: relative;
-    height: 3rem;
+    height: 4.5rem;
     border-bottom: 2px solid var(--color-gray);
 }
 .contact-content span{
@@ -326,7 +307,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 1rem 1rem 1rm 0;
+    padding: 1rem 1rem 1rem 0;
+    margin-top: 1rem;
     background: none;
     outline: none;
     border: none;
@@ -334,22 +316,27 @@
 }
 .contact-label{
     position: absolute;
-    top: .40rem;
+    top: .50rem;
     width: 100%;
     font-size: var(--small-font-size);
     transition: .3s;
 }
-.contact-area{
-    height: 7rem;
+.content-area{
+    height: 10rem;
 }
-.contact-area textarea{
+.content-area textarea{
     resize: none;
 }
+.contact-form button{
+    border: none;
+    outline: none;
+}
 .contact-input:focus + .contact-label{
-    top: .75rem;
+    top: .11rem;
     left: 0;
-    z-index: 10;
+    z-index: 1;
     color: var(--color-primary);
+    margin-bottom: var(--m-2);
 }
 
 /* Customize Theme  */
@@ -465,8 +452,8 @@
     border: 2px solid var(--color-primary);
 }
 .customize-theme .choose-bg .bg-1{
-    background: var(--color-light);
-    color: var(--color-dark);
+    background: hsl(252, 30%, 92%);
+    color: hsl(252, 30%, 17%);
 }
 .customize-theme .choose-bg .bg-2{
     background: hsl(252, 30%, 17%);
@@ -530,7 +517,7 @@
         position: fixed;
         background: var(--color-white);
         width: 80%;
-        height: 100%;
+        height: -100%;
         top: 0;
         right: 100%;
         padding: 4rem 0 0 3rem;
