@@ -1,7 +1,37 @@
 @import '/static/css/root.css';
 
 /* About  */
-.about-img{
+.about-text-container{
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+.about-image-container{
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+.main-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--m-2-5);
+}
+.about-container-text h2{
+    margin-bottom: var(--m-1);
+    font-family: var(--title-font);
+}
+.about-container-text p{
+    margin-bottom: var(--m-2);
+}
+.about-button a:first-child{
+    background: var(--background-color);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+.about-image-container{
+    box-shadow: unset ;
+}
+/* .about-img{
     flex:  0 0 25%;
     max-width: 25%;
 }
@@ -65,7 +95,7 @@
 .fact-item i{
     font-size: var(--h2-font-size);
     color: var(--color-gray);
-}
+} */
 
 
 /* Service  */
@@ -483,12 +513,15 @@
 }
 
 @media only screen and (max-width: 968px)  {
-    .about-content,.about-img{
+    /* .about-content,.about-img{
         flex: 0 0 100%;
         max-width: 100%;
-    }
-    .about-img{
+    } */
+    .about-image-container{
         text-align: center;
+    }
+    .about-text-container{
+        /* text-align: center; */
         margin-bottom: var(--m-2-5);
     }
     .project-item,
@@ -504,6 +537,18 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .about-text-container,.about-image-container{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .about-button{
+        display: grid;
+        gap: 1rem;
+        margin-bottom: var(--m-2-5);
+    }
+    .about-button a{
+        text-align: center;
+    }
     body{
         margin: var(--header-height) 0 0 0;
     }
