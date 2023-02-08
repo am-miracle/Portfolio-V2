@@ -193,11 +193,8 @@ fontSizes.forEach(size => {
     }
     // change font size of the root html element
     document.querySelector('html').style.fontSize = fontSize;
-    window.localStorage("fontsize", fontSize)
+    localStorage.setItem("fontsize", fontSize)
   })
-  const getFontSize = localStorage.getItem("fontsize");
-  console.log(root)
-  console.log(getFontSize)
 })
 
 // choose color
@@ -250,7 +247,7 @@ Bg1.addEventListener('click', () => {
   Bg2.classList.remove('active');
   Bg3.classList.remove('active');
   // remove customized changes from local storage
-  // window.location.reload();
+  window.location.reload();
 });
 
 Bg2.addEventListener('click', () => {
