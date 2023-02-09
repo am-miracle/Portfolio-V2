@@ -1,7 +1,6 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap'); */
 
 :root{
-    --header-height: 3.5rem;
+    --header-height: 4rem;
 
     /* COLORS  */
     /* COLO MODE HSL(hue, saturation, lightness) */
@@ -146,9 +145,8 @@ h3{
 
 /* Layout  */
 .container{
-    /* max-width: 968px; */
     width: 90%;
     max-width: 1280px;
     margin: auto;
-    /* overflow: hidden; */
+    overflow: hidden;
 }

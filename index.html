@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="description" content="Jude Miracle is a Front End Developer based in Port-Harcourt, Nigeria.">
 
     <link rel="stylesheet" href="/static/css/index.css">
     <link rel="stylesheet" href="/static/css/main.css">
-    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.google.com">
@@ -153,7 +153,7 @@
             </div>
         </div>
     </header>
-    <!-- Home  -->
+    <!-- Nav  -->
     <nav class="nav container padd-15" id="nav">
         <a href="/" class="nav-logo">
             <h2>Jude</h2>
@@ -162,20 +162,17 @@
         <div class="nav-menu" id="nav-menu">
             <!-- Nav List  -->
             <ul class="nav-list">
-                <!-- <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li> -->
                 <li class="nav-item">
-                    <a href="#about" class="nav-link active-link">About</a>
+                    <a href="about.html" class="nav-link active-link">About</a>
                 </li>
                 <li class="nav-item">
                     <a href="#services" class="nav-link">Capabilities</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#project" class="nav-link">Projects</a>
+                    <a href="project.html" class="nav-link">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#article" class="nav-link">Articles</a>
+                    <a href="article.html" class="nav-link">Articles</a>
                 </li>
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
@@ -183,15 +180,34 @@
             </ul>
             <!-- nav close  -->
             <div class="nav-close" id="nav-close">
-                <i class="lni lni-close"></i>
+                <div class="line"></div>
+                <div class="line"></div>
             </div>
         </div>
         <!-- Nav btn  -->
         <div class="nav-btns">
-            <i class="lni lni-pallet change-theme" id="theme-button"></i>
+        <?xml version="1.0" encoding="utf-8"?>
+        <!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <svg fill="" height="15px" width="15px" class="change-theme" id="theme-button" version="1.1" id="lni_lni-pallet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+            y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+        <g>
+            <path d="M55.9,43.9l-0.3-0.2c-0.8-0.5-1.7-0.9-3.8-1.5l-0.1,0c-0.7-0.1-1.5-0.4-1.8-0.6l-0.1-0.1c-0.4-0.4-0.7-1.1-0.7-1.9
+                c0-0.7,0.3-1.4,0.7-1.9l3.9-3.9c6.9-6.9,6.9-17.8,0-24.8c-4.6-4.7-11-7.2-18.1-7.2c-7.9,0-15.9,3.4-22,9.4C8,16.9,5,24.3,5,32.4
+                c0,8.1,3.1,15.6,8.8,21.1c5.7,5.7,13.2,8.8,21.2,8.8c7.9,0,15.4-3.2,21.1-8.9c1.2-1.2,1.9-3,1.9-4.7C58,46.8,57.2,45,55.9,43.9z
+                M52.9,50.2c-4.8,4.9-11.2,7.6-17.9,7.6c-6.9,0-13.1-2.6-18-7.5c-4.8-4.7-7.5-11-7.5-17.9c0-6.9,2.6-13.1,7.4-18
+                C22.2,9.2,29,6.2,35.8,6.2c5.9,0,11.1,2,14.9,5.9c5.2,5.3,5.2,13.3,0,18.5l-4,4c-1.2,1.3-1.9,3.1-1.9,5c0,2,0.7,3.7,1.9,5
+                c1.2,1.3,3.6,1.9,4.2,2c1.4,0.3,1.9,0.6,2.3,0.8c0.2,0.3,0.4,0.8,0.4,1.3C53.5,49.2,53.2,49.9,52.9,50.2z"/>
+            <path d="M36.8,36.7c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S38.2,36.7,36.8,36.7z"/>
+            <path d="M47.7,27.3c0-3.3-2.7-6.1-6.1-6.1s-6.1,2.7-6.1,6.1c0,3.3,2.7,6.1,6.1,6.1S47.7,30.7,47.7,27.3z M41.6,28.9
+                c-0.9,0-1.6-0.7-1.6-1.6s0.7-1.6,1.6-1.6s1.6,0.7,1.6,1.6S42.5,28.9,41.6,28.9z"/>
+            <path d="M37.3,16.7c0-4-3.3-7.3-7.3-7.3s-7.3,3.3-7.3,7.3s3.3,7.3,7.3,7.3S37.3,20.8,37.3,16.7z M30,19.6c-1.6,0-2.8-1.3-2.8-2.8
+                c0-1.6,1.3-2.8,2.8-2.8s2.8,1.3,2.8,2.8C32.8,18.3,31.6,19.6,30,19.6z"/>
+        </g>
+        </svg>
             <!-- toggle btn  -->
-            <div class="nav-toggle" id="nav-toggle">
-                <i class="lni lni-grid-alt"></i>
+            <div class="icon-burger" id="nav-toggle">
+                <div class="line"></div>
+                <div class="line"></div>
             </div>
         </div>
     </nav>
@@ -202,105 +218,21 @@
         <!-- About  -->
         <section class="about section" id="about">
             <div class="container">
-                <!-- Section title  -->
-                <!-- <h2 class="section-title padd-15">About Me</h2> -->
                 <div class="main-row">
                     <div class="about-text-container padd-15">
                         <div class="about-container-text">
                             <h2>Creating meaningful content and interactions through writing and code</h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos commodi cum non earum maxime exercitationem eaque officiis, necessitatibus placeat labore impedit illo ea quia. Minus ad ducimus sed! Vero, nisi. Exercitationem, iste! Aspernatur architecto ab aut nesciunt fugiat repellat nostrum? Deserunt, accusantium!</p>
                             <div class="about-button">
-                                <a href="#" class="btn btn-default">Download CV</a>
-                                <a href="#" class="btn btn-default">More About me</a>
+                                <!-- <a href="#" class="btn btn-default">Download CV</a> -->
+                                <a href="about.html" class="btn btn-default">More About me</a>
                             </div>
                         </div>
                     </div>
                     <figure class="about-image-container">
-                        <img src="/static/assets/images/headshot.webp" alt="my head shot pic" class="about-image">
+                        <img src="/static/assets/images/headshot.webp" alt="Jude Miracle picture" class="about-image" height="360" width="480">
                     </figure>
-                    <!-- <figure class="about-img padd-15"> -->
-                        <!-- avatar img  -->
-                        <!-- <img src="/static/assets/avatar-2.svg" alt="my head shot pic">
-                    </figure>
-                    <div class="about-content padd-15">
-                        <div class="rounded">
-                            <div class="row">
-                                <div class="about-text padd-15"> -->
-                                    <!-- about text  -->
-                                    <!-- <p>
-                                        I'm a Jude Miracle, web developer from Port-harcourt, Nigeria. I have rich experience in web design and building and customization, also I am good at API documentation
-                                    </p>
-                                    <div>
-                                        <a href="#" class="btn btn-default">Download CV</a>
-                                    </div>
-                                </div>
-                                <div class="skills padd-15">
-                                    <div class="row"> -->
-                                        <!-- Skill item  -->
-                                        <!-- <div class="skill-item">
-                                            <h4>Front-End</h4>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 95%; background: rgb(225, 209, 92)">
-                                                    <div class="skill-percent">95%</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-item">
-                                            <h4>API Documentation</h4>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 75%; background: rgb(225, 76, 96)">
-                                                    <div class="skill-percent">75%</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-item">
-                                            <h4>Backend</h4>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 85%; background: rgb(108, 108, 229)">
-                                                    <div class="skill-percent">85%</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
-                <!-- <div class="row"> -->
-                    <!-- fact item  -->
-                    <!-- <div class="fact-item padd-15">
-                        <i class="lni lni-thumbs-up"></i>
-                        <div class="details">
-                            <h3>198</h3>
-                            <p>Project done</p>
-                        </div>
-                    </div> -->
-                    <!-- fact item  -->
-                    <!-- <div class="fact-item padd-15">
-                        <i class="lni lni-coffee-cup"></i>
-                        <div class="details">
-                            <h3>6798</h3>
-                            <p>Cup of coffee</p>
-                        </div>
-                    </div> -->
-                    <!-- fact item  -->
-                    <!-- <div class="fact-item padd-15">
-                        <i class="lni lni-users"></i>
-                        <div class="details">
-                            <h3>428</h3>
-                            <p>Satisfied client</p>
-                        </div>
-                    </div> -->
-                    <!-- fact item  -->
-                    <!-- <div class="fact-item padd-15">
-                        <i class="lni lni-cup"></i>
-                        <div class="details">
-                            <h3>28</h3>
-                            <p>Nominees winner</p>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </section>
         <!-- Services  -->
@@ -311,31 +243,31 @@
                 <div class="row">
                     <!-- service item  -->
                     <div class="service-item padd15">
-                        <figure class="service-item-inner" style="background: rgb(108, 108, 229);">
-                            <img src="/static/assets/service-1.svg" alt="">
-                            <h3>Front-end Developer</h3>
+                        <figure class="service-item-inner" style="background: #00a6d2;">
+                            <img src="/static/assets/icons/code.svg" alt="Front-end Develope" height="100" width="100">
+                            <h3>Front End Developement</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, voluptatem? dolore</p>
                         </figure>
                     </div>
                     <!-- service item  -->
                     <div class="service-item padd15">
-                        <figure class="service-item-inner" style="background: rgb(108, 215, 76);">
-                            <img src="/static/assets/service-2.svg" alt="">
+                        <figure class="service-item-inner" style="background: #fdb81e;">
+                            <img src="/static/assets/icons/api-docs.svg" alt="API Documentation" height="100" width="100">
                             <h3>API Documentation</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, voluptatem? dolore</p>
                         </figure>
                     </div>
                     <!-- service item  -->
                     <div class="service-item padd15">
-                        <figure class="service-item-inner" style="background: rgb(249, 123,139);">
-                            <img src="/static/assets/service-3.svg" alt="">
-                            <h3>Technical writing</h3>
+                        <figure class="service-item-inner" style="background: #94bfa2;">
+                            <img src="/static/assets/icons/write.svg" alt="Technical writing" height="100" width="100">
+                            <h3>Content creation</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, voluptatem? dolore</p>
                         </figure>
                     </div>
                 </div>
                 <div class="text padd-15">
-                    <p>Looking for a customization job? <a href="#">Click here</a> to contact me!</p>
+                    <p>Looking for a customization job? <a href="#contact">Click here</a> to contact me!</p>
                 </div>
             </div>
         </section>
@@ -350,14 +282,14 @@
                     <div class="project-item padd-15">
                         <div class="project-item-inner">
                             <figure class="project-item-thumbnail">
-                                <img src="/static/assets/images/easybank.webp" alt="">
+                                <img src="/static/assets/images/easybank.webp" alt="Easy Banking project" height="360" width="700">
                             </figure>
                             <div class="project-detail">
                                 <h3 class="project-site">
                                     <a href="https://easybankingapp.netlify.app">Easy Banking</a>
                                 </h3>
                                 <div class="project-description">
-                                    <p>I built this website from a challenge from frontend mentor. i used it to test my knowledge on React. how to map items creating components and routing them to the correct source.
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae minima corrupti rerum odit ut expedita, eaque nam? Reiciendis, libero voluptates.
                                     </p>
                                     <ul class="project-tags" title="Technologies used">
                                         <li class="tag">React</li>
@@ -375,18 +307,20 @@
                     <div class="project-item padd-15">
                         <div class="project-item-inner">
                             <figure class="project-item-thumbnail">
-                                <img src="/static/assets/images/easybank.webp" alt="">
+                                <img src="/static/assets/images/bookmark.webp" alt="Easy Banking project" height="360" width="700">
                             </figure>
                             <div class="project-detail">
                                 <h3 class="project-site">
-                                    <a href="https://easybankingapp.netlify.app">Easy Banking</a>
+                                    <a href="https://easybankingapp.netlify.app">Bookmark</a>
                                 </h3>
                                 <div class="project-description">
-                                    <p>I built this website from a challenge from frontend mentor. i used it to test my knowledge on React. how to map items creating components and routing them to the correct source.
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dignissimos, omnis perferendis consequatur laudantium dolore nihil at quibusdam! Commodi, consequatur?.
                                     </p>
                                     <ul class="project-tags" title="Technologies used">
-                                        <li class="tag">React</li>
-                                        <li class="tag">CSS</li>
+                                        <li class="tag">HTML</li>
+                                        <li class="tag">TailwindCSS</li>
+                                        <li class="tag">Javascript</li>
                                     </ul>
                                     <div class="project-links">
                                         <a href="https://easybankingapp.netlify.app" target="_blank" rel="noopener" class="btn btn-default">visit site</a>
@@ -400,18 +334,19 @@
                     <div class="project-item padd-15">
                         <div class="project-item-inner">
                             <figure class="project-item-thumbnail">
-                                <img src="/static/assets/images/easybank.webp" alt="">
+                                <img src="/static/assets/images/real-est.webp" alt="Easy Banking project" height="360" width="700">
                             </figure>
                             <div class="project-detail">
                                 <h3 class="project-site">
-                                    <a href="https://easybankingapp.netlify.app">Easy Banking</a>
+                                    <a href="https://easybankingapp.netlify.app">Real Estate</a>
                                 </h3>
                                 <div class="project-description">
-                                    <p>I built this website from a challenge from frontend mentor. i used it to test my knowledge on React. how to map items creating components and routing them to the correct source.
+                                    <p>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium blanditiis quo esse, atque excepturi fugit quod commodi voluptatum consequatur sed!
                                     </p>
                                     <ul class="project-tags" title="Technologies used">
                                         <li class="tag">React</li>
-                                        <li class="tag">CSS</li>
+                                        <li class="tag">Rapid API</li>
                                     </ul>
                                     <div class="project-links">
                                         <a href="https://easybankingapp.netlify.app" target="_blank" rel="noopener" class="btn btn-default">visit site</a>
@@ -425,7 +360,7 @@
                     <!-- <div class="project-item padd-15">
                         <div class="project-item-inner">
                             <figure class="project-item-thumbnail">
-                                <img src="/static/assets/images/easybank.webp" alt="">
+                                <img src="/static/assets/images/easybank.webp" alt="" height="360" width="700">
                             </figure>
                             <div class="project-detail">
                                 <h3 class="project-site">
@@ -450,7 +385,7 @@
                     <!-- <div class="project-item padd-15">
                         <div class="project-item-inner">
                             <figure class="project-item-thumbnail">
-                                <img src="/static/assets/images/easybank.webp" alt="">
+                                <img src="/static/assets/images/easybank.webp" alt="" height="360" width="700">
                             </figure>
                             <div class="project-detail">
                                 <h3 class="project-site">
@@ -475,7 +410,7 @@
                     <!-- <div class="project-item padd-15">
                         <div class="project-item-inner">
                             <figure class="project-item-thumbnail">
-                                <img src="/static/assets/images/easybank.webp" alt="">
+                                <img src="/static/assets/images/easybank.webp" alt="" height="360" width="700">
                             </figure>
                             <div class="project-detail">
                                 <h3 class="project-site">
@@ -496,6 +431,9 @@
                             </div>
                         </div>
                     </div> -->
+                    <div class="projects">
+                        <a href="project.html" class="btn btn-default">View All Projects</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -511,7 +449,9 @@
                         <div class="inner">
                             <div class="thumb">
                                 <a href="https://blog.logrocket.com" target="_blank"><span class="category">LOGROCKET</span></a>
-                                <a href="https://blog.logrocket.com/react-state-management-legend-state/" target="_blank"><img src="/static/assets/images/legent-state.avif" alt=""></a>
+                                <a href="https://blog.logrocket.com/react-state-management-legend-state/" target="_blank" title="Dynamically managing state with Legend-State | Jude Miracle">
+                                    <img src="/static/assets/images/legent-state.avif" alt="featured img" height="360" width="700">
+                                </a>
                             </div>
                             <div class="details">
                                 <h3 class="title"><a href="https://blog.logrocket.com/react-state-management-legend-state" target="_blank">Dynamically managing state with Legend-State</a></h3>
@@ -524,7 +464,9 @@
                         <div class="inner">
                             <div class="thumb">
                                 <a href="https://blog.openreplay.com" target="_blank"><span class="category">OPENREPLAY</span></a>
-                                <a href="https://blog.openreplay.com/comparing-blockchains-ethereum-vs-tezos/" target="_blank"><img src="/static/assets/images/blockchain.webp" alt=""></a>
+                                <a href="https://blog.openreplay.com/comparing-blockchains-ethereum-vs-tezos/" target="_blank" title="Comparing Blockchains: Ethereum Vs Tezos | Jude Miracle">
+                                    <img src="/static/assets/images/blockchain.webp" alt="featured img" height="360" width="700">
+                                </a>
                             </div>
                             <div class="details">
                                 <h3 class="title"><a href="https://blog.openreplay.com/comparing-blockchains-ethereum-vs-tezos/" target="_blank">Comparing Blockchains: Ethereum Vs Tezos</a></h3>
@@ -537,13 +479,18 @@
                         <div class="inner">
                             <div class="thumb">
                                 <a href="https://code.pieces.app/blog" target="_blank"><span class="category">PIECES</span></a>
-                                <a href="https://code.pieces.app/blog/building-an-event-app-with-astro-prismic" target="_blank"><img src="/static/assets/images/astro-prismic.webp" alt=""></a>
+                                <a href="https://code.pieces.app/blog/building-an-event-app-with-astro-prismic" target="_blank" rel="noopener">
+                                    <img src="/static/assets/images/astro-prismic.webp" height="360" width="700" alt="featured img">
+                                </a>
                             </div>
                             <div class="details">
                                 <h3 class="title"><a href="https://code.pieces.app/blog/building-an-event-app-with-astro-prismic" target="_blank">Building an Event App with Astro & Prismic</a></h3>
                                 <p>In this article, we’ll cover about Prismic and learn how to set it up with Astro. In addition, we’ll learn to source data from Prismic to a frontend – Astro by building an Event App</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="articles">
+                        <a href="/article.html" class="btn btn-default">View All Articles</a>
                     </div>
                 </div>
             </div>

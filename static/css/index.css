@@ -141,21 +141,35 @@ nav.scroll-down {
 .nav-link:hover{
     color: var(--color-primary);
 }
-.nav-close{
-    font-size: 1rem;
+.nav-close .line{
+    font-size: 2rem;
     position: absolute;
     top: 1rem;
     right: 1.25rem;
     cursor: pointer;
+    width: 20px;
+    height: 3px;
+    background-color: var(--color-dark);
+    margin: 5px;
+    border-radius: 3px;
 }
+.nav-close .line:first-child{
+    transform: rotate(-45deg);
+}
+.nav-close .line:last-child{
+    transform: rotate(45deg);
+}
+
 .nav-btns{
     display: inline-flex;
     align-items: center;
     column-gap: 1rem;
 }
+svg {
+    fill: var(--color-dark);
+}
 
 .change-theme{
-    font-size: 1.15rem;
     cursor: pointer;
 }
 .nav-toggle{
@@ -163,10 +177,21 @@ nav.scroll-down {
     cursor: pointer;
 }
 .nav-close,
+.icon-burger,
 .nav-toggle{
     display: none;
 }
-
+.icon-burger .line{
+    width: 20px;
+    height: 3px;
+    background-color: var(--color-dark);
+    margin: 5px;
+    border-radius: 3px;
+    transition: all .3s ease-in-out;
+}
+.icon-burger .line:last-child{
+    width: 15px;
+}
 .active-link{
     position: relative;
 }
