@@ -66,7 +66,6 @@
     margin-top: var(--m-1-5);
 }
 .text a{
-    font-weight: 900;
     background: var(--color-primary);
     border-radius: 30px;
     color: #fff;
@@ -540,8 +539,6 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
-    /* .project-item, */
-        /* .blog-item, */
     .fact-item{
         flex: 0 0 50%;
         max-width: 50%;
