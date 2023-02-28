@@ -247,7 +247,6 @@
     background: var(--color-primary);
     border-radius: 30px;
     color: #fff;
-    font-size: .6rem;
     padding: .2rem .5rem;
 }
 
@@ -551,6 +550,9 @@
     }
     .customize-theme .card{
         width: 75vw;
+    }
+    .text a{
+        font-size: .6rem;
     }
 }
 
