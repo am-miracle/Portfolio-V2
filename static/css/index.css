@@ -180,6 +180,7 @@ svg {
 .icon-burger,
 .nav-toggle{
     display: none;
+    cursor: pointer;
 }
 .icon-burger .line{
     width: 20px;

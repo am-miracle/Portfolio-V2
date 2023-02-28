@@ -150,3 +150,10 @@ h3{
     margin: auto;
     overflow: hidden;
 }
+
+.page-nav {
+    padding: 3rem 0 0rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

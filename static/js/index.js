@@ -6,11 +6,11 @@ const navToggle = document.getElementById('nav-toggle');
 const navClose = document.getElementById('nav-close')
 const navLinks = document.querySelectorAll('.nav-link');
 //   const header = document.getElementById('header');
+const main = document.querySelector("main");
 const theme = document.querySelector("#theme-button");
 const themeModal = document.querySelector('.customize-theme');
-const fontSizes = document.querySelectorAll('.choose-size span');
+let fontSizes = document.querySelectorAll('.choose-size span');
 const colorPalette = document.querySelectorAll('.choose-color span');
-const scrollButton = document.getElementById('scroll-button');
 const topOfMain = main.getBoundingClientRect().top;
 var root = document.querySelector(":root");
 const Bg1 = document.querySelector(".bg-1");
@@ -18,10 +18,6 @@ const Bg2 = document.querySelector(".bg-2");
 const Bg3 = document.querySelector(".bg-3");
 
 
-// scroll page
-scrollButton.addEventListener("click", () => {
-  window.scroll({ top: topOfMain, behavior: "smooth" });
-})
 
 let previousScrollPosition = 0;
 
@@ -103,22 +99,6 @@ window.addEventListener("scroll", () => {
   // scrollHeader()
 });
 
-// contact message count
-const handleMessageCount = () => {
-  let msg = document.getElementById("message").value;
-  let msgCount = document.getElementById("message-count")
-  let msgLength = msg.length;
-  const maxLength = 1000;
-  let charLeft = maxLength - msgLength;
-  msgCount.innerText = charLeft;
-};
-
-message.addEventListener("input", handleMessageCount);
-
-const contactMessage = document.querySelector('.success-message');
-  if (window.location.search.includes('success')) {
-  contactMessage.innerHTML = "Thank you for your message, I'll get back to you as soon as I can &#128578;"
-}
 
 // ==== Scroll sections active link =====
 
@@ -146,6 +126,7 @@ const navHighlighter = () => {
 // add an event listener listening for scroll
 window.addEventListener('scroll', navHighlighter);
 
+
 // ==== Theme customization ===
 
 // open modal
@@ -162,7 +143,8 @@ theme.addEventListener('click', openThemeModal);
 themeModal.addEventListener('click', closeThemeModal);
 
 // Choose Fonts
-
+// const fonts = localStorage.getItem('font')
+// console.log(fonts)
 // remove active class from font size selectors
 const removeSizeSelector = () => {
   fontSizes.forEach(size => {
@@ -173,7 +155,8 @@ fontSizes.forEach(size => {
   size.addEventListener('click', () => {
     removeSizeSelector();
 
-    let fontSize;
+    let fontSize = localStorage.getItem('font');
+
     size.classList.toggle('active');
 
     if(size.classList.contains('font-size-1')){
@@ -193,7 +176,7 @@ fontSizes.forEach(size => {
     }
     // change font size of the root html element
     document.querySelector('html').style.fontSize = fontSize;
-    localStorage.setItem("fontsize", fontSize)
+    localStorage.setItem('font', fontSize);
   })
 })
 
@@ -228,6 +211,7 @@ colorPalette.forEach(color => {
   })
 })
 
+
 // Theme backgrounds
 let lightColorLightness;
 let whiteColorLightness;
@@ -247,7 +231,7 @@ Bg1.addEventListener('click', () => {
   Bg2.classList.remove('active');
   Bg3.classList.remove('active');
   // remove customized changes from local storage
-  window.location.reload();
+  // window.location.reload();
 });
 
 Bg2.addEventListener('click', () => {
