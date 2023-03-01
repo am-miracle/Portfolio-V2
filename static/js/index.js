@@ -104,7 +104,7 @@ window.addEventListener("scroll", () => {
 
 // get all sections that have an id defined
 const sections = document.querySelectorAll('section[id]');
-
+console.log(sections)
 
 const navHighlighter = () => {
   // get current scroll position
@@ -188,7 +188,7 @@ const changeActiveColorClass = () => {
 }
 colorPalette.forEach(color => {
   color.addEventListener('click', () => {
-    let primaryHue;
+    let primaryHue = localStorage.getItem('color');
     changeActiveColorClass();
 
     if(color.classList.contains('color-1')){
@@ -208,6 +208,7 @@ colorPalette.forEach(color => {
     }
     color.classList.add("active");
     root.style.setProperty("--primary-color-hue", primaryHue)
+    localStorage.setItem('color', primaryHue);
   })
 })
 
@@ -258,4 +259,4 @@ Bg3.addEventListener('click', () => {
   Bg1.classList.remove('active');
   Bg2.classList.remove('active');
   changeBG();
-})
+});

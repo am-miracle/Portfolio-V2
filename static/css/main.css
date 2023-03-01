@@ -492,41 +492,6 @@
     .about-button a{
         text-align: center;
     }
-    body{
-        margin: var(--header-height) 0 0 0;
-    }
-    .container{
-        max-width: 592px;
-    }
-    .nav{
-        height: var(--header-height);
-    }
-    .nav-list{
-        flex-direction: column;
-        row-gap: 1.5rem;
-    }
-    .nav-menu{
-        position: fixed ;
-        background: var(--color-white);
-        width: 80%;
-        height: 100%;
-        top: 0%;
-        right: 100%;
-        padding: 4rem 0 0 3rem;
-        border-radius: 1rem 0 0 1rem;
-        z-index: 100;
-        transition: .3s;
-    }
-    .show-menu {
-        right: 0;
-    }
-    .nav-close,
-    .nav-toggle{
-        display: inline-flex;
-    }
-    .icon-burger{
-        display: block;
-    }
     .contact-data,
     .contact-form,
     .project-item,
