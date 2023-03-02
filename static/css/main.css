@@ -23,6 +23,13 @@
 .about-container-text p{
     margin-bottom: var(--m-2);
 }
+.about-container-text p span{
+    display: block;
+    margin-bottom: var(--m-0-5);
+}
+.about-container-text p span a{
+    text-decoration: underline var(--color-primary) 0.2rem;
+}
 .about-image-container{
     box-shadow: unset ;
 }
