@@ -293,6 +293,7 @@
 .contact-input{
     position: absolute;
     caret-color: var(--color-primary);
+    color: var(--color-primary);
     top: 0;
     left: 0;
     width: 100%;
