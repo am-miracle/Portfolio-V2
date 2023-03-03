@@ -315,7 +315,6 @@ footer{
     }
     .nav{
         height: var(--header-height);
-        margin-top: -60px;
     }
     .nav-list{
         flex-direction: column;

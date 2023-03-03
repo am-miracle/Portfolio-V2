@@ -476,11 +476,14 @@
         margin-bottom: var(--m-2-5);
     }
     .project-item,
-    .blog-item,
-    .services .service-item{
+    .blog-item{
         flex: 0 0 50%;
         max-width: 50%;
         margin-bottom: var(--m-2-5);
+    }
+    .services .service-item{
+        flex: 0 0 50%;
+        max-width: 50%;
     }
     .customize-theme .card{
         width: 58vw;
