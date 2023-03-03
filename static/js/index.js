@@ -103,28 +103,27 @@ window.addEventListener("scroll", () => {
 // ==== Scroll sections active link =====
 
 // get all sections that have an id defined
-const sections = document.querySelectorAll('section[id]');
-console.log(sections)
+// const sections = document.querySelectorAll('section[id]');
 
-const navHighlighter = () => {
-  // get current scroll position
-  let scrollY = window.pageYOffset;
-  // now we loop through sections to get height , top and ID values for each
-  sections.forEach(current => {
-    const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 40,
-    sectionId = current.getAttribute('id');
+// const navHighlighter = () => {
+//   // get current scroll position
+//   let scrollY = window.pageYOffset;
+//   // now we loop through sections to get height , top and ID values for each
+//   sections.forEach(current => {
+//     const sectionHeight = current.offsetHeight;
+//     const sectionTop = current.offsetTop - 40,
+//     sectionId = current.getAttribute('id');
 
-    if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-      document.querySelector(`.nav-menu a[href*= "${sectionId}" ]`).classList.add("active-link")
-    }
-    else{
-      document.querySelector(`.nav-menu a[href*= "${sectionId}" ]`).classList.remove("active-link")
-    }
-  })
-}
-// add an event listener listening for scroll
-window.addEventListener('scroll', navHighlighter);
+//     if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+//       document.querySelector(`.nav-menu a[href*= "${sectionId}" ]`).classList.add("active-link")
+//     }
+//     else{
+//       document.querySelector(`.nav-menu a[href*= "${sectionId}" ]`).classList.remove("active-link")
+//     }
+//   })
+// }
+// // add an event listener listening for scroll
+// window.addEventListener('scroll', navHighlighter);
 
 
 // ==== Theme customization ===

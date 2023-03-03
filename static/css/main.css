@@ -28,6 +28,7 @@
     margin-bottom: var(--m-0-5);
 }
 .about-container-text p span a{
+    font-family: var(--title-font);
     text-decoration: underline var(--color-primary) 0.2rem;
 }
 .about-image-container{
