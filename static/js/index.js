@@ -5,7 +5,6 @@ const navMenu =  document.getElementById('nav-menu');
 const navToggle = document.getElementById('nav-toggle');
 const navClose = document.getElementById('nav-close')
 const navLinks = document.querySelectorAll('.nav-link');
-//   const header = document.getElementById('header');
 const main = document.querySelector("main");
 const theme = document.querySelector("#theme-button");
 const themeModal = document.querySelector('.customize-theme');
@@ -85,18 +84,10 @@ const linkAction = () => {
 navLinks.forEach(link => link.addEventListener('click', linkAction))
 
 
-// change background header
-
-// const scrollHeader() {
-//   // when the scroll is greater than 80 viewport height, add the class scroll header to the tag header
-//   if(this.scrollY >= 80) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
-// }
-
 window.addEventListener("scroll", () => {
   if (mediaQuery && !mediaQuery.matches) {
     throttle(handleNavScroll, 250)
   }
-  // scrollHeader()
 });
 
 
@@ -142,19 +133,19 @@ theme.addEventListener('click', openThemeModal);
 themeModal.addEventListener('click', closeThemeModal);
 
 // Choose Fonts
-// const fonts = localStorage.getItem('font')
-// console.log(fonts)
+
 // remove active class from font size selectors
 const removeSizeSelector = () => {
   fontSizes.forEach(size => {
     size.classList.remove("active");
   })
 }
+
 fontSizes.forEach(size => {
   size.addEventListener('click', () => {
     removeSizeSelector();
 
-    let fontSize = localStorage.getItem('font');
+    let fontSize;
 
     size.classList.toggle('active');
 
@@ -174,10 +165,14 @@ fontSizes.forEach(size => {
       fontSize = '18px'
     }
     // change font size of the root html element
-    document.querySelector('html').style.fontSize = fontSize;
-    localStorage.setItem('font', fontSize);
+    localStorage.setItem('font',document.querySelector('html').style.fontSize = fontSize);
   })
 })
+
+if(localStorage.font) {
+  // fontSize = localStorage.font;
+  document.querySelector('html').style.fontSize = localStorage.font;
+}
 
 // choose color
 const changeActiveColorClass = () => {
@@ -187,9 +182,9 @@ const changeActiveColorClass = () => {
 }
 colorPalette.forEach(color => {
   color.addEventListener('click', () => {
-    let primaryHue = localStorage.getItem('color');
     changeActiveColorClass();
 
+    let primaryHue;
     if(color.classList.contains('color-1')){
       primaryHue = 252;
     }
@@ -206,11 +201,15 @@ colorPalette.forEach(color => {
       primaryHue = 202
     }
     color.classList.add("active");
+    localStorage.setItem('color', primaryHue)
     root.style.setProperty("--primary-color-hue", primaryHue)
-    localStorage.setItem('color', primaryHue);
   })
 })
 
+if(localStorage.color) {
+  // fontSize = localStorage.font;
+  primaryHue = localStorage.color;
+}
 
 // Theme backgrounds
 let lightColorLightness;
@@ -225,11 +224,16 @@ const changeBG = () => {
 }
 
 Bg1.addEventListener('click', () => {
+  darkColorLightness = '17%';
+  whiteColorLightness = '100%';
+  lightColorLightness = '92%';
+
   // add active class
   Bg1.classList.add('active');
   // remove active class from the others
   Bg2.classList.remove('active');
   Bg3.classList.remove('active');
+  changeBG();
   // remove customized changes from local storage
   // window.location.reload();
 });
@@ -245,7 +249,8 @@ Bg2.addEventListener('click', () => {
   Bg1.classList.remove('active');
   Bg3.classList.remove('active');
   changeBG();
-});
+})
+
 
 Bg3.addEventListener('click', () => {
   darkColorLightness = '95%';
@@ -259,3 +264,11 @@ Bg3.addEventListener('click', () => {
   Bg2.classList.remove('active');
   changeBG();
 });
+
+const obj = {
+  Bg1: Bg1,
+  Bg2: Bg2,
+  Bg3: Bg3,
+}
+
+console.log(obj)
