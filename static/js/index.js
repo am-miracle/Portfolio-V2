@@ -90,33 +90,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
-// ==== Scroll sections active link =====
-
-// get all sections that have an id defined
-// const sections = document.querySelectorAll('section[id]');
-
-// const navHighlighter = () => {
-//   // get current scroll position
-//   let scrollY = window.pageYOffset;
-//   // now we loop through sections to get height , top and ID values for each
-//   sections.forEach(current => {
-//     const sectionHeight = current.offsetHeight;
-//     const sectionTop = current.offsetTop - 40,
-//     sectionId = current.getAttribute('id');
-
-//     if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-//       document.querySelector(`.nav-menu a[href*= "${sectionId}" ]`).classList.add("active-link")
-//     }
-//     else{
-//       document.querySelector(`.nav-menu a[href*= "${sectionId}" ]`).classList.remove("active-link")
-//     }
-//   })
-// }
-// // add an event listener listening for scroll
-// window.addEventListener('scroll', navHighlighter);
-
-
 // ==== Theme customization ===
 
 // open modal
@@ -146,7 +119,6 @@ fontSizes.forEach(size => {
     removeSizeSelector();
 
     let fontSize;
-
     size.classList.toggle('active');
 
     if(size.classList.contains('font-size-1')){
@@ -170,7 +142,6 @@ fontSizes.forEach(size => {
 })
 
 if(localStorage.font) {
-  // fontSize = localStorage.font;
   document.querySelector('html').style.fontSize = localStorage.font;
 }
 
@@ -184,7 +155,8 @@ colorPalette.forEach(color => {
   color.addEventListener('click', () => {
     changeActiveColorClass();
 
-    let primaryHue;
+    let primaryHue = localStorage.getItem('color');
+
     if(color.classList.contains('color-1')){
       primaryHue = 252;
     }
@@ -201,15 +173,9 @@ colorPalette.forEach(color => {
       primaryHue = 202
     }
     color.classList.add("active");
-    localStorage.setItem('color', primaryHue)
-    root.style.setProperty("--primary-color-hue", primaryHue)
+    root.style.setProperty("--primary-color-hue", primaryHue);
   })
 })
-
-if(localStorage.color) {
-  // fontSize = localStorage.font;
-  primaryHue = localStorage.color;
-}
 
 // Theme backgrounds
 let lightColorLightness;
@@ -265,10 +231,10 @@ Bg3.addEventListener('click', () => {
   changeBG();
 });
 
-const obj = {
-  Bg1: Bg1,
-  Bg2: Bg2,
-  Bg3: Bg3,
-}
+// const obj = {
+//   Bg1: Bg1,
+//   Bg2: Bg2,
+//   Bg3: Bg3,
+// }
 
-console.log(obj)
+// console.log(obj)
