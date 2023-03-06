@@ -1,0 +1,11 @@
+.cv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin: var(--m-2-5) auto 0 auto;
+}
+.cv a{
+    text-transform: uppercase;
+    font-family: var(--title-font);
+}
