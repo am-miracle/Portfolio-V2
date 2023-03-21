@@ -2,18 +2,20 @@
 
 /* About  */
 .about-text-container{
-    flex: 0 0 60%;
-    max-width: 60%;
+    flex: 0 0 55%;
+    max-width: 55%;
 }
 .about-image-container{
     flex: 0 0 40%;
     max-width: 40%;
+    box-shadow: unset;
 }
 .main-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 3rem;
     margin-top: var(--m-2-5);
 }
 .about-container-text h2{
@@ -30,9 +32,6 @@
 .about-container-text p span a{
     font-family: var(--title-font);
     text-decoration: underline var(--color-primary) 0.2rem;
-}
-.about-image-container{
-    box-shadow: unset ;
 }
 .about-button a{
     font-family: var(--title-font);
