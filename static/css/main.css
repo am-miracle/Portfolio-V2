@@ -6,8 +6,8 @@
     max-width: 55%;
 }
 .about-image-container{
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 45%;
+    max-width: 45%;
     box-shadow: unset;
 }
 .main-row {
@@ -15,7 +15,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
     margin-top: var(--m-2-5);
 }
 .about-container-text h2{
