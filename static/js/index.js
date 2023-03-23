@@ -219,8 +219,6 @@ Bg1.addEventListener('click', () => {
   Bg2.classList.remove('active');
   Bg3.classList.remove('active');
   changeBG();
-  // remove customized changes from local storage
-  // window.location.reload();
 });
 
 Bg2.addEventListener('click', () => {
