@@ -1,6 +1,6 @@
 // articles filter
 filterSelection("all")
-function filterSelection(c) {
+const filterSelection = (c) => {
   const x = document.getElementsByClassName("filterDiv");
   let i;
   if (c == "all") c = "";
@@ -10,7 +10,7 @@ function filterSelection(c) {
   }
 }
 
-function addClass(element, name) {
+const addClass = (element, name) => {
   let i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
@@ -19,7 +19,7 @@ function addClass(element, name) {
   }
 }
 
-function removeClass(element, name) {
+const removeClass = (element, name) => {
   let i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
@@ -31,11 +31,11 @@ function removeClass(element, name) {
   element.className = arr1.join(" ");
 }
 
-var btnContainer = document.getElementById("filter-container");
-var btns = btnContainer.getElementsByClassName("filter-btn");
+const btnContainer = document.getElementById("filter-container");
+const btns = btnContainer.getElementsByClassName("filter-btn");
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
+    const current = document.getElementsByClassName("active");
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
   });

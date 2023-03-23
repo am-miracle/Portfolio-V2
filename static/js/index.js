@@ -155,27 +155,37 @@ colorPalette.forEach(color => {
   color.addEventListener('click', () => {
     changeActiveColorClass();
 
-    let primaryHue = localStorage.getItem('color');
+    let primaryHue;
 
     if(color.classList.contains('color-1')){
       primaryHue = 252;
+      localStorage.setItem('color', primaryHue)
     }
     else if(color.classList.contains('color-2')){
       primaryHue = 52;
+      localStorage.setItem('color', primaryHue)
     }
     else if(color.classList.contains('color-3')){
       primaryHue = 352
+      localStorage.setItem('color', primaryHue)
     }
     else if(color.classList.contains('color-4')){
       primaryHue = 152
+      localStorage.setItem('color', primaryHue)
     }
     else if(color.classList.contains('color-5')){
       primaryHue = 202
+      localStorage.setItem('color', primaryHue)
     }
     color.classList.add("active");
-    root.style.setProperty("--primary-color-hue", primaryHue);
+
+    root.style.setProperty("--primary-color-hue", localStorage.getItem('color'));
   })
 })
+
+if(localStorage.color) {
+  root.style.setProperty("--primary-color-hue", localStorage.getItem('color'));
+}
 
 // Theme backgrounds
 let lightColorLightness;
@@ -185,8 +195,17 @@ let darkColorLightness;
 // change background color
 const changeBG = () => {
   root.style.setProperty('--light-color-lightness', lightColorLightness);
+  localStorage.setItem('lightBg', lightColorLightness);
   root.style.setProperty('--white-color-lightness', whiteColorLightness);
+  localStorage.setItem('whiteBg', whiteColorLightness);
   root.style.setProperty('--dark-color-lightness', darkColorLightness);
+  localStorage.setItem('darkBg', darkColorLightness);
+}
+
+if(localStorage.lightBg && localStorage.whiteBg && localStorage.darkBg) {
+  root.style.setProperty('--light-color-lightness', localStorage.getItem('lightBg'));
+  root.style.setProperty('--white-color-lightness', localStorage.getItem('whiteBg'));
+  root.style.setProperty('--dark-color-lightness', localStorage.getItem('darkBg'));
 }
 
 Bg1.addEventListener('click', () => {
