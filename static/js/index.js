@@ -8,7 +8,7 @@ const navLinks = document.querySelectorAll('.nav-link');
 const main = document.querySelector("main");
 const theme = document.querySelector("#theme-button");
 const themeModal = document.querySelector('.customize-theme');
-let fontSizes = document.querySelectorAll('.choose-size span');
+// let fontSizes = document.querySelectorAll('.choose-size span');
 const colorPalette = document.querySelectorAll('.choose-color span');
 const topOfMain = main.getBoundingClientRect().top;
 var root = document.querySelector(":root");
@@ -107,7 +107,9 @@ themeModal.addEventListener('click', closeThemeModal);
 
 // Choose Fonts
 
-// remove active class from font size selectors
+let fontSizes = document.querySelectorAll('.choose-size span');
+
+// remove active class from font size selectors except for the given element
 const removeSizeSelector = () => {
   fontSizes.forEach(size => {
     size.classList.remove("active");
@@ -119,30 +121,57 @@ fontSizes.forEach(size => {
     removeSizeSelector();
 
     let fontSize;
-    size.classList.toggle('active');
+    size.classList.add('active');
 
     if(size.classList.contains('font-size-1')){
-      fontSize = '12px'
-    }
-    else if(size.classList.contains('font-size-1')){
-      fontSize = '14px'
+      fontSize = '12px';
     }
     else if(size.classList.contains('font-size-2')){
-      fontSize = '14px'
+      fontSize = '14px';
     }
     else if(size.classList.contains('font-size-3')){
-      fontSize = '16px'
+      fontSize = '16px';
     }
     else if(size.classList.contains('font-size-4')){
-      fontSize = '18px'
+      fontSize = '18px';
     }
+
     // change font size of the root html element
-    localStorage.setItem('font',document.querySelector('html').style.fontSize = fontSize);
+    document.querySelector('html').style.fontSize = fontSize;
+
+    // Store active font size and active class to localStorage
+    localStorage.setItem('activeFontSize', fontSize);
+    localStorage.setItem('activeSizeSelector', size.id);
+
   })
+
+  // Add ID attributes to font size selectors
+  if (size.classList.contains('font-size-1')) {
+    size.id = 'size-1';
+  }
+  else if (size.classList.contains('font-size-2')) {
+    size.id = 'size-2';
+  }
+  else if (size.classList.contains('font-size-3')) {
+    size.id = 'size-3';
+  }
+  else if (size.classList.contains('font-size-4')) {
+    size.id = 'size-4';
+  }
 })
 
-if(localStorage.font) {
-  document.querySelector('html').style.fontSize = localStorage.font;
+// Check if there is an active font size stored in localStorage
+const activeFontSize = localStorage.getItem('activeFontSize');
+const activeSizeSelector = localStorage.getItem('activeSizeSelector');
+
+// If there is an active font size, set it as active
+if (activeFontSize && activeSizeSelector) {
+  fontSizes.forEach(size => {
+    if (size.id === activeSizeSelector) {
+      size.classList.add('active');
+    }
+  })
+  document.querySelector('html').style.fontSize = activeFontSize;
 }
 
 // choose color
