@@ -8,7 +8,7 @@ const navLinks = document.querySelectorAll('.nav-link');
 const main = document.querySelector("main");
 const theme = document.querySelector("#theme-button");
 const themeModal = document.querySelector('.customize-theme');
-// let fontSizes = document.querySelectorAll('.choose-size span');
+let fontSizes = document.querySelectorAll('.choose-size span');
 const colorPalette = document.querySelectorAll('.choose-color span');
 const topOfMain = main.getBoundingClientRect().top;
 var root = document.querySelector(":root");
@@ -107,9 +107,7 @@ themeModal.addEventListener('click', closeThemeModal);
 
 // Choose Fonts
 
-let fontSizes = document.querySelectorAll('.choose-size span');
-
-// remove active class from font size selectors except for the given element
+// remove active class from font size selectors
 const removeSizeSelector = () => {
   fontSizes.forEach(size => {
     size.classList.remove("active");
@@ -174,7 +172,9 @@ if (activeFontSize && activeSizeSelector) {
   document.querySelector('html').style.fontSize = activeFontSize;
 }
 
+
 // choose color
+
 const changeActiveColorClass = () => {
   colorPalette.forEach(colorPicker => {
     colorPicker.classList.remove('active')
@@ -206,6 +206,8 @@ colorPalette.forEach(color => {
       primaryHue = 202
       localStorage.setItem('color', primaryHue)
     }
+
+    localStorage.setItem('activeColor', color.classList);
     color.classList.add("active");
 
     root.style.setProperty("--primary-color-hue", localStorage.getItem('color'));
@@ -214,6 +216,11 @@ colorPalette.forEach(color => {
 
 if(localStorage.color) {
   root.style.setProperty("--primary-color-hue", localStorage.getItem('color'));
+  const activeColorClass = localStorage.getItem('activeColor');
+  const activeColorElement = document.querySelector(`.${activeColorClass}`);
+  if (activeColorElement) {
+    activeColorElement.classList.add('active');
+  }
 }
 
 // Theme backgrounds
@@ -242,22 +249,28 @@ Bg1.addEventListener('click', () => {
   whiteColorLightness = '100%';
   lightColorLightness = '92%';
 
-  // add active class
+  // add active class and store in local storage
   Bg1.classList.add('active');
-  // remove active class from the others
+  localStorage.setItem('activeBg', 'Bg1');
+  // remove active class from the others and remove from local storage
   Bg2.classList.remove('active');
   Bg3.classList.remove('active');
   changeBG();
+
 });
+
+
 
 Bg2.addEventListener('click', () => {
   darkColorLightness = '95%';
   whiteColorLightness = '20%';
   lightColorLightness = '15%';
 
-  // add active class
+
+  // add active class and store in local storage
   Bg2.classList.add('active');
-  // remove active class from the others
+  localStorage.setItem('activeBg', 'Bg2');
+  // remove active class from the others and remove from local storage
   Bg1.classList.remove('active');
   Bg3.classList.remove('active');
   changeBG();
@@ -269,14 +282,26 @@ Bg3.addEventListener('click', () => {
   whiteColorLightness = '10%';
   lightColorLightness = '0%';
 
-  // add active class
+  // add active class and store in local storage
   Bg3.classList.add('active');
-  // remove active class from the others
+  localStorage.setItem('activeBg', 'Bg3');
+  // remove active class from the others and remove from local storage
   Bg1.classList.remove('active');
   Bg2.classList.remove('active');
   changeBG();
 });
 
+// check if there is an active background in local storage and set the active class accordingly
+if(localStorage.activeBg) {
+  const activeBg = localStorage.getItem('activeBg');
+  if(activeBg === 'Bg1') {
+    Bg1.classList.add('active');
+  } else if(activeBg === 'Bg2') {
+    Bg2.classList.add('active');
+  } else if(activeBg === 'Bg3') {
+    Bg3.classList.add('active');
+  }
+}
 
 const tabs = document.querySelectorAll('[data-tab-target]')
 const tabContents = document.querySelectorAll('[data-tab-content]')
