@@ -81,3 +81,37 @@ function nextSlide() {
   prevTranslate = currentTranslate;
   setTransform(currentTranslate);
 }
+
+
+// get all carousel wrappers
+const carouselWrappers = document.querySelectorAll(".carousel-wrapper");
+
+// create IntersectionObserver instance
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    // get carousel element and its index
+    const carousel = entry.target.querySelector(".carousel");
+    const index = Array.from(carouselWrappers).indexOf(entry.target);
+
+    if (entry.isIntersecting) {
+      // start animation for current carousel
+      carousel.style.animationPlayState = "running";
+
+      // stop animation for adjacent carousels
+      if (index > 0) {
+        carouselWrappers[index - 1].querySelector(".carousel").style.animationPlayState = "paused";
+      }
+      if (index < carouselWrappers.length - 1) {
+        carouselWrappers[index + 1].querySelector(".carousel").style.animationPlayState = "paused";
+      }
+    } else {
+      // stop animation for current carousel
+      carousel.style.animationPlayState = "paused";
+    }
+  });
+});
+
+// observe each carousel wrapper
+carouselWrappers.forEach((carouselWrapper) => {
+  observer.observe(carouselWrapper);
+});
