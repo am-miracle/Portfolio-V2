@@ -18,7 +18,7 @@
   gap: 1rem;
 }
 
-.carousel-item a:hover{
+.carousel-wrapper a{
   text-decoration: underline var(--color-primary) 2px;
 }
 
@@ -135,8 +135,7 @@
 
 .links a:hover,
 .links a:focus {
-  color: var(--text-color);
-  text-decoration-color: var(--text-color);
+  color: var(--color-gray);
 }
 
 .more-link {
@@ -161,7 +160,7 @@
 /* .carousel {
   animation: slide 20s linear 3s infinite;
 } */
-/* #first-carousel .carousel {
+#first-carousel .carousel {
   animation: slide 20s linear 3s infinite running;
 }
 
@@ -180,5 +179,5 @@
   100% {
     transform: translateX(calc(-100% / 3 * 6.5));
   }
-} */
+}
 

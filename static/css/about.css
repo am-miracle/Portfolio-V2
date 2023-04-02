@@ -12,31 +12,6 @@ html {
     margin: 5rem 0;
 }
 
-/* .intro-image {
-    flex: 1 1 200px;
-}
-
-.intro-image img {
-    width: 100%;
-    background-color: var(--color-gray);
-}
-
-.intro {
-    margin-left: 3rem;
-    flex: 1 1 60%;
-}
-
-.intro p {
-    max-width: 40ch;
-}
-
-.large-text {
-    margin-top: 0;
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--shade-500);
-} */
-
 .bold-text {
     font-size: 1.5rem;
     color: var(--grey-text);
@@ -70,7 +45,7 @@ html {
 .tab{
     cursor: pointer;
 }
-.tab-container a:hover{
+.tab-container span:hover{
     color: var(--color-primary);
 }
 .tab.active{
