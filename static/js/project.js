@@ -20,6 +20,13 @@ carouselSlides.addEventListener('touchstart', dragStart);
 carouselSlides.addEventListener('touchend', dragEnd);
 carouselSlides.addEventListener('touchmove', drag);
 
+// prevButton.forEach((btn) => {
+//   btn.addEventListener('click', prevSlide)
+// })
+// nextButton.forEach((btn) => {
+//   btn.addEventListener('click', nextSlide)
+// })
+
 prevButton.addEventListener('click', prevSlide);
 nextButton.addEventListener('click', nextSlide);
 
@@ -84,34 +91,34 @@ function nextSlide() {
 
 
 // get all carousel wrappers
-const carouselWrappers = document.querySelectorAll(".carousel-wrapper");
+// const carouselWrappers = document.querySelectorAll(".carousel-wrapper");
 
-// create IntersectionObserver instance
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    // get carousel element and its index
-    const carousel = entry.target.querySelector(".carousel");
-    const index = Array.from(carouselWrappers).indexOf(entry.target);
+// // create IntersectionObserver instance
+// const observer = new IntersectionObserver((entries) => {
+//   entries.forEach((entry) => {
+//     // get carousel element and its index
+//     const carousel = entry.target.querySelector(".carousel");
+//     const index = Array.from(carouselWrappers).indexOf(entry.target);
 
-    if (entry.isIntersecting) {
-      // start animation for current carousel
-      carousel.style.animationPlayState = "running";
+//     if (entry.isIntersecting) {
+//       // start animation for current carousel
+//       carousel.style.animationPlayState = "running";
 
-      // stop animation for adjacent carousels
-      if (index > 0) {
-        carouselWrappers[index - 1].querySelector(".carousel").style.animationPlayState = "paused";
-      }
-      if (index < carouselWrappers.length - 1) {
-        carouselWrappers[index + 1].querySelector(".carousel").style.animationPlayState = "paused";
-      }
-    } else {
-      // stop animation for current carousel
-      carousel.style.animationPlayState = "paused";
-    }
-  });
-});
+//       // stop animation for adjacent carousels
+//       if (index > 0) {
+//         carouselWrappers[index - 1].querySelector(".carousel").style.animationPlayState = "paused";
+//       }
+//       if (index < carouselWrappers.length - 1) {
+//         carouselWrappers[index + 1].querySelector(".carousel").style.animationPlayState = "paused";
+//       }
+//     } else {
+//       // stop animation for current carousel
+//       carousel.style.animationPlayState = "paused";
+//     }
+//   });
+// });
 
-// observe each carousel wrapper
-carouselWrappers.forEach((carouselWrapper) => {
-  observer.observe(carouselWrapper);
-});
+// // observe each carousel wrapper
+// carouselWrappers.forEach((carouselWrapper) => {
+//   observer.observe(carouselWrapper);
+// });
