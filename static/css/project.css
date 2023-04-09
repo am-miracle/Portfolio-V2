@@ -71,11 +71,11 @@
   margin-left: 1.5rem;
 }
 
-.project-image {
+.project-image, .codepen {
   width: 100%;
 }
 
-.project-image img {
+.project-image img, .codepen {
   display: block;
   width: 100%;
   height: auto;
