@@ -283,7 +283,6 @@
 .contact-input{
     position: absolute;
     caret-color: var(--color-primary);
-    color: var(--color-primary);
     top: 0;
     left: 0;
     width: 100%;
@@ -294,6 +293,9 @@
     outline: none;
     border: none;
     z-index: 1;
+}
+.contact-input:focus{
+    color: var(--color-primary);
 }
 .contact-label{
     position: absolute;
