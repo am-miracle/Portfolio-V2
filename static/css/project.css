@@ -177,7 +177,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-100% / 4 * 6.5));
+    transform: translateX(calc(-100% / 3 * 6.5));
   }
 }
 
