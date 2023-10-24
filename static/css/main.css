@@ -72,6 +72,7 @@
     flex: 0 0 33.33%;
     max-width: 33.33%;
     margin-bottom: var(--m-1-5);
+    display: flex;
 }
 .project-item-inner{
     position: relative;
@@ -80,6 +81,10 @@
     overflow: hidden;
     transform: translateY(0);
     transition: .3s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .project-item-inner:hover{
     transform: translateY(-0.98rem);
@@ -105,6 +110,11 @@
     background-color: var(--background-color);
     padding: 1rem 1rem 0rem 1rem;
     height: 100%;
+    margin-bottom: 1em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .project-site{
     text-transform: uppercase;
