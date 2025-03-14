@@ -67,3 +67,121 @@ html {
       margin-bottom: 2rem;
     }
   } */
+
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    font-family: var(--body-font);
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    background: var(--color-primary);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: height 0.3s ease-in-out;
+}
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.timeline-item:nth-child(odd) {
+    text-align: left;
+    left: 0;
+}
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+.timeline-dot {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s ease;
+}
+.timeline-item:nth-child(odd) .timeline-dot {
+    left: 100%;
+    top: 50%;
+}
+.timeline-item:nth-child(even) .timeline-dot {
+    left: 0%;
+    top: 50%;
+}
+
+.timeline-content {
+    background: var(--color-white);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+.timeline-content ul{
+    list-style-type: square;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+.timeline-content a {
+    font-style: italic;
+}
+.timeline-content h3 {
+    font-family: var(--title-font);
+}
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.timeline-item.visible .timeline-dot {
+    transform: translate(-50%, -50%) scale(1);
+}
+@media screen and (max-width: 600px) {
+    .timeline::before {
+        left: 20px;
+    }
+    .timeline-item {
+        max-width: 95%;
+        width: auto;
+        left: 0 !important;
+        text-align: left !important;
+        margin: 0 auto;
+    }
+    .timeline-dot {
+        left: 12px !important;
+    }
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 900px;
+    margin: auto;
+}
+.skills-category {
+    padding: 15px;
+    border-radius: 8px;
+}
+.skills-category h3 {
+    margin-top: 0;
+}
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.skill {
+    padding: 10px 15px;
+    border-radius: 5px;
+}

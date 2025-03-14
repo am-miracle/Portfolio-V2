@@ -318,3 +318,65 @@ tabs.forEach(tab => {
     target.classList.add('active')
   })
 })
+
+
+// Function to observe sections and add animations
+function observeSections() {
+  const sections = document.querySelectorAll('.animate-section');
+  // const projectCards = document.querySelectorAll('.project-item');
+
+  const options = {
+      root: null, // Use the viewport as the root
+      rootMargin: '0px',
+      threshold: 0.2, // Trigger when 20% of the section is visible
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              observer.unobserve(entry.target); // Stop observing after animation
+          }
+      });
+  }, options);
+
+  sections.forEach(section => {
+      observer.observe(section);
+  });
+
+//   projectCards.forEach(card => {
+//     observer.observe(card);
+// });
+}
+
+// Call the function when the page loads
+window.addEventListener('load', observeSections);
+
+document.addEventListener("DOMContentLoaded", function () {
+  const items = document.querySelectorAll(".timeline-item");
+  
+  function checkVisibility() {
+      const triggerBottom = window.innerHeight * 0.8;
+      items.forEach(item => {
+          const boxTop = item.getBoundingClientRect().top;
+          if (boxTop < triggerBottom) {
+              item.classList.add("visible");
+          }
+      });
+  }
+  
+  window.addEventListener("scroll", checkVisibility);
+  checkVisibility();
+});
+
+// Add this script to your existing JavaScript
+document.addEventListener('DOMContentLoaded', () => {
+  // Add loaded class to body after initial render
+  document.body.classList.add('loaded');
+  
+  // Remove pointer after first interaction
+  // const pointer = document.querySelector('.customization-pointer');
+  // document.addEventListener('click', () => {
+  //     pointer.remove();
+  // }, { once: true });
+});

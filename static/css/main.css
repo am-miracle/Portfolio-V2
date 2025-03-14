@@ -13,8 +13,8 @@
 .main-row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     margin-top: var(--m-2-5);
 }
 .about-container-text h2{

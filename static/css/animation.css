@@ -1,0 +1,182 @@
+@import '/static/css/root.css';
+
+
+/* Keyframes for slide-in from the left */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Keyframes for slide-in from the right */
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Keyframes for fade-in with a delay */
+@keyframes fadeInDelayed {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Keyframes for typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Keyframes for blink cursor effect */
+@keyframes blinkCursor {
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+/* Keyframes for scroll button bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Keyframes for zoom-in animation */
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* INDEX PAGE ANIMATIONS */
+
+/* Animate the logo */
+.logo-container .logo {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(20, end), blinkCursor 0.75s step-end infinite;
+    border-right: 2px solid #fff; /* Cursor effect */
+}
+
+/* Animate the header text */
+.header-text h1 p:nth-child(1) {
+    animation: slideInLeft 1s ease-out;
+}
+
+.header-text h1 p:nth-child(2) {
+    animation: slideInRight 1s ease-out;
+    animation-delay: 0.5s; /* Delay the second line */
+}
+
+.header h2 {
+    animation: fadeInDelayed 2s ease-out;
+    animation-delay: 1s; /* Delay the subtitle */
+}
+
+
+/* Default section styling */
+.animate-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Animate sections when they come into view */
+.animate-section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Specific animations for each section */
+#about.animate-section.in-view {
+    animation: fadeInUp 1s ease-out;
+}
+#about.animate-section.in-view .about-button {
+    animation: fadeInUp 1s ease-out 1s;
+}
+
+#project .animate-section.in-view.row{
+    animation: zoomIn 1s ease-out;
+}
+#project.animate-section.in-view .projects {
+    animation: fadeInUp 1s ease-out 1s;
+}
+
+#article.animate-section.in-view {
+    animation: fadeInUp 1s ease-out;
+}
+#article .animate-section.in-view.row{
+    animation: zoomIn 1s ease-out;
+}
+#article.animate-section.in-view .articles {
+    animation: fadeInUp 1s ease-out 1s;
+}
+
+#services .animate-section.in-view.row {
+    animation: zoomIn 1s ease-out;
+}
+#services.animate-section.in-view .text {
+    animation: fadeInUp 1s ease-out 1s;
+}
+
+#contact.animate-section.in-view {
+    animation: fadeInUp 1s ease-out;
+}
+
+
+/* ABOUT PAGE ANIMATION  */
+#about.animate-section.in-view .section-title {
+    animation: fadeInUp 1s ease-out;
+}
+#about.animate-section.in-view .bold-text {
+    animation: zoomIn 1s ease-out 1.5s;
+}
+#about.animate-section.in-view .cv {
+    animation: fadeInUp 1s ease-out 1s;
+}
