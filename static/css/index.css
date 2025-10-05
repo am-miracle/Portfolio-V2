@@ -342,7 +342,7 @@ footer{
 
 /* Customize Theme  */
 .customize-theme{
-    background: rgba(0, 0, 0, .4);
+    background: rgba(0, 0, 0, 0);
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -353,7 +353,15 @@ footer{
     display: grid;
     place-items: center;
     font-size: var(--small-font-size);
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: background 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.customize-theme.show-modal {
+    visibility: visible;
+    opacity: 1;
+    background: rgba(0, 0, 0, .4);
 }
 .customize-theme .card{
     background: var(--color-white);
@@ -361,6 +369,14 @@ footer{
     border-radius: var(--border-radius);
     width: 40%;
     max-width: 600px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.customize-theme.show-modal .card {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .customize-theme .font-size{
@@ -390,9 +406,11 @@ footer{
     background: hsl(252, 100%, 90%);
     border-radius: 50%;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 .customize-theme .choose-size span.active{
     background: var(--color-primary);
+    transform: scale(1.2);
 }
 .customize-theme .color{
     margin-top: var(--m-2);
@@ -411,6 +429,13 @@ footer{
     height: 1.8rem;
     border-radius: 50%;
     background: var(--color-primary);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.customize-theme .choose-color span:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 .customize-theme .choose-color span:nth-child(1){
     background: hsl(252, 75%, 60%);
@@ -430,6 +455,8 @@ footer{
 
 .customize-theme .choose-color span.active{
     border: 5px solid #fff;
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 .customize-theme .background{
     margin-top: var(--m-2);
@@ -448,6 +475,12 @@ footer{
     justify-content: space-evenly;
     border-radius: 0.4rem;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.customize-theme .choose-bg > div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 .customize-theme .choose-bg > div.active{
     border: 2px solid var(--color-primary);
@@ -498,5 +531,16 @@ footer{
     }
 }
 
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
 
 /* HIGHLIGHTS  */

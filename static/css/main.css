@@ -94,11 +94,13 @@
     object-fit: cover;
     opacity: 0.8;
     filter: contrast(75%) grayscale(1);
-    transition: filter 1000ms, opacity 500ms;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1);
 }
 .project-item-inner:hover .project-item-thumbnail img{
     opacity: 1;
     filter: none;
+    transform: scale(1.05);
 }
 
 .project-item-inner:hover h3, .project-item-inner:hover span{
@@ -173,10 +175,12 @@
     overflow: hidden;
     border-radius: var(--border-radius);
     transform: translateY(0);
-    transition: .3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 .blog-item .inner:hover{
-    transform: translateY(-0.98rem);
+    transform: translateY(-0.98rem) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 .blog-item .thumb{
     position: relative;
@@ -184,11 +188,12 @@
 }
 .blog-item .thumb img{
     transform: scale(1);
-    transition: .3s;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(95%);
 }
 .blog-item .thumb:hover img{
-    transform: scale(1.1);
-    transition: .3s;
+    transform: scale(1.08);
+    filter: brightness(100%);
 }
 .blog-item .category{
     background: var(--color-primary);
@@ -232,11 +237,13 @@
     text-align: center;
     padding: var(--card-padding);
     transform: translateY(0);
-    transition: .3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .services .service-item .service-item-inner:hover{
-    transform: translateY(-0.625rem);
+    transform: translateY(-0.625rem) scale(1.03);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 .services .service-item img{
     margin-bottom: var(--m-0-75);

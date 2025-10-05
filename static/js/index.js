@@ -94,12 +94,12 @@ window.addEventListener("scroll", () => {
 
 // open modal
 const openThemeModal = () => {
-  themeModal.style.display = 'grid'
+  themeModal.classList.add('show-modal');
 }
 // close modal
 const closeThemeModal = (e) => {
   if(e.target.classList.contains('customize-theme')) {
-    themeModal.style.display = 'none'
+    themeModal.classList.remove('show-modal');
   }
 }
 theme.addEventListener('click', openThemeModal);
@@ -185,30 +185,32 @@ colorPalette.forEach(color => {
     changeActiveColorClass();
 
     let primaryHue;
+    let activeClass = '';
 
     if(color.classList.contains('color-1')){
       primaryHue = 252;
-      localStorage.setItem('color', primaryHue)
+      activeClass = 'color-1';
     }
     else if(color.classList.contains('color-2')){
       primaryHue = 52;
-      localStorage.setItem('color', primaryHue)
+      activeClass = 'color-2';
     }
     else if(color.classList.contains('color-3')){
-      primaryHue = 352
-      localStorage.setItem('color', primaryHue)
+      primaryHue = 352;
+      activeClass = 'color-3';
     }
     else if(color.classList.contains('color-4')){
-      primaryHue = 152
-      localStorage.setItem('color', primaryHue)
+      primaryHue = 152;
+      activeClass = 'color-4';
     }
     else if(color.classList.contains('color-5')){
-      primaryHue = 202
-      localStorage.setItem('color', primaryHue)
+      primaryHue = 202;
+      activeClass = 'color-5';
     }
 
-    localStorage.setItem('activeColor', color.classList);
-    color.classList.add("active");
+    localStorage.setItem('color', primaryHue);
+    localStorage.setItem('activeColor', activeClass);
+    color.classList.add('active');
 
     root.style.setProperty("--primary-color-hue", localStorage.getItem('color'));
   })
@@ -238,10 +240,56 @@ const changeBG = () => {
   localStorage.setItem('darkBg', darkColorLightness);
 }
 
+// Set initial active states from localStorage
+const setInitialActiveStates = () => {
+  // Set active font size
+  const activeFontSize = localStorage.getItem('activeSizeSelector');
+  if (activeFontSize) {
+    fontSizes.forEach(size => {
+      if (size.id === activeFontSize) {
+        size.classList.add('active');
+      }
+    });
+  } else {
+    // Set default font size (size-3)
+    fontSizes[2].classList.add('active');
+    localStorage.setItem('activeSizeSelector', 'size-3');
+    localStorage.setItem('activeFontSize', '16px');
+  }
+
+  // Set active color
+  const activeColor = localStorage.getItem('activeColor');
+  if (activeColor) {
+    colorPalette.forEach(color => {
+      if (color.classList.contains(activeColor)) {
+        color.classList.add('active');
+      }
+    });
+  } else {
+    // Set default color (color-3)
+    colorPalette[2].classList.add('active');
+    localStorage.setItem('activeColor', 'color-3');
+    localStorage.setItem('color', '352');
+  }
+}
+
+// Call the function to set initial states
+setInitialActiveStates();
+
 if(localStorage.lightBg && localStorage.whiteBg && localStorage.darkBg) {
   root.style.setProperty('--light-color-lightness', localStorage.getItem('lightBg'));
   root.style.setProperty('--white-color-lightness', localStorage.getItem('whiteBg'));
   root.style.setProperty('--dark-color-lightness', localStorage.getItem('darkBg'));
+} else {
+  // Set dim theme as default
+  darkColorLightness = '95%';
+  whiteColorLightness = '20%';
+  lightColorLightness = '15%';
+  changeBG();
+  Bg2.classList.add('active');
+  Bg1.classList.remove('active');
+  Bg3.classList.remove('active');
+  localStorage.setItem('activeBg', 'Bg2');
 }
 
 Bg1.addEventListener('click', () => {
@@ -323,18 +371,20 @@ tabs.forEach(tab => {
 // Function to observe sections and add animations
 function observeSections() {
   const sections = document.querySelectorAll('.animate-section');
-  // const projectCards = document.querySelectorAll('.project-item');
 
   const options = {
       root: null, // Use the viewport as the root
-      rootMargin: '0px',
-      threshold: 0.2, // Trigger when 20% of the section is visible
+      rootMargin: '50px', // Start animation slightly before elements come into view
+      threshold: 0.1, // Trigger when just 10% of the section is visible for earlier animation
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
-              entry.target.classList.add('in-view');
+              // Add a small delay before adding the class to ensure smooth transition
+              requestAnimationFrame(() => {
+                  entry.target.classList.add('in-view');
+              });
               observer.unobserve(entry.target); // Stop observing after animation
           }
       });
