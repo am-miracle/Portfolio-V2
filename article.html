@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="description" content="Jude Miracle is a Frontend Engineer based in Port-Harcourt, Nigeria.">
+        <meta name="description" content="Read technical articles by Jude Miracle on React, Next.js, Web3, blockchain development, and modern frontend frameworks. Published on LogRocket, OpenReplay, Cyfrin, and more.">
         <meta name="author" content="Jude Miracle">
 
         <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/icons/apple-touch-icon.png">
@@ -19,6 +19,17 @@
         <link rel="preload stylesheet" href="/static/css/main.css" as='style'>
         <link rel="preload stylesheet" href="/static/css/articles.css" as='style'>
         <link rel="preload stylesheet" href="/static/css/animation.css" as='style'>
+
+            <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2R2VXW8ST"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-F2R2VXW8ST');
+            </script>
+
         <!-- FONTS -->
         <link rel="preconnect" href="https://fonts.google.com">
         <style>
@@ -61,10 +72,10 @@
                     url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.woff') format('woff'), /* Modern Browsers */
                     url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.ttf') format('truetype'), /* Safari, Android, iOS */
             }
-    
-    
+
+
             /* MONTSERRAT */
-    
+
             /* montserrat-500 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
             @font-face {
                 font-family: 'Montserrat';
@@ -132,6 +143,28 @@
             }
         </style>
         <title>Jude Miracle: Articles</title>
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Technical Articles by Jude Miracle",
+            "description": "Developer tutorials and guides on React, Next.js, Web3, and blockchain development",
+            "url": "https://judemiracle.dev/article.html",
+            "author": {
+                "@type": "Person",
+                "name": "Jude Miracle"
+            },
+            "about": [
+                "React",
+                "Next.js",
+                "Web3",
+                "Blockchain",
+                "Front End Development",
+                "Technical Writing"
+            ]
+        }
+        </script>
     </head>
 <body>
     <!-- Nav  -->
@@ -200,7 +233,7 @@
         <div class="container">
             <!-- section title  -->
             <h2 class="section-title padd-15">Articles</h2>
-            <p class="padd-15 sub-title">I've written articles on multiple platforms and online publication, this is a list of some articles I've written online..</p>
+            <p class="padd-15 sub-title">I write developer-focused tutorials and guides for major tech publications. Here are some of my featured articles covering React, Web3, blockchain development, and modern frontend frameworks.</p>
             <div class="filter-wrapper">
                 <div id="filter-container" class="filter-container padd-15">
                     <span class="filter-btn active" onclick="filterSelection('all')">View all</span>
@@ -221,7 +254,7 @@
                         <a href="https://www.cyfrin.io/glossary/fuzz-testing">
                             <h1 class="article-title">Fuzz Testing</h1>
                         </a>
-                        <p class="article-content">In this glossary term, I explain what fuzz testing is, types, importance, how it works and its challenges</p>
+                        <p class="article-content">A comprehensive guide to fuzz testing in smart contract development, covering different fuzzing techniques, their importance in security audits, implementation strategies, and common challenges developers face.</p>
                         <div class="article-details">
                             <span>Cyfrin</span>
                             <p>glossary</p>
@@ -231,7 +264,7 @@
                         <a href="https://www.cyfrin.io/glossary/solidity-function">
                             <h1 class="article-title">Solidity Function</h1>
                         </a>
-                        <p class="article-content">In this glossary term, I cover everything about Solidity functions, their types, and how to use them effectively in your smart contracts.</p>
+                        <p class="article-content">Complete reference guide to Solidity functions including function types, visibility modifiers, state mutability, and best practices for writing secure and gas-efficient smart contracts.</p>
                         <div class="article-details">
                             <span>Cyfrin</span>
                             <p>glossary</p>
@@ -241,7 +274,7 @@
                         <a href="https://blog.openreplay.com/build-fast-web-apps-using-qwik-city/">
                             <h1 class="article-title">Build Fast Web Apps Using Qwik City</h1>
                         </a>
-                        <p class="article-content">In this article, we explore Qwik and with its benefits. We also look at how to create components, layouts, pages, as well as performing dynamic routing using Markdown, and adding styles our Qwik application.</p>
+                        <p class="article-content">Learn how to build lightning-fast web applications with Qwik City. This tutorial covers component creation, layouts, pages, dynamic routing with Markdown, and styling techniques for optimal performance.</p>
                         <div class="article-details">
                             <span>Openreplay</span>
                             <p>Jan 11, 2023 · 9 min read</p>
@@ -252,7 +285,7 @@
                             <h1 class="article-title">Dynamically managing state with Legend-State</h1>
                         </a>
                         <p class="article-content">
-                            Legend-State is a state management library that optimizes React apps for performance, scalability, and developer experience. This article will teach you how to manage state in your application using Legend-state.
+                            Discover Legend-State, a powerful state management solution for React applications. Learn how to implement reactive state management with better performance and developer experience than traditional solutions.
                         </p>
                         <div class="article-details">
                             <span>Logrocket</span>
