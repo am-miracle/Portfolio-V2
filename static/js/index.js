@@ -1,7 +1,7 @@
 const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const nav = document.getElementById('nav');
-const navMenu =  document.getElementById('nav-menu');
+const navMenu = document.getElementById('nav-menu');
 const navToggle = document.getElementById('nav-toggle');
 const navClose = document.getElementById('nav-close')
 const navLinks = document.querySelectorAll('.nav-link');
@@ -64,14 +64,14 @@ const throttle = (callback, time) => {
 
 // SHOW MENU
 
-if(navToggle){
+if (navToggle) {
   navToggle.addEventListener('click', () => {
     navMenu.classList.add('show-menu')
   })
 }
 
 // MENU HIDDEN
-if(navClose){
+if (navClose) {
   navClose.addEventListener('click', () => {
     navMenu.classList.remove('show-menu')
   })
@@ -98,12 +98,16 @@ const openThemeModal = () => {
 }
 // close modal
 const closeThemeModal = (e) => {
-  if(e.target.classList.contains('customize-theme')) {
+  if (e.target.classList.contains('customize-theme')) {
     themeModal.classList.remove('show-modal');
   }
 }
-theme.addEventListener('click', openThemeModal);
-themeModal.addEventListener('click', closeThemeModal);
+if (theme) {
+  theme.addEventListener('click', openThemeModal);
+}
+if (themeModal) {
+  themeModal.addEventListener('click', closeThemeModal);
+}
 
 // Choose Fonts
 
@@ -121,16 +125,16 @@ fontSizes.forEach(size => {
     let fontSize;
     size.classList.add('active');
 
-    if(size.classList.contains('font-size-1')){
+    if (size.classList.contains('font-size-1')) {
       fontSize = '12px';
     }
-    else if(size.classList.contains('font-size-2')){
+    else if (size.classList.contains('font-size-2')) {
       fontSize = '14px';
     }
-    else if(size.classList.contains('font-size-3')){
+    else if (size.classList.contains('font-size-3')) {
       fontSize = '16px';
     }
-    else if(size.classList.contains('font-size-4')){
+    else if (size.classList.contains('font-size-4')) {
       fontSize = '18px';
     }
 
@@ -187,23 +191,23 @@ colorPalette.forEach(color => {
     let primaryHue;
     let activeClass = '';
 
-    if(color.classList.contains('color-1')){
+    if (color.classList.contains('color-1')) {
       primaryHue = 252;
       activeClass = 'color-1';
     }
-    else if(color.classList.contains('color-2')){
+    else if (color.classList.contains('color-2')) {
       primaryHue = 52;
       activeClass = 'color-2';
     }
-    else if(color.classList.contains('color-3')){
+    else if (color.classList.contains('color-3')) {
       primaryHue = 352;
       activeClass = 'color-3';
     }
-    else if(color.classList.contains('color-4')){
+    else if (color.classList.contains('color-4')) {
       primaryHue = 152;
       activeClass = 'color-4';
     }
-    else if(color.classList.contains('color-5')){
+    else if (color.classList.contains('color-5')) {
       primaryHue = 202;
       activeClass = 'color-5';
     }
@@ -216,7 +220,7 @@ colorPalette.forEach(color => {
   })
 })
 
-if(localStorage.color) {
+if (localStorage.color) {
   root.style.setProperty("--primary-color-hue", localStorage.getItem('color'));
   const activeColorClass = localStorage.getItem('activeColor');
   const activeColorElement = document.querySelector(`.${activeColorClass}`);
@@ -276,7 +280,7 @@ const setInitialActiveStates = () => {
 // Call the function to set initial states
 setInitialActiveStates();
 
-if(localStorage.lightBg && localStorage.whiteBg && localStorage.darkBg) {
+if (localStorage.lightBg && localStorage.whiteBg && localStorage.darkBg) {
   root.style.setProperty('--light-color-lightness', localStorage.getItem('lightBg'));
   root.style.setProperty('--white-color-lightness', localStorage.getItem('whiteBg'));
   root.style.setProperty('--dark-color-lightness', localStorage.getItem('darkBg'));
@@ -286,9 +290,9 @@ if(localStorage.lightBg && localStorage.whiteBg && localStorage.darkBg) {
   whiteColorLightness = '20%';
   lightColorLightness = '15%';
   changeBG();
-  Bg2.classList.add('active');
-  Bg1.classList.remove('active');
-  Bg3.classList.remove('active');
+  if (Bg2) Bg2.classList.add('active');
+  if (Bg1) Bg1.classList.remove('active');
+  if (Bg3) Bg3.classList.remove('active');
   localStorage.setItem('activeBg', 'Bg2');
 }
 
@@ -339,13 +343,13 @@ Bg3.addEventListener('click', () => {
 });
 
 // check if there is an active background in local storage and set the active class accordingly
-if(localStorage.activeBg) {
+if (localStorage.activeBg) {
   const activeBg = localStorage.getItem('activeBg');
-  if(activeBg === 'Bg1') {
+  if (activeBg === 'Bg1') {
     Bg1.classList.add('active');
-  } else if(activeBg === 'Bg2') {
+  } else if (activeBg === 'Bg2') {
     Bg2.classList.add('active');
-  } else if(activeBg === 'Bg3') {
+  } else if (activeBg === 'Bg3') {
     Bg3.classList.add('active');
   }
 }
@@ -373,30 +377,30 @@ function observeSections() {
   const sections = document.querySelectorAll('.animate-section');
 
   const options = {
-      root: null, // Use the viewport as the root
-      rootMargin: '50px', // Start animation slightly before elements come into view
-      threshold: 0.1, // Trigger when just 10% of the section is visible for earlier animation
+    root: null, // Use the viewport as the root
+    rootMargin: '50px', // Start animation slightly before elements come into view
+    threshold: 0.1, // Trigger when just 10% of the section is visible for earlier animation
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              // Add a small delay before adding the class to ensure smooth transition
-              requestAnimationFrame(() => {
-                  entry.target.classList.add('in-view');
-              });
-              observer.unobserve(entry.target); // Stop observing after animation
-          }
-      });
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Add a small delay before adding the class to ensure smooth transition
+        requestAnimationFrame(() => {
+          entry.target.classList.add('in-view');
+        });
+        observer.unobserve(entry.target); // Stop observing after animation
+      }
+    });
   }, options);
 
   sections.forEach(section => {
-      observer.observe(section);
+    observer.observe(section);
   });
 
-//   projectCards.forEach(card => {
-//     observer.observe(card);
-// });
+  //   projectCards.forEach(card => {
+  //     observer.observe(card);
+  // });
 }
 
 // Call the function when the page loads
@@ -404,17 +408,17 @@ window.addEventListener('load', observeSections);
 
 document.addEventListener("DOMContentLoaded", function () {
   const items = document.querySelectorAll(".timeline-item");
-  
+
   function checkVisibility() {
-      const triggerBottom = window.innerHeight * 0.8;
-      items.forEach(item => {
-          const boxTop = item.getBoundingClientRect().top;
-          if (boxTop < triggerBottom) {
-              item.classList.add("visible");
-          }
-      });
+    const triggerBottom = window.innerHeight * 0.8;
+    items.forEach(item => {
+      const boxTop = item.getBoundingClientRect().top;
+      if (boxTop < triggerBottom) {
+        item.classList.add("visible");
+      }
+    });
   }
-  
+
   window.addEventListener("scroll", checkVisibility);
   checkVisibility();
 });
@@ -423,7 +427,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener('DOMContentLoaded', () => {
   // Add loaded class to body after initial render
   document.body.classList.add('loaded');
-  
+
   // Remove pointer after first interaction
   // const pointer = document.querySelector('.customization-pointer');
   // document.addEventListener('click', () => {

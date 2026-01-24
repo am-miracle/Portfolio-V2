@@ -1,148 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="description" content="Explore web development projects by Jude Miracle, including NFT marketplaces, e-commerce platforms, and Web3 applications built with React, Next.js, TypeScript, Solidity, and Rust.">
-        <meta name="author" content="Jude Miracle">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/icons/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/icons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/icons/favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="/static/assets/icons/android-chrome-192x192.png">
-        <link rel="icon" type="image/png" sizes="512x512" href="/static/assets/icons/android-chrome-512x512.png">
-        <!-- <link rel="manifest" href="/static/assets/icons/site.webmanifest"> -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description"
+        content="Explore web development projects by Jude Miracle, including NFT marketplaces, e-commerce platforms, and Web3 applications built with React, Next.js, TypeScript, Solidity, and Rust.">
+    <meta name="author" content="Jude Miracle">
 
-        <link rel="stylesheet" href="/static/css/index.css">
-        <link rel="stylesheet" href="/static/css/project.css">
-        <link rel="stylesheet" href="/static/css/animation.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/assets/icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/static/assets/icons/android-chrome-512x512.png">
+    <!-- <link rel="manifest" href="/static/assets/icons/site.webmanifest"> -->
 
-            <!-- Google tag (gtag.js) -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2R2VXW8ST"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/project.css">
+    <link rel="stylesheet" href="/static/css/animation.css">
 
-              gtag('config', 'G-F2R2VXW8ST');
-            </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2R2VXW8ST"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-        <!-- FONTS -->
-        <link rel="preconnect" href="https://fonts.google.com">
-        <style>
-            /* open-sans-300 - vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: 'Open Sans';
-                font-style: normal;
-                font-weight: 300;
-                font-display: swap;
-                src: url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.woff2') format('woff2'); /* Super Modern Browsers */
-                src: local(''),
-                    url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-                    url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.eot'), /* IE9 Compat Modes */
-                    url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.woff') format('woff'), /* Modern Browsers */
-                    url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.ttf') format('truetype'), /* Safari, Android, iOS */
-            }
-            /* open-sans-regular - vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: 'Open Sans';
-                font-style: normal;
-                font-weight: 400;
-                font-display: swap;
-                src: url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff2') format('woff2'); /* Super Modern Browsers */
-                src: local(''),
-                    url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-                    url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.eot'), /* IE9 Compat Modes */
-                    url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
-                    url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-            }
-            /* open-sans-600 - vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: 'Open Sans';
-                font-style: normal;
-                font-weight: 600;
-                font-display: swap;
-                src: url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.woff2') format('woff2'); /* Super Modern Browsers */
-                src: local(''),
-                    url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-                    url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.eot'), /* IE9 Compat Modes */
-                    url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.woff') format('woff'), /* Modern Browsers */
-                    url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.ttf') format('truetype'), /* Safari, Android, iOS */
-            }
+        gtag('config', 'G-F2R2VXW8ST');
+    </script>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.google.com">
+    <style>
+        /* open-sans-300 - vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.woff2') format('woff2');
+            /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.eot?#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.eot'),
+                /* IE9 Compat Modes */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.woff') format('woff'),
+                /* Modern Browsers */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.ttf') format('truetype'),
+                /* Safari, Android, iOS */
+        }
+
+        /* open-sans-regular - vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff2') format('woff2');
+            /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.eot?#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.eot'),
+                /* IE9 Compat Modes */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff'),
+                /* Modern Browsers */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.ttf') format('truetype'),
+                /* Safari, Android, iOS */
+        }
+
+        /* open-sans-600 - vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.woff2') format('woff2');
+            /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.eot?#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.eot'),
+                /* IE9 Compat Modes */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.woff') format('woff'),
+                /* Modern Browsers */
+                url('../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.ttf') format('truetype'),
+                /* Safari, Android, iOS */
+        }
 
 
-            /* MONTSERRAT */
+        /* MONTSERRAT */
 
-            /* montserrat-500 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: 'Montserrat';
-                font-style: normal;
-                font-weight: 500;
-                font-display: swap;
-                src: url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.woff2') format('woff2'); /* Super Modern Browsers */
-                src: local(''),
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.eot'), /* IE9 Compat Modes */
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.woff') format('woff'), /* Modern Browsers */
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.ttf') format('truetype'), /* Safari, Android, iOS */
-            }
-            /* montserrat-600 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: 'Montserrat';
-                font-style: normal;
-                font-weight: 600;
-                font-display: swap;
-                src: url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.woff2') format('woff2'); /* Super Modern Browsers */
-                src: local(''),
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.eot'), /* IE9 Compat Modes */
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.woff') format('woff'), /* Modern Browsers */
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.ttf') format('truetype'), /* Safari, Android, iOS */
-            }
-            /* montserrat-700 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: 'Montserrat';
-                font-style: normal;
-                font-weight: 700;
-                font-display: swap;
-                src: url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.woff2') format('woff2'); /* Super Modern Browsers */
-                src: local(''),
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.woff') format('woff'), /* Modern Browsers */
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.eot'), /* IE9 Compat Modes */
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.ttf') format('truetype'), /* Safari, Android, iOS */
-            }
-            /* montserrat-800 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: 'Montserrat';
-                font-style: normal;
-                font-weight: 800;
-                font-display: swap;
-                src: url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.woff2') format('woff2'); /* Super Modern Browsers */
-                src: local(''),
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.eot'), /* IE9 Compat Modes */
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.woff') format('woff'), /* Modern Browsers */
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.ttf') format('truetype'), /* Safari, Android, iOS */
-            }
-                    /* montserrat-900 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: 'Montserrat';
-                font-style: normal;
-                font-weight: 900;
-                font-display: swap;
-                src: url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.woff2') format('woff2'); /* Super Modern Browsers */
-                src: local(''),
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.eot'), /* IE9 Compat Modes */
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.woff') format('woff'), /* Modern Browsers */
-                    url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.ttf') format('truetype'), /* Safari, Android, iOS */
-            }
-        </style>
-        <title>Jude Miracle: Projects</title>
-    </head>
+        /* montserrat-500 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.woff2') format('woff2');
+            /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.eot?#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.eot'),
+                /* IE9 Compat Modes */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.woff') format('woff'),
+                /* Modern Browsers */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.ttf') format('truetype'),
+                /* Safari, Android, iOS */
+        }
+
+        /* montserrat-600 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.woff2') format('woff2');
+            /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.eot?#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.eot'),
+                /* IE9 Compat Modes */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.woff') format('woff'),
+                /* Modern Browsers */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.ttf') format('truetype'),
+                /* Safari, Android, iOS */
+        }
+
+        /* montserrat-700 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.woff2') format('woff2');
+            /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.eot?#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.woff') format('woff'),
+                /* Modern Browsers */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.eot'),
+                /* IE9 Compat Modes */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.ttf') format('truetype'),
+                /* Safari, Android, iOS */
+        }
+
+        /* montserrat-800 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.woff2') format('woff2');
+            /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.eot?#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.eot'),
+                /* IE9 Compat Modes */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.woff') format('woff'),
+                /* Modern Browsers */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.ttf') format('truetype'),
+                /* Safari, Android, iOS */
+        }
+
+        /* montserrat-900 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.woff2') format('woff2');
+            /* Super Modern Browsers */
+            src: local(''),
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.eot?#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.eot'),
+                /* IE9 Compat Modes */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.woff') format('woff'),
+                /* Modern Browsers */
+                url('../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.ttf') format('truetype'),
+                /* Safari, Android, iOS */
+        }
+    </style>
+    <title>Jude Miracle: Projects</title>
+</head>
+
 <body>
     <!-- Nav  -->
     <nav class="nav container padd-15" id="nav">
@@ -163,7 +212,7 @@
                     <a href="article.html" class="nav-link">Articles</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/#services" class="nav-link">Capabilities</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
                 </li>
                 <li class="nav-item">
                     <a href="/#contact" class="nav-link">Contact</a>
@@ -179,20 +228,22 @@
         <div class="nav-btns">
             <?xml version="1.0" encoding="utf-8"?>
             <!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-            <svg fill="" height="15px" width="15px" class="change-theme" id="theme-button" version="1.1" id="lni_lni-pallet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+            <svg fill="" height="15px" width="15px" class="change-theme" id="theme-button" version="1.1"
+                id="lni_lni-pallet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
                 <g>
-                    <path d="M55.9,43.9l-0.3-0.2c-0.8-0.5-1.7-0.9-3.8-1.5l-0.1,0c-0.7-0.1-1.5-0.4-1.8-0.6l-0.1-0.1c-0.4-0.4-0.7-1.1-0.7-1.9
+                    <path
+                        d="M55.9,43.9l-0.3-0.2c-0.8-0.5-1.7-0.9-3.8-1.5l-0.1,0c-0.7-0.1-1.5-0.4-1.8-0.6l-0.1-0.1c-0.4-0.4-0.7-1.1-0.7-1.9
                         c0-0.7,0.3-1.4,0.7-1.9l3.9-3.9c6.9-6.9,6.9-17.8,0-24.8c-4.6-4.7-11-7.2-18.1-7.2c-7.9,0-15.9,3.4-22,9.4C8,16.9,5,24.3,5,32.4
                         c0,8.1,3.1,15.6,8.8,21.1c5.7,5.7,13.2,8.8,21.2,8.8c7.9,0,15.4-3.2,21.1-8.9c1.2-1.2,1.9-3,1.9-4.7C58,46.8,57.2,45,55.9,43.9z
                         M52.9,50.2c-4.8,4.9-11.2,7.6-17.9,7.6c-6.9,0-13.1-2.6-18-7.5c-4.8-4.7-7.5-11-7.5-17.9c0-6.9,2.6-13.1,7.4-18
                         C22.2,9.2,29,6.2,35.8,6.2c5.9,0,11.1,2,14.9,5.9c5.2,5.3,5.2,13.3,0,18.5l-4,4c-1.2,1.3-1.9,3.1-1.9,5c0,2,0.7,3.7,1.9,5
-                        c1.2,1.3,3.6,1.9,4.2,2c1.4,0.3,1.9,0.6,2.3,0.8c0.2,0.3,0.4,0.8,0.4,1.3C53.5,49.2,53.2,49.9,52.9,50.2z"/>
-                    <path d="M36.8,36.7c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S38.2,36.7,36.8,36.7z"/>
+                        c1.2,1.3,3.6,1.9,4.2,2c1.4,0.3,1.9,0.6,2.3,0.8c0.2,0.3,0.4,0.8,0.4,1.3C53.5,49.2,53.2,49.9,52.9,50.2z" />
+                    <path d="M36.8,36.7c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S38.2,36.7,36.8,36.7z" />
                     <path d="M47.7,27.3c0-3.3-2.7-6.1-6.1-6.1s-6.1,2.7-6.1,6.1c0,3.3,2.7,6.1,6.1,6.1S47.7,30.7,47.7,27.3z M41.6,28.9
-                        c-0.9,0-1.6-0.7-1.6-1.6s0.7-1.6,1.6-1.6s1.6,0.7,1.6,1.6S42.5,28.9,41.6,28.9z"/>
+                        c-0.9,0-1.6-0.7-1.6-1.6s0.7-1.6,1.6-1.6s1.6,0.7,1.6,1.6S42.5,28.9,41.6,28.9z" />
                     <path d="M37.3,16.7c0-4-3.3-7.3-7.3-7.3s-7.3,3.3-7.3,7.3s3.3,7.3,7.3,7.3S37.3,20.8,37.3,16.7z M30,19.6c-1.6,0-2.8-1.3-2.8-2.8
-                        c0-1.6,1.3-2.8,2.8-2.8s2.8,1.3,2.8,2.8C32.8,18.3,31.6,19.6,30,19.6z"/>
+                        c0-1.6,1.3-2.8,2.8-2.8s2.8,1.3,2.8,2.8C32.8,18.3,31.6,19.6,30,19.6z" />
                 </g>
             </svg>
             <!-- toggle btn  -->
@@ -207,159 +258,172 @@
     <main>
         <!-- projects  -->
         <section class="project section" id="project">
-        <div class="container">
-            <!-- section title  -->
-            <!-- <h2 class="section-title">Projects</h2> -->
-            <div class="padd-15">
-                <div class="sections animate-section">
-                    <h1>WEB PAGES</h1>
-                    <div class="carousel-wrapper">
-                        <div class="carousel">
-                            <div class="carousel-slides">
-                                <div class="carousel-item active">
-                                    <div class="project-card">
-                                        <figure class="project-image">
-                                            <img loading="lazy" src="/static/assets/images/my-portfolio.webp" alt="portfolio website">
-                                        </figure>
-                                        <div class="details">
-                                            <h1>Portfolio Website</h1>
-                                            <p>A Portfolio Website</p>
-                                            <ul class="tags">
-                                                <li>HTML5</li>
-                                                <li>CSS</li>
-                                                <li>JavaScript</li>
-                                            </ul>
-                                            <div class="links">
-                                                <a href="https://github.com/am-miracle/Portfolio-V2" target="_blank">Github</a>
+            <div class="container">
+                <!-- section title  -->
+                <!-- <h2 class="section-title">Projects</h2> -->
+                <div class="padd-15">
+                    <div class="sections animate-section">
+                        <h1>WEB PAGES</h1>
+                        <div class="carousel-wrapper">
+                            <div class="carousel">
+                                <div class="carousel-slides">
+                                    <div class="carousel-item active">
+                                        <div class="project-card">
+                                            <figure class="project-image">
+                                                <img loading="lazy" src="/static/assets/images/my-portfolio.webp"
+                                                    alt="portfolio website">
+                                            </figure>
+                                            <div class="details">
+                                                <h1>Portfolio Website</h1>
+                                                <p>A Portfolio Website</p>
+                                                <ul class="tags">
+                                                    <li>HTML5</li>
+                                                    <li>CSS</li>
+                                                    <li>JavaScript</li>
+                                                </ul>
+                                                <div class="links">
+                                                    <a href="https://github.com/am-miracle/Portfolio-V2"
+                                                        target="_blank">Github</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="project-card">
-                                        <figure class="project-image">
-                                            <img loading="lazy" src="/static/assets/images/neflex.webp" alt="neflex">
-                                        </figure>
-                                        <div class="details">
-                                            <h1>Neflex</h1>
-                                            <p>A decentralize NFT Marketplace</p>
-                                            <ul class="tags">
-                                                <li>Next.js</li>
-                                                <li>Solidity</li>
-                                                <li>TypeScript</li>
-                                                <li>Foundry</li>
-                                            </ul>
-                                            <div class="links">
-                                                <a href="https://neflex.vercel.app/" target="_blank">Live Site</a>
-                                                <a href="https://github.com/am-miracle/neflex" target="_blank">Github</a>
+                                    <div class="carousel-item">
+                                        <div class="project-card">
+                                            <figure class="project-image">
+                                                <img loading="lazy" src="/static/assets/images/neflex.webp"
+                                                    alt="neflex">
+                                            </figure>
+                                            <div class="details">
+                                                <h1>Neflex</h1>
+                                                <p>A decentralize NFT Marketplace</p>
+                                                <ul class="tags">
+                                                    <li>Next.js</li>
+                                                    <li>Solidity</li>
+                                                    <li>TypeScript</li>
+                                                    <li>Foundry</li>
+                                                </ul>
+                                                <div class="links">
+                                                    <a href="https://neflex.vercel.app/" target="_blank">Live Site</a>
+                                                    <a href="https://github.com/am-miracle/neflex"
+                                                        target="_blank">Github</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="project-card">
-                                        <figure class="project-image">
-                                            <img loading="lazy" src="/static/assets/images/vertix.webp" alt="vertix">
-                                        </figure>
-                                        <div class="details">
-                                            <h1>Vertix</h1>
-                                            <p>A decentralize Marketplace for digital assets</p>
-                                            <ul class="tags">
-                                                <li>Next.js</li>
-                                                <li>Solidity</li>
-                                                <li>TypeScript</li>
-                                                <li>Foundry</li>
-                                                <li>Rust</li>
-                                                <li>Axum</li>
-                                            </ul>
-                                            <div class="links">
-                                                <a href="https://vertix.netlify.app/" target="_blank">Live Site</a>
-                                                <a href="https://github.com/Vertix-platform" target="_blank">Github</a>
+                                    <div class="carousel-item">
+                                        <div class="project-card">
+                                            <figure class="project-image">
+                                                <img loading="lazy" src="/static/assets/images/vertix.webp"
+                                                    alt="vertix">
+                                            </figure>
+                                            <div class="details">
+                                                <h1>Vertix</h1>
+                                                <p>A decentralize Marketplace for digital assets</p>
+                                                <ul class="tags">
+                                                    <li>Next.js</li>
+                                                    <li>Solidity</li>
+                                                    <li>TypeScript</li>
+                                                    <li>Foundry</li>
+                                                    <li>Rust</li>
+                                                    <li>Axum</li>
+                                                </ul>
+                                                <div class="links">
+                                                    <a href="https://vertix.netlify.app/" target="_blank">Live Site</a>
+                                                    <a href="https://github.com/Vertix-platform"
+                                                        target="_blank">Github</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="project-card">
-                                        <figure class="project-image">
-                                            <img loading="lazy" src="/static/assets/images/greenore.webp" alt="greenore">
-                                        </figure>
-                                        <div class="details">
-                                            <h1>GreenoreAI</h1>
-                                            <p>Marketplace for raw and concentrate ore</p>
-                                            <ul class="tags">
-                                                <li>Next.js</li>
-                                                <li>Shadcn UI</li>
-                                                <li>TypeScript</li>
-                                                <li>Zustand</li>
-                                            </ul>
-                                            <div class="links">
-                                                <a href="https://greenore.ai" target="_blank">Live Site</a>
+                                    <div class="carousel-item">
+                                        <div class="project-card">
+                                            <figure class="project-image">
+                                                <img loading="lazy" src="/static/assets/images/greenore.webp"
+                                                    alt="greenore">
+                                            </figure>
+                                            <div class="details">
+                                                <h1>GreenoreAI</h1>
+                                                <p>Marketplace for raw and concentrate ore</p>
+                                                <ul class="tags">
+                                                    <li>Next.js</li>
+                                                    <li>Shadcn UI</li>
+                                                    <li>TypeScript</li>
+                                                    <li>Zustand</li>
+                                                </ul>
+                                                <div class="links">
+                                                    <a href="https://greenore.ai" target="_blank">Live Site</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="project-card">
-                                        <figure class="project-image">
-                                            <img loading="lazy" src="/static/assets/images/kreatoors.webp" alt="kreatoors">
-                                        </figure>
-                                        <div class="details">
-                                            <h1>Kreatoors</h1>
-                                            <p>AI-powered employee content creation</p>
-                                            <ul class="tags">
-                                                <li>Next.js</li>
-                                                <li>Shadcn UI</li>
-                                                <li>TypeScript</li>
-                                                <li>Redux</li>
-                                            </ul>
-                                            <div class="links">
-                                                <a href="https://kreatoors.ai/platform" target="_blank">Live Site</a>
+                                    <div class="carousel-item">
+                                        <div class="project-card">
+                                            <figure class="project-image">
+                                                <img loading="lazy" src="/static/assets/images/kreatoors.webp"
+                                                    alt="kreatoors">
+                                            </figure>
+                                            <div class="details">
+                                                <h1>Kreatoors</h1>
+                                                <p>AI-powered employee content creation</p>
+                                                <ul class="tags">
+                                                    <li>Next.js</li>
+                                                    <li>Shadcn UI</li>
+                                                    <li>TypeScript</li>
+                                                    <li>Redux</li>
+                                                </ul>
+                                                <div class="links">
+                                                    <a href="https://kreatoors.ai/platform" target="_blank">Live
+                                                        Site</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="project-card">
-                                        <figure class="project-image">
-                                            <img loading="lazy" src="/static/assets/images/meatvault.webp" alt="meat-vault">
-                                        </figure>
-                                        <div class="details">
-                                            <h1>MeatVault</h1>
-                                            <p>An E-commerce site for buying all kinds of meat type based in Canada</p>
-                                            <ul class="tags">
-                                                <li>React</li>
-                                                <li>Chakra UI</li>
-                                                <li>TypeScript</li>
-                                                <li>Redux Toolkit</li>
-                                                <li>Headless CMS</li>
-                                            </ul>
-                                            <div class="links">
-                                                <a href="https://kreatoors.ai/platform" target="_blank">Live Site</a>
+                                    <div class="carousel-item">
+                                        <div class="project-card">
+                                            <figure class="project-image">
+                                                <img loading="lazy" src="/static/assets/images/meatvault.webp"
+                                                    alt="meat-vault">
+                                            </figure>
+                                            <div class="details">
+                                                <h1>MeatVault</h1>
+                                                <p>An E-commerce site for buying all kinds of meat type based in Canada
+                                                </p>
+                                                <ul class="tags">
+                                                    <li>React</li>
+                                                    <li>Chakra UI</li>
+                                                    <li>TypeScript</li>
+                                                    <li>Redux Toolkit</li>
+                                                    <li>Headless CMS</li>
+                                                </ul>
+                                                <div class="links">
+                                                    <a href="https://kreatoors.ai/platform" target="_blank">Live
+                                                        Site</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="project-card">
-                                        <figure class="project-image">
-                                            <img loading="lazy" src="/static/assets/images/polltractr.webp" alt="polltractr">
-                                        </figure>
-                                        <div class="details">
-                                            <h1>PollTrackr</h1>
-                                            <p>A Voting platform for Nigerians</p>
-                                            <ul class="tags">
-                                                <li>React</li>
-                                                <li>Typescript</li>
-                                                <li>MongoDB</li>
-                                            </ul>
-                                            <div class="links">
-                                                <a href="https://polltrackr.com/" target="_blank">Live Site</a>
+                                    <div class="carousel-item">
+                                        <div class="project-card">
+                                            <figure class="project-image">
+                                                <img loading="lazy" src="/static/assets/images/polltractr.webp"
+                                                    alt="polltractr">
+                                            </figure>
+                                            <div class="details">
+                                                <h1>PollTrackr</h1>
+                                                <p>A Voting platform for Nigerians</p>
+                                                <ul class="tags">
+                                                    <li>React</li>
+                                                    <li>Typescript</li>
+                                                    <li>MongoDB</li>
+                                                </ul>
+                                                <div class="links">
+                                                    <a href="https://polltrackr.com/" target="_blank">Live Site</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- <div class="carousel-item">
+                                    <!-- <div class="carousel-item">
                                     <div class="project-card">
                                         <figure class="project-image">
                                             <img loading="lazy" src="/static/assets/images/real-est.webp" alt="Real Estate">
@@ -379,168 +443,191 @@
                                         </div>
                                     </div>
                                 </div> -->
+                                </div>
                             </div>
+                            <a class="carousel-control prev" role="button" data-slide="prev">
+                                <span class="carousel-control-icon" aria-hidden="true"></span>
+                                <span class="sr-only">&#10094;</span>
+                            </a>
+                            <a class="carousel-control next" role="button" data-slide="next">
+                                <span class="carousel-control-icon" aria-hidden="true"></span>
+                                <span class="sr-only">&#10095;</span>
+                            </a>
                         </div>
-                        <a class="carousel-control prev" role="button" data-slide="prev">
-                            <span class="carousel-control-icon" aria-hidden="true"></span>
-                            <span class="sr-only">&#10094;</span>
-                        </a>
-                        <a class="carousel-control next" role="button" data-slide="next">
-                            <span class="carousel-control-icon" aria-hidden="true"></span>
-                            <span class="sr-only">&#10095;</span>
-                        </a>
+                    </div>
+                    <!-- WEB APPS  -->
+                    <div class="sections animate-section">
+                        <h1>WEB APPS</h1>
+                        <div id="second-carousel" class="carousel-wrapper">
+                            <div class="carousel">
+                                <div class="carousel-slides">
+                                    <div class="carousel-item active">
+                                        <div class="project-card">
+                                            <figure class="project-image">
+                                                <img loading="lazy" src="/static/assets/images/image-editor.webp"
+                                                    alt="Image Editor">
+                                            </figure>
+                                            <div class="details">
+                                                <h1>Image Editor</h1>
+                                                <p>An Image editing app</p>
+                                                <ul class="tags">
+                                                    <li>HTML</li>
+                                                    <li>CSS</li>
+                                                    <li>JavaScript</li>
+                                                </ul>
+                                                <div class="links">
+                                                    <a href="https://piceditorandsave.netlify.app/" target="_blank">Live
+                                                        Site</a>
+                                                    <a href="https://github.com/am-miracle/image-editor"
+                                                        target="_blank">Github</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="project-card">
+                                            <figure class="project-image">
+                                                <img loading="lazy" src="/static/assets/images/drumkit.webp"
+                                                    alt="Drum player">
+                                            </figure>
+                                            <div class="details">
+                                                <h1>DrumKit</h1>
+                                                <p>A drum player (play with keyboard only)</p>
+                                                <ul class="tags">
+                                                    <li>HTML</li>
+                                                    <li>CSS</li>
+                                                    <li>JavaScript</li>
+                                                </ul>
+                                                <div class="links">
+                                                    <a href="https://drumplaykit.netlify.app/" target="_blank">Live
+                                                        Site</a>
+                                                    <a href="https://github.com/am-miracle/JavaScript-Projects/tree/master/Drum%20Kit%20Player"
+                                                        target="_blank">Github</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="project-card">
+                                            <figure class="project-image">
+                                                <img loading="lazy" src="/static/assets/images/pexel-clone.webp"
+                                                    alt="gallery">
+                                            </figure>
+                                            <div class="details">
+                                                <h1>Pexels Clone</h1>
+                                                <p>A gallery of Images from Pexels API</p>
+                                                <ul class="tags">
+                                                    <li>HTML5</li>
+                                                    <li>CSS</li>
+                                                    <li>Typescript</li>
+                                                </ul>
+                                                <div class="links">
+                                                    <a href="https://pexel-clone-app.netlify.app/" target="_blank">Live
+                                                        Site</a>
+                                                    <a href="https://github.com/am-miracle/pexels-clone-tsr"
+                                                        target="_blank">Github</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="see-more">
+                                            <a href="https://github.com/am-miracle" target="_blank">See more on
+                                                Github</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control prev" role="button" data-slide="prev">
+                                <span class="carousel-control-icon" aria-hidden="true"></span>
+                                <span class="sr-only">&#10094;</span>
+                            </a>
+                            <a class="carousel-control next" role="button" data-slide="next">
+                                <span class="carousel-control-icon" aria-hidden="true"></span>
+                                <span class="sr-only">&#10095;</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- CODE PENS  -->
+                    <div class="sections animate-section">
+                        <h1>PENS</h1>
+                        <div id="third-carousel" class="carousel-wrapper">
+                            <div class="carousel">
+                                <div class="carousel-slides">
+                                    <div class="carousel-item active">
+                                        <div class="project-card">
+                                            <!-- <div> -->
+                                            <p class="codepen" data-height="300" data-default-tab="result"
+                                                data-slug-hash="VwWZVJZ" data-user="JudeIV"
+                                                style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                                                <span>See the Pen <a href="https://codepen.io/JudeIV/pen/VwWZVJZ"
+                                                        target="_blank">
+                                                        Analog and Digital Clock</a> by Miracle Jude (<a
+                                                        href="https://codepen.io/JudeIV" target="_blank">@JudeIV</a>)
+                                                    on <a href="https://codepen.io" target="_blank">CodePen</a>.</span>
+                                            </p>
+                                            <!-- </div> -->
+                                            <div class="details">
+                                                <h1>Analog and Digital Clock</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="project-card">
+                                            <p class="codepen" data-height="300" data-default-tab="result"
+                                                data-slug-hash="abJPdBW" data-user="JudeIV"
+                                                style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                                                <span>See the Pen <a href="https://codepen.io/JudeIV/pen/abJPdBW"
+                                                        target="_blank">
+                                                        Recipes layout</a> by Miracle Jude (<a
+                                                        href="https://codepen.io/JudeIV" target="_blank">@JudeIV</a>)
+                                                    on <a href="https://codepen.io" target="_blank">CodePen</a>.</span>
+                                            </p>
+                                            <div class="details">
+                                                <h1>Recipes layout</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="project-card">
+                                            <p class="codepen" data-height="300" data-default-tab="result"
+                                                data-slug-hash="eYvpBzw" data-user="JudeIV"
+                                                style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                                                <span>See the Pen <a href="https://codepen.io/JudeIV/pen/eYvpBzw"
+                                                        target="_blank">
+                                                        text animation : Transition</a> by Miracle Jude (<a
+                                                        href="https://codepen.io/JudeIV" target="_blank">@JudeIV</a>)
+                                                    on <a href="https://codepen.io" target="_blank">CodePen</a>.</span>
+                                            </p>
+                                            <div class="details">
+                                                <h1>Don't Quit animation</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="see-more">
+                                            <a href="https://codepen.io/your-work?cursor=ZD0wJm89MSZwPTEmdj01NDM0MDc4Ng=="
+                                                target="_blank">Click to see more pens</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control prev" role="button" data-slide="prev">
+                                <span class="carousel-control-icon" aria-hidden="true"></span>
+                                <span class="sr-only">&#10094;</span>
+                            </a>
+                            <a class="carousel-control next" role="button" data-slide="next">
+                                <span class="carousel-control-icon" aria-hidden="true"></span>
+                                <span class="sr-only">&#10095;</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <!-- WEB APPS  -->
-                <div class="sections animate-section">
-                    <h1>WEB APPS</h1>
-                    <div id="second-carousel" class="carousel-wrapper">
-                        <div class="carousel">
-                            <div class="carousel-slides">
-                                <div class="carousel-item active">
-                                    <div class="project-card">
-                                        <figure class="project-image">
-                                            <img loading="lazy" src="/static/assets/images/image-editor.webp" alt="Image Editor">
-                                        </figure>
-                                        <div class="details">
-                                            <h1>Image Editor</h1>
-                                            <p>An Image editing app</p>
-                                            <ul class="tags">
-                                                <li>HTML</li>
-                                                <li>CSS</li>
-                                                <li>JavaScript</li>
-                                            </ul>
-                                            <div class="links">
-                                                <a href="https://piceditorandsave.netlify.app/" target="_blank">Live Site</a>
-                                                <a href="https://github.com/am-miracle/image-editor" target="_blank">Github</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="project-card">
-                                        <figure class="project-image">
-                                            <img loading="lazy" src="/static/assets/images/drumkit.webp" alt="Drum player">
-                                        </figure>
-                                        <div class="details">
-                                            <h1>DrumKit</h1>
-                                            <p>A drum player (play with keyboard only)</p>
-                                            <ul class="tags">
-                                                <li>HTML</li>
-                                                <li>CSS</li>
-                                                <li>JavaScript</li>
-                                            </ul>
-                                            <div class="links">
-                                                <a href="https://drumplaykit.netlify.app/" target="_blank">Live Site</a>
-                                                <a href="https://github.com/am-miracle/JavaScript-Projects/tree/master/Drum%20Kit%20Player" target="_blank">Github</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="project-card">
-                                        <figure class="project-image">
-                                            <img loading="lazy" src="/static/assets/images/pexel-clone.webp" alt="gallery">
-                                        </figure>
-                                        <div class="details">
-                                            <h1>Pexels Clone</h1>
-                                            <p>A gallery of Images from Pexels API</p>
-                                            <ul class="tags">
-                                                <li>HTML5</li>
-                                                <li>CSS</li>
-                                                <li>Typescript</li>
-                                            </ul>
-                                            <div class="links">
-                                                <a href="https://pexel-clone-app.netlify.app/" target="_blank">Live Site</a>
-                                                <a href="https://github.com/am-miracle/pexels-clone-tsr" target="_blank">Github</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="see-more">
-                                        <a href="https://github.com/am-miracle" target="_blank">See more on Github</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control prev" role="button" data-slide="prev">
-                            <span class="carousel-control-icon" aria-hidden="true"></span>
-                            <span class="sr-only">&#10094;</span>
-                        </a>
-                        <a class="carousel-control next" role="button" data-slide="next">
-                            <span class="carousel-control-icon" aria-hidden="true"></span>
-                            <span class="sr-only">&#10095;</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- CODE PENS  -->
-                <div class="sections animate-section">
-                    <h1>PENS</h1>
-                    <div id="third-carousel" class="carousel-wrapper">
-                        <div class="carousel">
-                            <div class="carousel-slides">
-                                <div class="carousel-item active">
-                                    <div class="project-card">
-                                        <!-- <div> -->
-                                            <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="VwWZVJZ" data-user="JudeIV" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-                                                <span>See the Pen <a href="https://codepen.io/JudeIV/pen/VwWZVJZ" target="_blank">
-                                                Analog  and Digital Clock</a> by Miracle Jude  (<a href="https://codepen.io/JudeIV" target="_blank">@JudeIV</a>)
-                                                on <a href="https://codepen.io" target="_blank">CodePen</a>.</span>
-                                              </p>
-                                        <!-- </div> -->
-                                        <div class="details">
-                                            <h1>Analog  and Digital Clock</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="project-card">
-                                        <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="abJPdBW" data-user="JudeIV" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-                                            <span>See the Pen <a href="https://codepen.io/JudeIV/pen/abJPdBW" target="_blank">
-                                            Recipes layout</a> by Miracle Jude  (<a href="https://codepen.io/JudeIV" target="_blank">@JudeIV</a>)
-                                            on <a href="https://codepen.io" target="_blank">CodePen</a>.</span>
-                                        </p>
-                                        <div class="details">
-                                            <h1>Recipes layout</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="project-card">
-                                        <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="eYvpBzw" data-user="JudeIV" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-                                            <span>See the Pen <a href="https://codepen.io/JudeIV/pen/eYvpBzw" target="_blank">
-                                            text animation : Transition</a> by Miracle Jude  (<a href="https://codepen.io/JudeIV" target="_blank">@JudeIV</a>)
-                                            on <a href="https://codepen.io" target="_blank">CodePen</a>.</span>
-                                          </p>
-                                        <div class="details">
-                                            <h1>Don't Quit animation</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="see-more">
-                                        <a href="https://codepen.io/your-work?cursor=ZD0wJm89MSZwPTEmdj01NDM0MDc4Ng==" target="_blank">Click to see more pens</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control prev" role="button" data-slide="prev">
-                            <span class="carousel-control-icon" aria-hidden="true"></span>
-                            <span class="sr-only">&#10094;</span>
-                        </a>
-                        <a class="carousel-control next" role="button" data-slide="next">
-                            <span class="carousel-control-icon" aria-hidden="true"></span>
-                            <span class="sr-only">&#10095;</span>
-                        </a>
-                    </div>
+                <div class="page-nav">
+                    <a href="about.html">&#8592; About</a>
+                    <a href="article.html">Articles &#8594;</a>
                 </div>
             </div>
-            <div class="page-nav">
-                <a href="about.html">&#8592; About</a>
-                <a href="article.html">Articles &#8594;</a>
-            </div>
-        </div>
     </main>
 
     <!-- Footer  -->
@@ -550,26 +637,52 @@
                 <div class="footer-media">
                     <a href="https://www.github.com/am-miracle" title="Github" target="_blank">
                         <span class="visually-hidden">GitHub</span>
-                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github"
+                            class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 496 512">
+                            <path fill="currentColor"
+                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                            </path>
+                        </svg>
                     </a>
                     <a href="https://www.x.com/miraclejudeiv" title="X" target="_blank">
                         <span class="visually-hidden">X (Twitter)</span>
-                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="x" class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50">
-                            <path fill="currentColor" d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"></path>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="x"
+                            class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                            x="0px" y="0px" viewBox="0 0 50 50">
+                            <path fill="currentColor"
+                                d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z">
+                            </path>
                         </svg>
                     </a>
                     <a href="https://codepen.io/judeiv" title="Codepen" target="_blank">
                         <span class="visually-hidden">CodePen</span>
-                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="codepen" class="svg-inline--fa fa-codepen fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.285 159.704l-234-156c-7.987-4.915-16.511-4.96-24.571 0l-234 156C3.714 163.703 0 170.847 0 177.989v155.999c0 7.143 3.714 14.286 9.715 18.286l234 156.022c7.987 4.915 16.511 4.96 24.571 0l234-156.022c6-3.999 9.715-11.143 9.715-18.286V177.989c-.001-7.142-3.715-14.286-9.716-18.285zM278 63.131l172.286 114.858-76.857 51.429L278 165.703V63.131zm-44 0v102.572l-95.429 63.715-76.857-51.429L234 63.131zM44 219.132l55.143 36.857L44 292.846v-73.714zm190 229.715L61.714 333.989l76.857-51.429L234 346.275v102.572zm22-140.858l-77.715-52 77.715-52 77.715 52-77.715 52zm22 140.858V346.275l95.429-63.715 76.857 51.429L278 448.847zm190-156.001l-55.143-36.857L468 219.132v73.714z"></path></svg>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="codepen"
+                            class="svg-inline--fa fa-codepen fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M502.285 159.704l-234-156c-7.987-4.915-16.511-4.96-24.571 0l-234 156C3.714 163.703 0 170.847 0 177.989v155.999c0 7.143 3.714 14.286 9.715 18.286l234 156.022c7.987 4.915 16.511 4.96 24.571 0l234-156.022c6-3.999 9.715-11.143 9.715-18.286V177.989c-.001-7.142-3.715-14.286-9.716-18.285zM278 63.131l172.286 114.858-76.857 51.429L278 165.703V63.131zm-44 0v102.572l-95.429 63.715-76.857-51.429L234 63.131zM44 219.132l55.143 36.857L44 292.846v-73.714zm190 229.715L61.714 333.989l76.857-51.429L234 346.275v102.572zm22-140.858l-77.715-52 77.715-52 77.715 52-77.715 52zm22 140.858V346.275l95.429-63.715 76.857 51.429L278 448.847zm190-156.001l-55.143-36.857L468 219.132v73.714z">
+                            </path>
+                        </svg>
                     </a>
                     <a href="https://www.linkedin.com/in/miracle-jude-4b7a4b179" title="LinkedIn" target="_blank">
                         <span class="visually-hidden">LinkedIn</span>
-                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin"
+                            class="svg-inline--fa fa-linkedin fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                            </path>
+                        </svg>
                     </a>
                     <a href="https://medium.com/@judemiracle" title="Medium" target="_blank">
                         <span class="visually-hidden">Medium</span>
-                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="medium" class="svg-inline--fa fa-instagram fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50">
-                            <path fill="currentColor" d="M15 12A13 13 0 1015 38 13 13 0 1015 12zM35.5 13c-3.59 0-6.5 5.373-6.5 12 0 1.243.102 2.441.292 3.568.253 1.503.662 2.879 1.192 4.065.265.593.56 1.138.881 1.627.642.978 1.388 1.733 2.202 2.201C34.178 36.811 34.827 37 35.5 37s1.322-.189 1.933-.539c.814-.468 1.56-1.223 2.202-2.201.321-.489.616-1.034.881-1.627.53-1.185.939-2.562 1.192-4.065C41.898 27.441 42 26.243 42 25 42 18.373 39.09 13 35.5 13zM45.5 14c-.259 0-.509.173-.743.495-.157.214-.307.494-.448.833-.071.169-.14.353-.206.551-.133.395-.257.846-.37 1.343-.226.995-.409 2.181-.536 3.497-.063.658-.112 1.349-.146 2.065C43.017 23.499 43 24.241 43 25s.017 1.501.051 2.217c.033.716.082 1.407.146 2.065.127 1.316.31 2.501.536 3.497.113.498.237.948.37 1.343.066.198.135.382.206.551.142.339.292.619.448.833C44.991 35.827 45.241 36 45.5 36c1.381 0 2.5-4.925 2.5-11S46.881 14 45.5 14z"></path>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="medium"
+                            class="svg-inline--fa fa-instagram fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                            x="0px" y="0px" viewBox="0 0 50 50">
+                            <path fill="currentColor"
+                                d="M15 12A13 13 0 1015 38 13 13 0 1015 12zM35.5 13c-3.59 0-6.5 5.373-6.5 12 0 1.243.102 2.441.292 3.568.253 1.503.662 2.879 1.192 4.065.265.593.56 1.138.881 1.627.642.978 1.388 1.733 2.202 2.201C34.178 36.811 34.827 37 35.5 37s1.322-.189 1.933-.539c.814-.468 1.56-1.223 2.202-2.201.321-.489.616-1.034.881-1.627.53-1.185.939-2.562 1.192-4.065C41.898 27.441 42 26.243 42 25 42 18.373 39.09 13 35.5 13zM45.5 14c-.259 0-.509.173-.743.495-.157.214-.307.494-.448.833-.071.169-.14.353-.206.551-.133.395-.257.846-.37 1.343-.226.995-.409 2.181-.536 3.497-.063.658-.112 1.349-.146 2.065C43.017 23.499 43 24.241 43 25s.017 1.501.051 2.217c.033.716.082 1.407.146 2.065.127 1.316.31 2.501.536 3.497.113.498.237.948.37 1.343.066.198.135.382.206.551.142.339.292.619.448.833C44.991 35.827 45.241 36 45.5 36c1.381 0 2.5-4.925 2.5-11S46.881 14 45.5 14z">
+                            </path>
                         </svg>
                     </a>
                 </div>
@@ -579,59 +692,60 @@
             </div>
         </div>
     </footer>
-        <!-- Theme customization  -->
-        <div class="customize-theme">
-            <div class="card">
-                <h2>Customize your view</h2>
-                <p>Manage your font size, color, and background</p>
-                <!-- font size  -->
-                <div class="font-size">
-                    <h3>Font size</h3>
-                    <div>
-                        <h6>Aa</h6>
-                        <div class="choose-size">
-                            <span class="font-size-1"></span>
-                            <span class="font-size-2"></span>
-                            <span class="font-size-3"></span>
-                            <span class="font-size-4"></span>
-                        </div>
-                        <h3>Aa</h3>
+    <!-- Theme customization  -->
+    <div class="customize-theme">
+        <div class="card">
+            <h2>Customize your view</h2>
+            <p>Manage your font size, color, and background</p>
+            <!-- font size  -->
+            <div class="font-size">
+                <h3>Font size</h3>
+                <div>
+                    <h6>Aa</h6>
+                    <div class="choose-size">
+                        <span class="font-size-1"></span>
+                        <span class="font-size-2"></span>
+                        <span class="font-size-3"></span>
+                        <span class="font-size-4"></span>
                     </div>
+                    <h3>Aa</h3>
                 </div>
-                <!-- color  -->
-                <div class="color">
-                    <h3>Color</h3>
-                    <div class="choose-color">
-                        <span class="color-1"></span>
-                        <span class="color-2"></span>
-                        <span class="color-3"></span>
-                        <span class="color-4"></span>
-                        <span class="color-5"></span>
+            </div>
+            <!-- color  -->
+            <div class="color">
+                <h3>Color</h3>
+                <div class="choose-color">
+                    <span class="color-1"></span>
+                    <span class="color-2"></span>
+                    <span class="color-3"></span>
+                    <span class="color-4"></span>
+                    <span class="color-5"></span>
+                </div>
+            </div>
+            <!-- background  -->
+            <div class="background">
+                <h3>Background</h3>
+                <div class="choose-bg">
+                    <div class="bg-1">
+                        <span></span>
+                        <h5 for="bg-1">Light</h5>
                     </div>
-                </div>
-                <!-- background  -->
-                <div class="background">
-                    <h3>Background</h3>
-                    <div class="choose-bg">
-                        <div class="bg-1">
-                            <span></span>
-                            <h5 for="bg-1">Light</h5>
-                        </div>
-                        <div class="bg-2">
-                            <span></span>
-                            <h5 for="bg-2">Dim</h5>
-                        </div>
-                        <div class="bg-3">
-                            <span></span>
-                            <h5 for="bg-3">Dark</h5>
-                        </div>
+                    <div class="bg-2">
+                        <span></span>
+                        <h5 for="bg-2">Dim</h5>
+                    </div>
+                    <div class="bg-3">
+                        <span></span>
+                        <h5 for="bg-3">Dark</h5>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     <script src="./static/js/index.js"></script>
     <script src="./static/js/project.js"></script>
 
 </body>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
 </html>

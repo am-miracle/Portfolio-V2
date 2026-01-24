@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Page Not Found - Jude Miracle</title>
+
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/animation.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.google.com">
+    <style>
+        /* Reusing main fonts logic/imports from other pages would be ideal, 
+           inheriting from main.css should handle variables. 
+        */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap');
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Center vertically */
+            align-items: center;
+            /* Center horizontally */
+            overflow: hidden;
+            background-color: var(--body-color);
+            color: var(--text-color);
+            transition: .3s;
+            /* Smooth theme transition */
+        }
+
+        .error-container {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .glitch-wrapper {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 900;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--title-color);
+            line-height: 1;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Simple Aesthetic Glitch Effect */
+        .error-code::before,
+        .error-code::after {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--body-color);
+        }
+
+        .error-code::before {
+            color: var(--color-primary);
+            animation: glitch-effect 3s infinite linear alternate-reverse;
+            text-shadow: 2px 0 var(--text-color);
+            clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+            transform: translate(-2px, -2px);
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .error-code::after {
+            color: var(--color-secondary, #6c757d);
+            /* Fallback if secondary undefined */
+            animation: glitch-effect 2s infinite linear alternate-reverse;
+            text-shadow: -2px 0 var(--color-primary);
+            clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+            transform: translate(2px, 2px);
+            z-index: -2;
+            opacity: 0.7;
+        }
+
+        @keyframes glitch-effect {
+            0% {
+                clip-path: polygon(0 15%, 100% 15%, 100% 40%, 0 40%);
+            }
+
+            20% {
+                clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+            }
+
+            40% {
+                clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+            }
+
+            60% {
+                clip-path: polygon(0 33%, 100% 33%, 100% 34%, 0 34%);
+            }
+
+            80% {
+                clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+            }
+
+            100% {
+                clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+            }
+        }
+
+        .error-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .error-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text-color);
+            opacity: 0.8;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .home-btn {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            background-color: var(--color-primary);
+            /* Ensure consistency if variable changes */
+            opacity: 0.9;
+        }
+
+        /* Abstract aesthetic shapes */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--color-primary);
+            opacity: 0.1;
+            z-index: 1;
+            filter: blur(50px);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            right: -100px;
+            animation-delay: -5s;
+            background: var(--hover-color, #ff6b6b);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(30px, 50px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Shapes for aesthetics -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+
+    <div class="error-container">
+        <div class="glitch-wrapper">
+            <div class="error-code">404</div>
+        </div>
+        <h1 class="error-title">Lost in Space?</h1>
+        <p class="error-description">The article or page you are looking for has been moved, deleted, or possibly never
+            existed.</p>
+        <a href="/" class="home-btn">Back to Home</a>
+    </div>
+
+</body>
+
+</html>
