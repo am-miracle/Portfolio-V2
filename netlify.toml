@@ -1,3 +1,3 @@
 [build]
-  command = "./generate-config.sh && node generate-sitemap.js"
+  command = "./generate-config.sh && node generate-static-articles.js && node generate-sitemap.js"
   publish = "/"
