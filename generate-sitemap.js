@@ -2,7 +2,22 @@ const https = require('https');
 const fs = require('fs');
 
 const SITE_URL = 'https://judemiracle.com';
-const HYGRAPH_ENDPOINT = process.env.HYGRAPH_ENDPOINT;
+const path = require('path');
+let HYGRAPH_ENDPOINT = process.env.HYGRAPH_ENDPOINT;
+
+if (!HYGRAPH_ENDPOINT) {
+    try {
+        const configPath = path.join(__dirname, 'static', 'js', 'config.js');
+        const configContent = fs.readFileSync(configPath, 'utf8');
+        const match = configContent.match(/const HYGRAPH_ENDPOINT = ['"]([^'"]+)['"]/);
+        if (match && match[1]) {
+            HYGRAPH_ENDPOINT = match[1];
+            console.log('Using HYGRAPH_ENDPOINT from static/js/config.js');
+        }
+    } catch (e) {
+        console.warn('Could not read config.js');
+    }
+}
 
 if (!HYGRAPH_ENDPOINT) {
     console.error('Error: HYGRAPH_ENDPOINT environment variable is not set.');
@@ -72,9 +87,7 @@ function generateSitemap(posts) {
     let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
     xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
-    // Add static pages
     STATIC_PAGES.forEach(page => {
-        // Handle root vs pages
         const loc = page === '/' ? SITE_URL : `${SITE_URL}${page}`;
         xml += '  <url>\n';
         xml += `    <loc>${loc}</loc>\n`;
@@ -84,11 +97,10 @@ function generateSitemap(posts) {
         xml += '  </url>\n';
     });
 
-    // Add dynamic posts
     posts.forEach(post => {
         const lastMod = post.updatedAt ? post.updatedAt.split('T')[0] : post.date.split('T')[0];
         xml += '  <url>\n';
-        xml += `    <loc>${SITE_URL}/article-detail.html?slug=${post.slug}</loc>\n`;
+        xml += `    <loc>${SITE_URL}/articles/${post.slug}.html</loc>\n`;
         xml += `    <lastmod>${lastMod}</lastmod>\n`;
         xml += '    <changefreq>monthly</changefreq>\n';
         xml += '    <priority>0.6</priority>\n';
