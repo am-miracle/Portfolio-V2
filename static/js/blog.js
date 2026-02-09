@@ -88,7 +88,7 @@ async function initBlogList() {
         articleDiv.style.transform = 'translateY(0)';
 
         articleDiv.innerHTML = `
-            <a href="article-detail.html?slug=${post.slug}">
+            <a href="/articles/${post.slug}.html">
                 <h1 class="article-title">${post.title}</h1>
             </a>
             <div class="article-details">
