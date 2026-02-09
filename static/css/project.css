@@ -1,10 +1,10 @@
 .sections {
   margin: 3rem 0;
 }
-.sections h1{
+.sections h1 {
   margin-bottom: 2rem;
 }
-.carousel-wrapper{
+.carousel-wrapper {
   position: relative;
 }
 .carousel {
@@ -18,7 +18,7 @@
   gap: 1rem;
 }
 
-.carousel-wrapper a{
+.carousel-wrapper a {
   text-decoration: underline var(--color-primary) 2px;
 }
 
@@ -71,11 +71,13 @@
   margin-left: 1.5rem;
 }
 
-.project-image, .codepen {
+.project-image,
+.codepen {
   width: 100%;
 }
 
-.project-image img, .codepen {
+.project-image img,
+.codepen {
   display: block;
   width: 100%;
   height: auto;
@@ -180,4 +182,3 @@
     transform: translateX(calc(-100% / 3 * 6.5));
   }
 } */
-
