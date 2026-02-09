@@ -18,9 +18,9 @@ def minify_css(file_path):
         print(f"Error minifying {file_path}: {e}")
 
 css_files = [
-    '/Users/sph/Portfolio-V2/static/css/index.css',
-    '/Users/sph/Portfolio-V2/static/css/main.css',
-    '/Users/sph/Portfolio-V2/static/css/animation.css'
+    'static/css/index.css',
+    'static/css/main.css',
+    'static/css/animation.css'
 ]
 
 for css_file in css_files:
