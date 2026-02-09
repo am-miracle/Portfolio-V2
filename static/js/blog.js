@@ -68,6 +68,21 @@ async function initBlogList() {
         return;
     }
 
+    dynamicContainer.innerHTML = `
+        <div class="skeleton-card">
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-date"></div>
+        </div>
+        <div class="skeleton-card">
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-date"></div>
+        </div>
+        <div class="skeleton-card">
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-date"></div>
+        </div>
+    `;
+
     const data = await fetchHygraph(QUERY_POSTS);
 
     if (!data || !data.posts) {

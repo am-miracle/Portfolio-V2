@@ -258,3 +258,81 @@ hr {
         border-radius: var(--border-radius);
     }
 }
+
+
+.skeleton {
+    background: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.skeleton::after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.skeleton-card {
+    padding: 2rem 1.5rem;
+    margin-bottom: var(--m-1);
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.skeleton-title {
+    height: 2rem;
+    width: 70%;
+    margin-bottom: 1rem;
+}
+
+.skeleton-date {
+    height: 1rem;
+    width: 30%;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}

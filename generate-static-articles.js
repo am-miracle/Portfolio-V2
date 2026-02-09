@@ -135,30 +135,27 @@ async function main() {
 
         html = html.replace('<div id="loading-indicator" class="padd-15" style="text-align: center; padding: 50px;">', '<div id="loading-indicator" style="display: none;">');
 
-        html = html.replace('article id="article-container" class="animate-section" style="display: none;"', 'article id="article-container" class="animate-section"');
+        html = html.replace(/<article\s+id="article-container"\s*style="display:\s*none;"\s*>/, '<article id="article-container">');
 
-        html = html.replace('<h1 id="article-title" class="section-title" style="margin-bottom: 1rem;"></h1>', `<h1 id="article-title" class="section-title" style="margin-bottom: 1rem;">${post.title}</h1>`);
+        html = html.replace(
+            /<h1\s+id="article-title"\s+class="section-title\s+animate-fade-up\s+delay-200"\s*style="margin-bottom:\s*1rem;"\s*>\s*<\/h1>/,
+            `<h1 id="article-title" class="section-title animate-fade-up delay-200" style="margin-bottom: 1rem;">${post.title}</h1>`
+        );
 
         const date = formatDate(post.date);
         const tags = post.tags.join(', ');
-        html = html.replace('<span id="article-date"></span>', `<span id="article-date">${date}</span>`);
-        html = html.replace('<span id="article-tags"></span>', `<span id="article-tags">${tags}</span>`);
+        html = html.replace(/<span\s+id="article-date">\s*<\/span>/, `<span id="article-date">${date}</span>`);
+        html = html.replace(/<span\s+id="article-tags">\s*<\/span>/, `<span id="article-tags">${tags}</span>`);
 
         if (post.coverImage && post.coverImage.url) {
-            html = html.replace('<img id="article-cover" src=""', `<img id="article-cover" src="${post.coverImage.url}" style="display: block; width: 100%; object-fit: cover; border-radius: var(--border-radius); margin-bottom: 2rem;"`);
+            const imgRegex = /<img\s+id="article-cover"\s+class="animate-fade-up\s+delay-100"\s+src=""\s+alt=""[\s\S]*?>/;
+            html = html.replace(imgRegex, `<img id="article-cover" class="animate-fade-up delay-100" src="${post.coverImage.url}" style="display: block; width: 100%; object-fit: cover; border-radius: var(--border-radius); margin-bottom: 2rem;" alt="${post.title}">`);
         }
-
 
         html = html.replace(
-            '<div id="article-body" class="padd-15 article-body-content">\n                    </div>',
-            `<div id="article-body" class="padd-15 article-body-content">\n${post.content.html}\n</div>`
+            /<div\s+id="article-body"\s+class="padd-15\s+article-body-content\s+animate-fade-up\s+delay-400">\s*<\/div>/,
+            `<div id="article-body" class="padd-15 article-body-content animate-fade-up delay-400">\n${post.content.html}\n</div>`
         );
-        if (!html.includes(post.content.html)) {
-            html = html.replace(
-                '<div id="article-body" class="padd-15 article-body-content">',
-                `<div id="article-body" class="padd-15 article-body-content">${post.content.html}`
-            );
-        }
 
         html = html.replace('<script src="/static/js/blog.js" defer></script>', '');
 

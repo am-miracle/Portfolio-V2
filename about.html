@@ -1,259 +1,212 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-            name="apple-mobile-web-app-status-bar-style"
-            content="black-translucent"
-        />
-        <meta
-            name="description"
-            content="Learn more about Jude Miracle, a Full-Stack Developer and Technical Writer from Port Harcourt, Nigeria. Building with React, Next.js, TypeScript, Node.js, Rust, and Solidity."
-        />
-        <meta name="author" content="Jude Miracle" />
-        <meta name="keywords" content="Jude Miracle, Full-Stack Developer Nigeria, Generalist Developer, React Developer, Node.js Developer, Rust Developer, Technical Writer, Web3 Developer, Port Harcourt Developer, Claude Code" />
-        <meta property="og:title" content="About Jude Miracle - Full-Stack Developer & Technical Writer" />
-        <meta property="og:description" content="Full-stack developer working with React, Node.js, Rust, and Solidity. Technical writer helping developers learn and grow." />
-        <meta property="og:type" content="profile" />
-        <link rel="canonical" href="https://judemiracle.dev/about.html" />
 
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/static/assets/icons/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/static/assets/icons/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/static/assets/icons/favicon-16x16.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="192x192"
-            href="/static/assets/icons/android-chrome-192x192.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="512x512"
-            href="/static/assets/icons/android-chrome-512x512.png"
-        />
-        <!-- <link rel="manifest" href="/static/assets/icons/site.webmanifest"> -->
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description"
+        content="Learn more about Jude Miracle, a Full-Stack Developer and Technical Writer from Port Harcourt, Nigeria. Building with React, Next.js, TypeScript, Node.js, Rust, and Solidity." />
+    <meta name="author" content="Jude Miracle" />
+    <meta name="keywords"
+        content="Jude Miracle, Full-Stack Developer Nigeria, Generalist Developer, React Developer, Node.js Developer, Rust Developer, Technical Writer, Web3 Developer, Port Harcourt Developer, Claude Code" />
+    <meta property="og:title" content="About Jude Miracle - Full-Stack Developer & Technical Writer" />
+    <meta property="og:description"
+        content="Full-stack developer working with React, Node.js, Rust, and Solidity. Technical writer helping developers learn and grow." />
+    <meta property="og:type" content="profile" />
+    <link rel="canonical" href="https://judemiracle.dev/about.html" />
 
-        <link rel="stylesheet" href="/static/css/index.css" />
-        <link rel="stylesheet" href="/static/css/about.css" />
-        <link rel="stylesheet" href="/static/css/animation.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/icons/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/assets/icons/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/static/assets/icons/android-chrome-512x512.png" />
+    <!-- <link rel="manifest" href="/static/assets/icons/site.webmanifest"> -->
 
-        <!-- Google tag (gtag.js) -->
-        <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-F2R2VXW8ST"
-        ></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href="/static/css/about.css" />
+    <link rel="stylesheet" href="/static/css/animation.css" />
 
-            gtag("config", "G-F2R2VXW8ST");
-        </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2R2VXW8ST"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
 
-        <!-- FONTS -->
-        <link rel="preconnect" href="https://fonts.google.com" />
-        <style>
-            /* open-sans-300 - vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: "Open Sans";
-                font-style: normal;
-                font-weight: 300;
-                font-display: swap;
-                src: url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.woff2")
-                    format("woff2"); /* Super Modern Browsers */
-                src:
-                    local(""),
-                    url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.eot?#iefix")
-                        format("embedded-opentype"),
-                    /* IE6-IE8 */
-                        url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.eot"),
-                    /* IE9 Compat Modes */
-                        url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.woff")
-                        format("woff"),
-                    /* Modern Browsers */
-                        url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.ttf")
-                        format("truetype"); /* Safari, Android, iOS */
-            }
-            /* open-sans-regular - vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: "Open Sans";
-                font-style: normal;
-                font-weight: 400;
-                font-display: swap;
-                src: url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff2")
-                    format("woff2"); /* Super Modern Browsers */
-                src:
-                    local(""),
-                    url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.eot?#iefix")
-                        format("embedded-opentype"),
-                    /* IE6-IE8 */
-                        url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.eot"),
-                    /* IE9 Compat Modes */
-                        url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff")
-                        format("woff"),
-                    /* Modern Browsers */
-                        url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.ttf")
-                        format("truetype"); /* Safari, Android, iOS */
-            }
-            /* open-sans-600 - vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: "Open Sans";
-                font-style: normal;
-                font-weight: 600;
-                font-display: swap;
-                src: url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.woff2")
-                    format("woff2"); /* Super Modern Browsers */
-                src:
-                    local(""),
-                    url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.eot?#iefix")
-                        format("embedded-opentype"),
-                    /* IE6-IE8 */
-                        url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.eot"),
-                    /* IE9 Compat Modes */
-                        url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.woff")
-                        format("woff"),
-                    /* Modern Browsers */
-                        url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.ttf")
-                        format("truetype"); /* Safari, Android, iOS */
-            }
+        gtag("config", "G-F2R2VXW8ST");
+    </script>
 
-            /* MONTSERRAT */
-            /* montserrat-500 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: "Montserrat";
-                font-style: normal;
-                font-weight: 500;
-                font-display: swap;
-                src: url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.woff2")
-                    format("woff2"); /* Super Modern Browsers */
-                src:
-                    local(""),
-                    url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.eot?#iefix")
-                        format("embedded-opentype"),
-                    /* IE6-IE8 */
-                        url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.eot"),
-                    /* IE9 Compat Modes */
-                        url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.woff")
-                        format("woff"),
-                    /* Modern Browsers */
-                        url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.ttf")
-                        format("truetype"); /* Safari, Android, iOS */
-            }
-            /* montserrat-600 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: "Montserrat";
-                font-style: normal;
-                font-weight: 600;
-                font-display: swap;
-                src: url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.woff2")
-                    format("woff2"); /* Super Modern Browsers */
-                src:
-                    local(""),
-                    url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.eot?#iefix")
-                        format("embedded-opentype"),
-                    /* IE6-IE8 */
-                        url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.eot"),
-                    /* IE9 Compat Modes */
-                        url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.woff")
-                        format("woff"),
-                    /* Modern Browsers */
-                        url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.ttf")
-                        format("truetype"); /* Safari, Android, iOS */
-            }
-            /* montserrat-700 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: "Montserrat";
-                font-style: normal;
-                font-weight: 700;
-                font-display: swap;
-                src: url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.woff2")
-                    format("woff2"); /* Super Modern Browsers */
-                src:
-                    local(""),
-                    url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.eot?#iefix")
-                        format("embedded-opentype"),
-                    /* IE6-IE8 */
-                        url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.woff")
-                        format("woff"),
-                    /* Modern Browsers */
-                        url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.eot"),
-                    /* IE9 Compat Modes */
-                        url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.ttf")
-                        format("truetype"); /* Safari, Android, iOS */
-            }
-            /* montserrat-800 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: "Montserrat";
-                font-style: normal;
-                font-weight: 800;
-                font-display: swap;
-                src: url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.woff2")
-                    format("woff2"); /* Super Modern Browsers */
-                src:
-                    local(""),
-                    url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.eot?#iefix")
-                        format("embedded-opentype"),
-                    /* IE6-IE8 */
-                        url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.eot"),
-                    /* IE9 Compat Modes */
-                        url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.woff")
-                        format("woff"),
-                    /* Modern Browsers */
-                        url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.ttf")
-                        format("truetype"); /* Safari, Android, iOS */
-            }
-            /* montserrat-900 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
-            @font-face {
-                font-family: "Montserrat";
-                font-style: normal;
-                font-weight: 900;
-                font-display: swap;
-                src: url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.woff2")
-                    format("woff2"); /* Super Modern Browsers */
-                src:
-                    local(""),
-                    url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.eot?#iefix")
-                        format("embedded-opentype"),
-                    /* IE6-IE8 */
-                        url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.eot"),
-                    /* IE9 Compat Modes */
-                        url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.woff")
-                        format("woff"),
-                    /* Modern Browsers */
-                        url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.ttf")
-                        format("truetype"); /* Safari, Android, iOS */
-            }
-        </style>
-        <title>About Jude Miracle - Full-Stack Developer from Nigeria</title>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.google.com" />
+    <style>
+        /* open-sans-300 - vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.woff2") format("woff2");
+            src:
+                local(""),
+                url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.eot?#iefix") format("embedded-opentype"),
+                url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.eot"),
+                url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.woff") format("woff"),
+                url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.ttf") format("truetype");
+        }
 
-        <script type="application/ld+json">
+        /* open-sans-regular - vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff2") format("woff2");
+            src:
+                local(""),
+                url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.eot?#iefix") format("embedded-opentype"),
+                url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.eot"),
+                url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff") format("woff"),
+                /* Modern Browsers */
+                url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.ttf") format("truetype");
+            /* Safari, Android, iOS */
+        }
+
+        /* open-sans-600 - vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.woff2") format("woff2");
+            /* Super Modern Browsers */
+            src:
+                local(""),
+                url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.eot?#iefix") format("embedded-opentype"),
+                /* IE6-IE8 */
+                url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.eot"),
+                /* IE9 Compat Modes */
+                url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.woff") format("woff"),
+                /* Modern Browsers */
+                url("../fonts/open-sans/open-sans-v25-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.ttf") format("truetype");
+            /* Safari, Android, iOS */
+        }
+
+        /* MONTSERRAT */
+        /* montserrat-500 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.woff2") format("woff2");
+            /* Super Modern Browsers */
+            src:
+                local(""),
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.eot?#iefix") format("embedded-opentype"),
+                /* IE6-IE8 */
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.eot"),
+                /* IE9 Compat Modes */
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.woff") format("woff"),
+                /* Modern Browsers */
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-500.ttf") format("truetype");
+            /* Safari, Android, iOS */
+        }
+
+        /* montserrat-600 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.woff2") format("woff2");
+            /* Super Modern Browsers */
+            src:
+                local(""),
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.eot?#iefix") format("embedded-opentype"),
+                /* IE6-IE8 */
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.eot"),
+                /* IE9 Compat Modes */
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.woff") format("woff"),
+                /* Modern Browsers */
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-600.ttf") format("truetype");
+            /* Safari, Android, iOS */
+        }
+
+        /* montserrat-700 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.woff2") format("woff2");
+            /* Super Modern Browsers */
+            src:
+                local(""),
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.eot?#iefix") format("embedded-opentype"),
+                /* IE6-IE8 */
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.woff") format("woff"),
+                /* Modern Browsers */
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.eot"),
+                /* IE9 Compat Modes */
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-700.ttf") format("truetype");
+            /* Safari, Android, iOS */
+        }
+
+        /* montserrat-800 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.woff2") format("woff2");
+            /* Super Modern Browsers */
+            src:
+                local(""),
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.eot?#iefix") format("embedded-opentype"),
+                /* IE6-IE8 */
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.eot"),
+                /* IE9 Compat Modes */
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.woff") format("woff"),
+                /* Modern Browsers */
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-800.ttf") format("truetype");
+            /* Safari, Android, iOS */
+        }
+
+        /* montserrat-900 - vietnamese_latin-ext_latin_cyrillic-ext_cyrillic */
+        @font-face {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.woff2") format("woff2");
+            /* Super Modern Browsers */
+            src:
+                local(""),
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.eot?#iefix") format("embedded-opentype"),
+                /* IE6-IE8 */
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.eot"),
+                /* IE9 Compat Modes */
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.woff") format("woff"),
+                /* Modern Browsers */
+                url("../fonts/montserrat/montserrat-v18-vietnamese_latin-ext_latin_cyrillic-ext_cyrillic-900.ttf") format("truetype");
+            /* Safari, Android, iOS */
+        }
+    </style>
+    <title>About Jude Miracle | Frontend Engineer in Nigeria & Technical Writer</title>
+
+    <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "ProfilePage",
             "mainEntity": {
                 "@type": "Person",
                 "name": "Jude Miracle",
-                "jobTitle": "Full-Stack Developer & Technical Writer",
-                "description": "Full-stack developer building with React, Next.js, Node.js, Rust, and Solidity",​
+                "jobTitle": "Frontend Engineer & Technical Writer",
+                "description": "Frontend Engineer and Technical Writer from Nigeria. Building with React, Next.js, Node.js, Rust, and Solidity",​
                 "url": "https://judemiracle.dev/about.html",
                 "worksFor": [
                     {
@@ -268,537 +221,423 @@
             }
         }
         </script>
-    </head>
-    <body>
-        <!-- Nav  -->
-        <nav class="nav container padd-15" id="nav">
-            <a href="/" class="nav-logo" title="Go back to the homepage">
-                <h2>Jude</h2>
-            </a>
-            <!-- Nav Menu  -->
-            <div class="nav-menu" id="nav-menu">
-                <!-- Nav List  -->
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="about.html" class="nav-link active-link"
-                            >About</a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a href="project.html" class="nav-link">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="article.html" class="nav-link">Articles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/#services" class="nav-link">Capabilities</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-                <!-- nav close  -->
-                <div class="nav-close" id="nav-close">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
+</head>
+
+<body>
+    <!-- Nav  -->
+    <nav class="nav container padd-15" id="nav">
+        <a href="/" class="nav-logo" title="Go back to the homepage">
+            <h2>Jude</h2>
+        </a>
+        <!-- Nav Menu  -->
+        <div class="nav-menu" id="nav-menu">
+            <!-- Nav List  -->
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link active-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="project.html" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="article.html" class="nav-link">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/#services" class="nav-link">Capabilities</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <!-- nav close  -->
+            <div class="nav-close" id="nav-close">
+                <div class="line"></div>
+                <div class="line"></div>
             </div>
-            <!-- Nav btn  -->
-            <div class="nav-btns">
-                <?xml version="1.0" encoding="utf-8"?>
-                <!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                <svg
-                    fill=""
-                    height="15px"
-                    width="15px"
-                    class="change-theme"
-                    id="theme-button"
-                    version="1.1"
-                    id="lni_lni-pallet"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    x="0px"
-                    y="0px"
-                    viewBox="0 0 64 64"
-                    style="enable-background: new 0 0 64 64"
-                    xml:space="preserve"
-                >
-                    <g>
-                        <path
-                            d="M55.9,43.9l-0.3-0.2c-0.8-0.5-1.7-0.9-3.8-1.5l-0.1,0c-0.7-0.1-1.5-0.4-1.8-0.6l-0.1-0.1c-0.4-0.4-0.7-1.1-0.7-1.9
+        </div>
+        <!-- Nav btn  -->
+        <div class="nav-btns">
+            <?xml version="1.0" encoding="utf-8"?>
+            <!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+            <svg fill="" height="15px" width="15px" class="change-theme" id="theme-button" version="1.1"
+                id="lni_lni-pallet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 64 64" style="enable-background: new 0 0 64 64" xml:space="preserve">
+                <g>
+                    <path
+                        d="M55.9,43.9l-0.3-0.2c-0.8-0.5-1.7-0.9-3.8-1.5l-0.1,0c-0.7-0.1-1.5-0.4-1.8-0.6l-0.1-0.1c-0.4-0.4-0.7-1.1-0.7-1.9
                 c0-0.7,0.3-1.4,0.7-1.9l3.9-3.9c6.9-6.9,6.9-17.8,0-24.8c-4.6-4.7-11-7.2-18.1-7.2c-7.9,0-15.9,3.4-22,9.4C8,16.9,5,24.3,5,32.4
                 c0,8.1,3.1,15.6,8.8,21.1c5.7,5.7,13.2,8.8,21.2,8.8c7.9,0,15.4-3.2,21.1-8.9c1.2-1.2,1.9-3,1.9-4.7C58,46.8,57.2,45,55.9,43.9z
                 M52.9,50.2c-4.8,4.9-11.2,7.6-17.9,7.6c-6.9,0-13.1-2.6-18-7.5c-4.8-4.7-7.5-11-7.5-17.9c0-6.9,2.6-13.1,7.4-18
                 C22.2,9.2,29,6.2,35.8,6.2c5.9,0,11.1,2,14.9,5.9c5.2,5.3,5.2,13.3,0,18.5l-4,4c-1.2,1.3-1.9,3.1-1.9,5c0,2,0.7,3.7,1.9,5
-                c1.2,1.3,3.6,1.9,4.2,2c1.4,0.3,1.9,0.6,2.3,0.8c0.2,0.3,0.4,0.8,0.4,1.3C53.5,49.2,53.2,49.9,52.9,50.2z"
-                        />
-                        <path
-                            d="M36.8,36.7c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S38.2,36.7,36.8,36.7z"
-                        />
-                        <path
-                            d="M47.7,27.3c0-3.3-2.7-6.1-6.1-6.1s-6.1,2.7-6.1,6.1c0,3.3,2.7,6.1,6.1,6.1S47.7,30.7,47.7,27.3z M41.6,28.9
-                c-0.9,0-1.6-0.7-1.6-1.6s0.7-1.6,1.6-1.6s1.6,0.7,1.6,1.6S42.5,28.9,41.6,28.9z"
-                        />
-                        <path
-                            d="M37.3,16.7c0-4-3.3-7.3-7.3-7.3s-7.3,3.3-7.3,7.3s3.3,7.3,7.3,7.3S37.3,20.8,37.3,16.7z M30,19.6c-1.6,0-2.8-1.3-2.8-2.8
-                c0-1.6,1.3-2.8,2.8-2.8s2.8,1.3,2.8,2.8C32.8,18.3,31.6,19.6,30,19.6z"
-                        />
-                    </g>
-                </svg>
-                <!-- toggle btn  -->
-                <div class="icon-burger" id="nav-toggle">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
+                c1.2,1.3,3.6,1.9,4.2,2c1.4,0.3,1.9,0.6,2.3,0.8c0.2,0.3,0.4,0.8,0.4,1.3C53.5,49.2,53.2,49.9,52.9,50.2z" />
+                    <path d="M36.8,36.7c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S38.2,36.7,36.8,36.7z" />
+                    <path d="M47.7,27.3c0-3.3-2.7-6.1-6.1-6.1s-6.1,2.7-6.1,6.1c0,3.3,2.7,6.1,6.1,6.1S47.7,30.7,47.7,27.3z M41.6,28.9
+                c-0.9,0-1.6-0.7-1.6-1.6s0.7-1.6,1.6-1.6s1.6,0.7,1.6,1.6S42.5,28.9,41.6,28.9z" />
+                    <path d="M37.3,16.7c0-4-3.3-7.3-7.3-7.3s-7.3,3.3-7.3,7.3s3.3,7.3,7.3,7.3S37.3,20.8,37.3,16.7z M30,19.6c-1.6,0-2.8-1.3-2.8-2.8
+                c0-1.6,1.3-2.8,2.8-2.8s2.8,1.3,2.8,2.8C32.8,18.3,31.6,19.6,30,19.6z" />
+                </g>
+            </svg>
+            <!-- toggle btn  -->
+            <div class="icon-burger" id="nav-toggle">
+                <div class="line"></div>
+                <div class="line"></div>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <!-- Main  -->
-        <main class="container">
-            <section id="about">
-                <div class="inner-wrapper">
-                    <div class="intro-container">
-                        <h1 class="section-title animate-section">
-                            Hello there, I'm Jude Miracle
-                        </h1>
-                        <p class="bold-text animate-section">
-                            I'm a software developer and technical writer based in Port Harcourt, Nigeria.
-                            My journey into tech wasn't straightforward like many Nigerian developers, I started
-                            by teaching myself to code, staying up late watching YouTube tutorials and reading
-                            documentation until things finally clicked. I'm what you'd call a generalist I don't
-                            just do frontend, I build across the entire stack.
-                        </p>
-                        <p class="bold-text animate-section">
-                            On the frontend, I work with React, Next.js, and TypeScript to create interfaces
-                            people actually enjoy using. On the backend, I build with Node.js and Rust, depending
-                            on what the project needs. Rust is my go-to when performance really matters there's
-                            something satisfying about writing fast, reliable systems. I also use tools like Claude
-                            Code to speed up my workflow and handle repetitive tasks, letting me focus on solving
-                            the interesting problems.
-                        </p>
-                        <p class="bold-text animate-section">
-                            Beyond building applications, I write articles that help other developers learn.
-                            I've been fortunate to write for over 10 platforms like LogRocket, OpenReplay, Cyfrin,
-                            Pieces, etc, breaking down complex topics into simple, practical guides. There's something
-                            special about helping someone else understand something that once confused you it
-                            reminds me of when I was that person struggling to make sense of it all.
-                        </p>
-                        <p class="bold-text animate-section">
-                            I'm also deep into the Web3 space, exploring how blockchain technology can solve
-                            real problems. I write smart contracts in Solidity and build the full-stack applications
-                            around them. It's exciting to be part of this growing tech ecosystem in Nigeria, where
-                            innovation is happening despite the challenges we face daily unstable power, slow
-                            internet, and all the wahala that comes with building from this side of the world.
-                        </p>
-                        <p class="bold-text animate-section">
-                            When I'm not coding or writing, you'll find me playing football with my guys or
-                            watching my favorite team play. Football is life here, and the pitch is where I
-                            clear my head after debugging for hours. I also love mentoring younger developers
-                            who are just starting out I remember how hard it was at the beginning, and if I
-                            can make someone's journey easier, I'm happy to help.
-                        </p>
-                        <p class="bold-text animate-section">
-                            I believe technology can change lives, especially here in Nigeria where we need
-                            it most. Every line of code I write, every article I publish, is a small step
-                            toward that vision. If you're building something interesting or need a generalist
-                            developer who understands the hustle, let's connect and create something meaningful
-                            together.
-                        </p>
+    <!-- Main  -->
+    <main class="container">
+        <section id="about">
+            <div class="inner-wrapper">
+                <div class="intro-container">
+                    <h1 class="section-title animate-section">
+                        Hello there, I'm Jude Miracle
+                    </h1>
+                    <p class="bold-text animate-section">
+                        I'm a software developer and technical writer based in Port Harcourt, Nigeria.
+                        My journey into tech wasn't straightforward like many Nigerian developers, I started
+                        by teaching myself to code, staying up late watching YouTube tutorials and reading
+                        documentation until things finally clicked. I'm what you'd call a generalist I don't
+                        just do frontend, I build across the entire stack.
+                    </p>
+                    <p class="bold-text animate-section">
+                        On the frontend, I work with React, Next.js, and TypeScript to create interfaces
+                        people actually enjoy using. On the backend, I build with Node.js and Rust, depending
+                        on what the project needs. Rust is my go-to when performance really matters there's
+                        something satisfying about writing fast, reliable systems. I also use tools like Claude
+                        Code to speed up my workflow and handle repetitive tasks, letting me focus on solving
+                        the interesting problems.
+                    </p>
+                    <p class="bold-text animate-section">
+                        Beyond building applications, I write articles that help other developers learn.
+                        I've been fortunate to write for over 10 platforms like LogRocket, OpenReplay, Cyfrin,
+                        Pieces, etc, breaking down complex topics into simple, practical guides. There's something
+                        special about helping someone else understand something that once confused you it
+                        reminds me of when I was that person struggling to make sense of it all.
+                    </p>
+                    <p class="bold-text animate-section">
+                        I'm also deep into the Web3 space, exploring how blockchain technology can solve
+                        real problems. I write smart contracts in Solidity and build the full-stack applications
+                        around them. It's exciting to be part of this growing tech ecosystem in Nigeria, where
+                        innovation is happening despite the challenges we face daily unstable power, slow
+                        internet, and all the wahala that comes with building from this side of the world.
+                    </p>
+                    <p class="bold-text animate-section">
+                        When I'm not coding or writing, you'll find me playing football with my guys or
+                        watching my favorite team play. Football is life here, and the pitch is where I
+                        clear my head after debugging for hours. I also love mentoring younger developers
+                        who are just starting out I remember how hard it was at the beginning, and if I
+                        can make someone's journey easier, I'm happy to help.
+                    </p>
+                    <p class="bold-text animate-section">
+                        I believe technology can change lives, especially here in Nigeria where we need
+                        it most. Every line of code I write, every article I publish, is a small step
+                        toward that vision. If you're building something interesting or need a generalist
+                        developer who understands the hustle, let's connect and create something meaningful
+                        together.
+                    </p>
                     <div class="cv animate-section">
-                        <a
-                            href="https://docs.google.com/document/d/1jSw5JRLvWW-ggVjyPmqFvARTIi3QmBe6O61kq5Yf0WE/edit?usp=sharing"
-                            class="btn btn-default"
-                            >Download CV</a
-                        >
+                        <a href="https://docs.google.com/document/d/1jSw5JRLvWW-ggVjyPmqFvARTIi3QmBe6O61kq5Yf0WE/edit?usp=sharing"
+                            class="btn btn-default">Download CV</a>
                     </div>
                 </div>
-            </section>
+        </section>
 
-            <section class="tab-wrapper">
-                <!-- TAB LINKS -->
-                <div class="tab-container">
-                    <span data-tab-target="#experience" class="tab active"
-                        >Experience</span
-                    >
-                    <span data-tab-target="#skills" class="tab">Skills</span>
-                </div>
-                <!-- TAB CONTENT  -->
-                <div class="tab-content">
-                    <div id="experience" data-tab-content class="active">
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h3>
-                                        Software developer (contract) -
-                                        <a
-                                            href="https://kreatoors.ai/"
-                                            target="_blank"
-                                            rel="noopener"
-                                            >Kreatoors.ai</a
-                                        >
-                                    </h3>
-                                    <p>FEB 2025 - Present</p>
-                                    <ul>
-                                        <li>
-                                            Worked on building and maintaining
-                                            the frontend using React, Next.js,
-                                            and TypeScript.
-                                        </li>
-                                        <li>
-                                            Worked on implementing new features
-                                            and bug fixes for the application
-                                        </li>
-                                        <li>
-                                            Collaborated with other developers
-                                            and designers to ensure the
-                                            application's quality and user
-                                            experience
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h3>
-                                        Technical Writer -
-                                        <a
-                                            href="https://logrocket.com/"
-                                            target="_blank"
-                                            rel="noopener"
-                                            >Logrocket</a
-                                        >
-                                    </h3>
-                                    <p>NOV 2022 - Present</p>
-                                    <ul>
-                                        <li>
-                                            Research and create technical
-                                            articles on various technology
-                                            topics like JavaScript, React, Web3,
-                                            etc, catering for developers and
-                                            software engineers with different
-                                            technical expertise.
-                                        </li>
-                                        <li>
-                                            Update existing content to ensure
-                                            accuracy and relevance
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h3>
-                                        Front End Developer -
-                                        <a
-                                            href="#"
-                                            target="_blank"
-                                            rel="noopener"
-                                            >Khoomi</a
-                                        >
-                                    </h3>
-                                    <p>MAY 2023 - FEB 2024</p>
-                                    <ul>
-                                        <li>
-                                            Developed and maintained scalable
-                                            web applications using React and
-                                            Next.js.
-                                        </li>
-                                        <li>
-                                            Document and maintained API for easy
-                                            testing among team members
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h3>
-                                        Front End Developer (contract ) -
-                                        <a
-                                            href="https://icowebagency.com/"
-                                            target="_blank"
-                                            rel="noopener"
-                                            >ICOWEB AGENCY</a
-                                        >
-                                    </h3>
-                                    <p>SEP 2023 - DEC 2024</p>
-                                    <ul>
-                                        <li>
-                                            Improved UI/UX for various client
-                                            projects, focusing on accessibility
-                                            and performance
-                                        </li>
-                                        <li>
-                                            Collaborated with cross-functional
-                                            teams to design and implement user
-                                            interfaces.
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h3>
-                                        Front End Engineer -
-                                        <a
-                                            href="https://www.getdaabo.com.ng/"
-                                            target="_blank"
-                                            rel="noopener"
-                                            >Daabo Inc</a
-                                        >
-                                    </h3>
-                                    <p>JUL 2022 - DEC 2022</p>
-                                    <ul>
-                                        <li>
-                                            in charge of documentation,
-                                            reviewing new software, identifying
-                                            improvement areas, and creating
-                                            responsive user interfaces.
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="skills" data-tab-content>
-                        <div class="skills-container animate-section">
-                            <div class="skills-category">
-                                <h3>Languages</h3>
-                                <ul class="skills">
-                                    <li class="skill">HTML</li>
-                                    <li class="skill">CSS</li>
-                                    <li class="skill">JavaScript</li>
-                                    <li class="skill">TypeScript</li>
-                                    <li class="skill">Solidity</li>
-                                    <li class="skill">Move</li>
-                                    <li class="skill">Rust</li>
-                                </ul>
-                            </div>
-                            <div class="skills-category">
-                                <h3>Libraries</h3>
-                                <ul class="skills">
-                                    <li class="skill">React</li>
-                                    <li class="skill">Redux</li>
-                                    <li class="skill">Hardhat</li>
-                                    <li class="skill">Foundry</li>
-                                    <li class="skill">Wagmi</li>
-                                    <li class="skill">Tanstack Query</li>
-                                    <li class="skill">Zustand</li>
-                                </ul>
-                            </div>
-                            <div class="skills-category">
-                                <h3>Frameworks</h3>
-                                <ul class="skills">
-                                    <li class="skill">Next.js</li>
-                                    <li class="skill">Shadcn UI</li>
-                                    <li class="skill">Tailwind CSS</li>
-                                    <li class="skill">Axum</li>
-                                </ul>
-                            </div>
-                            <div class="skills-category">
-                                <h3>Tools</h3>
-                                <ul class="skills">
-                                    <li class="skill">Git</li>
-                                    <li class="skill">Ethers.js</li>
-                                    <li class="skill">Docusaurus</li>
-                                    <li class="skill">Ethereum</li>
-                                    <li class="skill">SUI</li>
-                                    <li class="skill">Solana</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PAGE NAV  -->
-            <div class="page-nav">
-                <a href="/">&#8592; Home</a>
-                <a href="project.html">Projects &#8594;</a>
+        <section class="tab-wrapper">
+            <!-- TAB LINKS -->
+            <div class="tab-container">
+                <span data-tab-target="#experience" class="tab active">Experience</span>
+                <span data-tab-target="#skills" class="tab">Skills</span>
             </div>
-        </main>
-
-        <!-- Footer  -->
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-media">
-                        <a
-                            href="https://www.github.com/am-miracle"
-                            title="Github"
-                            target="_blank"
-                        >
-                            <span class="visually-hidden">GitHub</span>
-                            <svg
-                                aria-hidden="true"
-                                focusable="false"
-                                data-prefix="fab"
-                                data-icon="github"
-                                class="svg-inline--fa fa-github fa-w-16"
-                                role="img"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 496 512"
-                            >
-                                <path
-                                    fill="currentColor"
-                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-                                ></path>
-                            </svg>
-                        </a>
-                        <a
-                            href="https://www.x.com/miraclejudeiv"
-                            title="X"
-                            target="_blank"
-                        >
-                            <span class="visually-hidden">X (Twitter)</span>
-                            <svg
-                                aria-hidden="true"
-                                focusable="false"
-                                data-prefix="fab"
-                                data-icon="x"
-                                class="svg-inline--fa fa-twitter fa-w-16"
-                                role="img"
-                                xmlns="http://www.w3.org/2000/svg"
-                                x="0px"
-                                y="0px"
-                                viewBox="0 0 50 50"
-                            >
-                                <path
-                                    fill="currentColor"
-                                    d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"
-                                ></path>
-                            </svg>
-                        </a>
-                        <a
-                            href="https://codepen.io/judeiv"
-                            title="Codepen"
-                            target="_blank"
-                        >
-                            <span class="visually-hidden">CodePen</span>
-                            <svg
-                                aria-hidden="true"
-                                focusable="false"
-                                data-prefix="fab"
-                                data-icon="codepen"
-                                class="svg-inline--fa fa-codepen fa-w-16"
-                                role="img"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 512 512"
-                            >
-                                <path
-                                    fill="currentColor"
-                                    d="M502.285 159.704l-234-156c-7.987-4.915-16.511-4.96-24.571 0l-234 156C3.714 163.703 0 170.847 0 177.989v155.999c0 7.143 3.714 14.286 9.715 18.286l234 156.022c7.987 4.915 16.511 4.96 24.571 0l234-156.022c6-3.999 9.715-11.143 9.715-18.286V177.989c-.001-7.142-3.715-14.286-9.716-18.285zM278 63.131l172.286 114.858-76.857 51.429L278 165.703V63.131zm-44 0v102.572l-95.429 63.715-76.857-51.429L234 63.131zM44 219.132l55.143 36.857L44 292.846v-73.714zm190 229.715L61.714 333.989l76.857-51.429L234 346.275v102.572zm22-140.858l-77.715-52 77.715-52 77.715 52-77.715 52zm22 140.858V346.275l95.429-63.715 76.857 51.429L278 448.847zm190-156.001l-55.143-36.857L468 219.132v73.714z"
-                                ></path>
-                            </svg>
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/miracle-jude-4b7a4b179"
-                            title="LinkedIn"
-                            target="_blank"
-                        >
-                            <span class="visually-hidden">LinkedIn</span>
-                            <svg
-                                aria-hidden="true"
-                                focusable="false"
-                                data-prefix="fab"
-                                data-icon="linkedin"
-                                class="svg-inline--fa fa-linkedin fa-w-14"
-                                role="img"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 448 512"
-                            >
-                                <path
-                                    fill="currentColor"
-                                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-                                ></path>
-                            </svg>
-                        </a>
-                        <a
-                            href="https://medium.com/@judemiracle"
-                            title="Medium"
-                            target="_blank"
-                        >
-                            <span class="visually-hidden">Medium</span>
-                            <svg
-                                aria-hidden="true"
-                                focusable="false"
-                                data-prefix="fab"
-                                data-icon="medium"
-                                class="svg-inline--fa fa-instagram fa-w-14"
-                                role="img"
-                                xmlns="http://www.w3.org/2000/svg"
-                                x="0px"
-                                y="0px"
-                                viewBox="0 0 50 50"
-                            >
-                                <path
-                                    fill="currentColor"
-                                    d="M15 12A13 13 0 1015 38 13 13 0 1015 12zM35.5 13c-3.59 0-6.5 5.373-6.5 12 0 1.243.102 2.441.292 3.568.253 1.503.662 2.879 1.192 4.065.265.593.56 1.138.881 1.627.642.978 1.388 1.733 2.202 2.201C34.178 36.811 34.827 37 35.5 37s1.322-.189 1.933-.539c.814-.468 1.56-1.223 2.202-2.201.321-.489.616-1.034.881-1.627.53-1.185.939-2.562 1.192-4.065C41.898 27.441 42 26.243 42 25 42 18.373 39.09 13 35.5 13zM45.5 14c-.259 0-.509.173-.743.495-.157.214-.307.494-.448.833-.071.169-.14.353-.206.551-.133.395-.257.846-.37 1.343-.226.995-.409 2.181-.536 3.497-.063.658-.112 1.349-.146 2.065C43.017 23.499 43 24.241 43 25s.017 1.501.051 2.217c.033.716.082 1.407.146 2.065.127 1.316.31 2.501.536 3.497.113.498.237.948.37 1.343.066.198.135.382.206.551.142.339.292.619.448.833C44.991 35.827 45.241 36 45.5 36c1.381 0 2.5-4.925 2.5-11S46.881 14 45.5 14z"
-                                ></path>
-                            </svg>
-                        </a>
+            <!-- TAB CONTENT  -->
+            <div class="tab-content">
+                <div id="experience" data-tab-content class="active">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>
+                                    Software developer (contract) -
+                                    <a href="https://kreatoors.ai/" target="_blank" rel="noopener">Kreatoors.ai</a>
+                                </h3>
+                                <p>FEB 2025 - Present</p>
+                                <ul>
+                                    <li>
+                                        Worked on building and maintaining
+                                        the frontend using React, Next.js,
+                                        and TypeScript.
+                                    </li>
+                                    <li>
+                                        Worked on implementing new features
+                                        and bug fixes for the application
+                                    </li>
+                                    <li>
+                                        Collaborated with other developers
+                                        and designers to ensure the
+                                        application's quality and user
+                                        experience
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>
+                                    Technical Writer -
+                                    <a href="https://logrocket.com/" target="_blank" rel="noopener">Logrocket</a>
+                                </h3>
+                                <p>NOV 2022 - Present</p>
+                                <ul>
+                                    <li>
+                                        Research and create technical
+                                        articles on various technology
+                                        topics like JavaScript, React, Web3,
+                                        etc, catering for developers and
+                                        software engineers with different
+                                        technical expertise.
+                                    </li>
+                                    <li>
+                                        Update existing content to ensure
+                                        accuracy and relevance
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>
+                                    Front End Developer -
+                                    <a href="#" target="_blank" rel="noopener">Khoomi</a>
+                                </h3>
+                                <p>MAY 2023 - FEB 2024</p>
+                                <ul>
+                                    <li>
+                                        Developed and maintained scalable
+                                        web applications using React and
+                                        Next.js.
+                                    </li>
+                                    <li>
+                                        Document and maintained API for easy
+                                        testing among team members
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>
+                                    Front End Developer (contract ) -
+                                    <a href="https://icowebagency.com/" target="_blank" rel="noopener">ICOWEB AGENCY</a>
+                                </h3>
+                                <p>SEP 2023 - DEC 2024</p>
+                                <ul>
+                                    <li>
+                                        Improved UI/UX for various client
+                                        projects, focusing on accessibility
+                                        and performance
+                                    </li>
+                                    <li>
+                                        Collaborated with cross-functional
+                                        teams to design and implement user
+                                        interfaces.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>
+                                    Front End Engineer -
+                                    <a href="https://www.getdaabo.com.ng/" target="_blank" rel="noopener">Daabo Inc</a>
+                                </h3>
+                                <p>JUL 2022 - DEC 2022</p>
+                                <ul>
+                                    <li>
+                                        in charge of documentation,
+                                        reviewing new software, identifying
+                                        improvement areas, and creating
+                                        responsive user interfaces.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="copyright">
-                        © developed by Jude Miracle with ♥
+                </div>
+                <div id="skills" data-tab-content>
+                    <div class="skills-container animate-section">
+                        <div class="skills-category">
+                            <h3>Languages</h3>
+                            <ul class="skills">
+                                <li class="skill">HTML</li>
+                                <li class="skill">CSS</li>
+                                <li class="skill">JavaScript</li>
+                                <li class="skill">TypeScript</li>
+                                <li class="skill">Solidity</li>
+                                <li class="skill">Move</li>
+                                <li class="skill">Rust</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <h3>Libraries</h3>
+                            <ul class="skills">
+                                <li class="skill">React</li>
+                                <li class="skill">Redux</li>
+                                <li class="skill">Hardhat</li>
+                                <li class="skill">Foundry</li>
+                                <li class="skill">Wagmi</li>
+                                <li class="skill">Tanstack Query</li>
+                                <li class="skill">Zustand</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <h3>Frameworks</h3>
+                            <ul class="skills">
+                                <li class="skill">Next.js</li>
+                                <li class="skill">Shadcn UI</li>
+                                <li class="skill">Tailwind CSS</li>
+                                <li class="skill">Axum</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <h3>Tools</h3>
+                            <ul class="skills">
+                                <li class="skill">Git</li>
+                                <li class="skill">Ethers.js</li>
+                                <li class="skill">Docusaurus</li>
+                                <li class="skill">Ethereum</li>
+                                <li class="skill">SUI</li>
+                                <li class="skill">Solana</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Theme customization  -->
-        <div class="customize-theme">
-            <div class="card">
-                <h2>Customize your view</h2>
-                <p>Manage your font size, color, and background</p>
-                <!-- font size  -->
-                <div class="font-size">
-                    <h3>Font size</h3>
-                    <div>
-                        <h6>Aa</h6>
-                        <div class="choose-size">
-                            <span class="font-size-1"></span>
-                            <span class="font-size-2"></span>
-                            <span class="font-size-3"></span>
-                            <span class="font-size-4"></span>
-                        </div>
-                        <h3>Aa</h3>
-                    </div>
+        </section>
+
+        <!-- PAGE NAV  -->
+        <div class="page-nav">
+            <a href="/">&#8592; Home</a>
+            <a href="project.html">Projects &#8594;</a>
+        </div>
+    </main>
+
+    <!-- Footer  -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-media">
+                    <a href="https://www.github.com/am-miracle" title="Github" target="_blank">
+                        <span class="visually-hidden">GitHub</span>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github"
+                            class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 496 512">
+                            <path fill="currentColor"
+                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="https://www.x.com/miraclejudeiv" title="X" target="_blank">
+                        <span class="visually-hidden">X (Twitter)</span>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="x"
+                            class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                            x="0px" y="0px" viewBox="0 0 50 50">
+                            <path fill="currentColor"
+                                d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="https://codepen.io/judeiv" title="Codepen" target="_blank">
+                        <span class="visually-hidden">CodePen</span>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="codepen"
+                            class="svg-inline--fa fa-codepen fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M502.285 159.704l-234-156c-7.987-4.915-16.511-4.96-24.571 0l-234 156C3.714 163.703 0 170.847 0 177.989v155.999c0 7.143 3.714 14.286 9.715 18.286l234 156.022c7.987 4.915 16.511 4.96 24.571 0l234-156.022c6-3.999 9.715-11.143 9.715-18.286V177.989c-.001-7.142-3.715-14.286-9.716-18.285zM278 63.131l172.286 114.858-76.857 51.429L278 165.703V63.131zm-44 0v102.572l-95.429 63.715-76.857-51.429L234 63.131zM44 219.132l55.143 36.857L44 292.846v-73.714zm190 229.715L61.714 333.989l76.857-51.429L234 346.275v102.572zm22-140.858l-77.715-52 77.715-52 77.715 52-77.715 52zm22 140.858V346.275l95.429-63.715 76.857 51.429L278 448.847zm190-156.001l-55.143-36.857L468 219.132v73.714z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/miracle-jude-4b7a4b179" title="LinkedIn" target="_blank">
+                        <span class="visually-hidden">LinkedIn</span>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin"
+                            class="svg-inline--fa fa-linkedin fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="https://medium.com/@judemiracle" title="Medium" target="_blank">
+                        <span class="visually-hidden">Medium</span>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="medium"
+                            class="svg-inline--fa fa-instagram fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                            x="0px" y="0px" viewBox="0 0 50 50">
+                            <path fill="currentColor"
+                                d="M15 12A13 13 0 1015 38 13 13 0 1015 12zM35.5 13c-3.59 0-6.5 5.373-6.5 12 0 1.243.102 2.441.292 3.568.253 1.503.662 2.879 1.192 4.065.265.593.56 1.138.881 1.627.642.978 1.388 1.733 2.202 2.201C34.178 36.811 34.827 37 35.5 37s1.322-.189 1.933-.539c.814-.468 1.56-1.223 2.202-2.201.321-.489.616-1.034.881-1.627.53-1.185.939-2.562 1.192-4.065C41.898 27.441 42 26.243 42 25 42 18.373 39.09 13 35.5 13zM45.5 14c-.259 0-.509.173-.743.495-.157.214-.307.494-.448.833-.071.169-.14.353-.206.551-.133.395-.257.846-.37 1.343-.226.995-.409 2.181-.536 3.497-.063.658-.112 1.349-.146 2.065C43.017 23.499 43 24.241 43 25s.017 1.501.051 2.217c.033.716.082 1.407.146 2.065.127 1.316.31 2.501.536 3.497.113.498.237.948.37 1.343.066.198.135.382.206.551.142.339.292.619.448.833C44.991 35.827 45.241 36 45.5 36c1.381 0 2.5-4.925 2.5-11S46.881 14 45.5 14z">
+                            </path>
+                        </svg>
+                    </a>
                 </div>
-                <!-- color  -->
-                <div class="color">
-                    <h3>Color</h3>
-                    <div class="choose-color">
-                        <span class="color-1"></span>
-                        <span class="color-2"></span>
-                        <span class="color-3"></span>
-                        <span class="color-4"></span>
-                        <span class="color-5"></span>
-                    </div>
+                <div class="copyright">
+                    © developed by Jude Miracle with ♥
                 </div>
-                <!-- background  -->
-                <div class="background">
-                    <h3>Background</h3>
-                    <div class="choose-bg">
-                        <div class="bg-1">
-                            <span></span>
-                            <h5 for="bg-1">Light</h5>
-                        </div>
-                        <div class="bg-2">
-                            <span></span>
-                            <h5 for="bg-2">Dim</h5>
-                        </div>
-                        <div class="bg-3">
-                            <span></span>
-                            <h5 for="bg-3">Dark</h5>
-                        </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Theme customization  -->
+    <div class="customize-theme">
+        <div class="card">
+            <h2>Customize your view</h2>
+            <p>Manage your font size, color, and background</p>
+            <!-- font size  -->
+            <div class="font-size">
+                <h3>Font size</h3>
+                <div>
+                    <h6>Aa</h6>
+                    <div class="choose-size">
+                        <span class="font-size-1"></span>
+                        <span class="font-size-2"></span>
+                        <span class="font-size-3"></span>
+                        <span class="font-size-4"></span>
+                    </div>
+                    <h3>Aa</h3>
+                </div>
+            </div>
+            <!-- color  -->
+            <div class="color">
+                <h3>Color</h3>
+                <div class="choose-color">
+                    <span class="color-1"></span>
+                    <span class="color-2"></span>
+                    <span class="color-3"></span>
+                    <span class="color-4"></span>
+                    <span class="color-5"></span>
+                </div>
+            </div>
+            <!-- background  -->
+            <div class="background">
+                <h3>Background</h3>
+                <div class="choose-bg">
+                    <div class="bg-1">
+                        <span></span>
+                        <h5 for="bg-1">Light</h5>
+                    </div>
+                    <div class="bg-2">
+                        <span></span>
+                        <h5 for="bg-2">Dim</h5>
+                    </div>
+                    <div class="bg-3">
+                        <span></span>
+                        <h5 for="bg-3">Dark</h5>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
-    <script src="./static/js/index.js"></script>
+    </div>
+</body>
+<script src="./static/js/index.js"></script>
+
 </html>
