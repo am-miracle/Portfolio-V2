@@ -20,8 +20,8 @@ if (!HYGRAPH_ENDPOINT) {
 }
 
 if (!HYGRAPH_ENDPOINT) {
-    console.error('Error: HYGRAPH_ENDPOINT not set and could not be found in config.js');
-    process.exit(1);
+    console.warn('Warning: HYGRAPH_ENDPOINT not set. Skipping static article generation.');
+    return;
 }
 
 const TEMPLATE_PATH = path.join(__dirname, 'article-detail.html');

@@ -20,8 +20,8 @@ if (!HYGRAPH_ENDPOINT) {
 }
 
 if (!HYGRAPH_ENDPOINT) {
-    console.error('Error: HYGRAPH_ENDPOINT environment variable is not set.');
-    process.exit(1);
+    console.warn('Warning: HYGRAPH_ENDPOINT environment variable is not set. Skipping sitemap generation.');
+    return;
 }
 
 const STATIC_PAGES = [
