@@ -128,9 +128,9 @@ async function main() {
     data.posts.forEach(post => {
         let html = template;
 
-        html = html.replace('<!-- SEO_TITLE -->', `${post.title} | Jude Miracle`);
+        html = html.replace('<!-- SEO_TITLE -->', `${post.title} | Miracle Jude`);
         html = html.replace('<!-- SEO_DESCRIPTION -->', post.title);
-        html = html.replace('<!-- SEO_AUTHOR -->', 'Jude Miracle');
+        html = html.replace('<!-- SEO_AUTHOR -->', 'Miracle Jude');
 
 
         html = html.replace('<div id="loading-indicator" class="padd-15" style="text-align: center; padding: 50px;">', '<div id="loading-indicator" style="display: none;">');
