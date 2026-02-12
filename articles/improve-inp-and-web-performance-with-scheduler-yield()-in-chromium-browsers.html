@@ -2,135 +2,195 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta id="meta-description" name="description" content="Improve INP and web performance with `scheduler.yield()` in Chromium browsers">
-    <meta id="meta-author" name="author" content="Miracle Jude">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta id="meta-description" name="description"
+    content="Improve INP and web performance with `scheduler.yield()` in Chromium browsers">
+  <meta id="meta-author" name="author" content="Miracle Jude">
+  <link rel="canonical"
+    href="https://judemiracle.com/articles/improve-inp-and-web-performance-with-scheduler-yield()-in-chromium-browsers.html" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/icons/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/static/assets/icons/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/static/assets/icons/android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/icons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/static/assets/icons/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/static/assets/icons/android-chrome-512x512.png">
 
-    <link rel="stylesheet" href="/static/css/index.css">
-    <link rel="stylesheet" href="/static/css/main.css">
-    <link rel="stylesheet" href="/static/css/articles.css">
-    <link rel="stylesheet" href="/static/css/animation.css">
+  <link rel="stylesheet" href="/static/css/index.css">
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/articles.css">
+  <link rel="stylesheet" href="/static/css/animation.css">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2R2VXW8ST"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-F2R2VXW8ST');
-    </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2R2VXW8ST"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-F2R2VXW8ST');
+  </script>
 
-    <!-- FONTS (Same as other pages for consistency) -->
-    <link rel="preconnect" href="https://fonts.google.com">
-    <style>
-        /* Font imports omitted for brevity, assuming main.css loads them or they are cached, 
+  <!-- FONTS (Same as other pages for consistency) -->
+  <link rel="preconnect" href="https://fonts.google.com">
+  <style>
+    /* Font imports omitted for brevity, assuming main.css loads them or they are cached, 
                but strictly following style of article.html, I should re-include or ensure they are available.
                For this file, I'll rely on the same structure as article.html */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap');
-    </style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap');
+  </style>
 
-    <title id="page-title">Improve INP and web performance with `scheduler.yield()` in Chromium browsers | Miracle Jude</title>
+  <title id="page-title">Improve INP and web performance with `scheduler.yield()` in Chromium browsers | Miracle Jude
+  </title>
 </head>
 
 <body>
-    <!-- Nav  -->
-    <nav class="nav container padd-15" id="nav">
-        <a href="/" class="nav-logo" title="Go back to the homepage">
-            <h2>Miracle</h2>
-        </a>
-        <!-- Nav Menu  -->
-        <div class="nav-menu" id="nav-menu">
-            <!-- Nav List  -->
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="/about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../project.html" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../article.html" class="nav-link">Articles</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../blog.html" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <!-- nav close  -->
-            <div class="nav-close" id="nav-close">
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-        </div>
-        <!-- Nav btn  -->
-        <div class="nav-btns">
-            <?xml version="1.0" encoding="utf-8"?>
-            <!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-            <svg fill="" height="15px" width="15px" class="change-theme" id="theme-button" version="1.1"
-                id="lni_lni-pallet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
-                <g>
-                    <path
-                        d="M55.9,43.9l-0.3-0.2c-0.8-0.5-1.7-0.9-3.8-1.5l-0.1,0c-0.7-0.1-1.5-0.4-1.8-0.6l-0.1-0.1c-0.4-0.4-0.7-1.1-0.7-1.9
+  <!-- Nav  -->
+  <nav class="nav container padd-15" id="nav">
+    <a href="/" class="nav-logo" title="Go back to the homepage">
+      <h2>Miracle</h2>
+    </a>
+    <!-- Nav Menu  -->
+    <div class="nav-menu" id="nav-menu">
+      <!-- Nav List  -->
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="/about.html" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="../project.html" class="nav-link">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a href="../article.html" class="nav-link">Articles</a>
+        </li>
+        <li class="nav-item">
+          <a href="../blog.html" class="nav-link">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a href="/#contact" class="nav-link">Contact</a>
+        </li>
+      </ul>
+      <!-- nav close  -->
+      <div class="nav-close" id="nav-close">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+    <!-- Nav btn  -->
+    <div class="nav-btns">
+      <?xml version="1.0" encoding="utf-8"?>
+      <!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+      <svg fill="" height="15px" width="15px" class="change-theme" id="theme-button" version="1.1" id="lni_lni-pallet"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+        <g>
+          <path
+            d="M55.9,43.9l-0.3-0.2c-0.8-0.5-1.7-0.9-3.8-1.5l-0.1,0c-0.7-0.1-1.5-0.4-1.8-0.6l-0.1-0.1c-0.4-0.4-0.7-1.1-0.7-1.9
                 c0-0.7,0.3-1.4,0.7-1.9l3.9-3.9c6.9-6.9,6.9-17.8,0-24.8c-4.6-4.7-11-7.2-18.1-7.2c-7.9,0-15.9,3.4-22,9.4C8,16.9,5,24.3,5,32.4
                 c0,8.1,3.1,15.6,8.8,21.1c5.7,5.7,13.2,8.8,21.2,8.8c7.9,0,15.4-3.2,21.1-8.9c1.2-1.2,1.9-3,1.9-4.7C58,46.8,57.2,45,55.9,43.9z
                 M52.9,50.2c-4.8,4.9-11.2,7.6-17.9,7.6c-6.9,0-13.1-2.6-18-7.5c-4.8-4.7-7.5-11-7.5-17.9c0-6.9,2.6-13.1,7.4-18
                 C22.2,9.2,29,6.2,35.8,6.2c5.9,0,11.1,2,14.9,5.9c5.2,5.3,5.2,13.3,0,18.5l-4,4c-1.2,1.3-1.9,3.1-1.9,5c0,2,0.7,3.7,1.9,5
                 c1.2,1.3,3.6,1.9,4.2,2c1.4,0.3,1.9,0.6,2.3,0.8c0.2,0.3,0.4,0.8,0.4,1.3C53.5,49.2,53.2,49.9,52.9,50.2z" />
-                    <path d="M36.8,36.7c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S38.2,36.7,36.8,36.7z" />
-                    <path d="M47.7,27.3c0-3.3-2.7-6.1-6.1-6.1s-6.1,2.7-6.1,6.1c0,3.3,2.7,6.1,6.1,6.1S47.7,30.7,47.7,27.3z M41.6,28.9
+          <path d="M36.8,36.7c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S38.2,36.7,36.8,36.7z" />
+          <path d="M47.7,27.3c0-3.3-2.7-6.1-6.1-6.1s-6.1,2.7-6.1,6.1c0,3.3,2.7,6.1,6.1,6.1S47.7,30.7,47.7,27.3z M41.6,28.9
                 c-0.9,0-1.6-0.7-1.6-1.6s0.7-1.6,1.6-1.6s1.6,0.7,1.6,1.6S42.5,28.9,41.6,28.9z" />
-                    <path d="M37.3,16.7c0-4-3.3-7.3-7.3-7.3s-7.3,3.3-7.3,7.3s3.3,7.3,7.3,7.3S37.3,20.8,37.3,16.7z M30,19.6c-1.6,0-2.8-1.3-2.8-2.8
+          <path d="M37.3,16.7c0-4-3.3-7.3-7.3-7.3s-7.3,3.3-7.3,7.3s3.3,7.3,7.3,7.3S37.3,20.8,37.3,16.7z M30,19.6c-1.6,0-2.8-1.3-2.8-2.8
                 c0-1.6,1.3-2.8,2.8-2.8s2.8,1.3,2.8,2.8C32.8,18.3,31.6,19.6,30,19.6z" />
-                </g>
-            </svg>
-            <!-- toggle btn  -->
-            <div class="icon-burger" id="nav-toggle">
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
+        </g>
+      </svg>
+      <!-- toggle btn  -->
+      <div class="icon-burger" id="nav-toggle">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main  -->
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="padd-15" style="margin-bottom: 2rem;">
+          <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
         </div>
-    </nav>
 
-    <!-- Main  -->
-    <main>
-        <section class="section">
-            <div class="container">
-                <div class="padd-15" style="margin-bottom: 2rem;">
-                    <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
-                </div>
+        <div id="loading-indicator" style="display: none;">
+          <p>Loading article...</p>
+        </div>
 
-                <div id="loading-indicator" style="display: none;">
-                    <p>Loading article...</p>
-                </div>
-
-                <article id="article-container">
-                    <div class="padd-15">
-                        <img id="article-cover" class="animate-fade-up delay-100" src="https://us-east-1.graphassets.com/AWYz8mgJ4TE6CiHk9uB7pz/cmkrjp7kd7vea07k9fddgp5h1" style="display: block; width: 100%; object-fit: cover; border-radius: var(--border-radius); margin-bottom: 2rem;" alt="Improve INP and web performance with `scheduler.yield()` in Chromium browsers">
-                        <h1 id="article-title" class="section-title animate-fade-up delay-200" style="margin-bottom: 1rem;">Improve INP and web performance with `scheduler.yield()` in Chromium browsers</h1>
-                        <div class="article-meta animate-fade-up delay-300"
-                            style="margin-bottom: 2rem; color: var(--text-color); opacity: 0.8;">
-                            <span id="article-date">December 20, 2025</span> &bull;
-                            <span id="article-tags"></span>
-                        </div>
-                    </div>
-                    <div id="article-body" class="padd-15 article-body-content animate-fade-up delay-400">
-<p>If your web app feels sluggish despite having clean code, the problem isn&#39;t what you&#39;re doing, it&#39;s when you&#39;re doing it. Long-running JavaScript blocks the main thread, freezing your UI and destroying your Interaction to Next Paint (INP) scores. The new scheduler.yield() API solves this by letting you break up heavy tasks without the overhead of traditional techniques.</p><p>This tutorial shows you exactly how to use <code>scheduler.yield()</code> to keep your apps responsive, with real code examples that demonstrate the measurable difference it makes.</p><h3>What&#39;s the problem?</h3><p>JavaScript is single-threaded. When you run a heavy operation, parsing large datasets, complex calculations, DOM manipulations, the browser can&#39;t respond to user input, clicks don&#39;t register, and scrolling stutters. Your INP metric skyrockets.</p><p>INP (Interaction to Next Paint) measures the time between a user interaction and when the browser paints the next frame. Google&#39;s Core Web Vitals considers anything over 200ms poor. Long tasks (&gt;50ms) are the primary culprit.</p><p><br>Traditional solutions:</p><ul><li><div><code>setTimeout(fn, 0)</code> - Works, but adds 4ms+ delay per yield</div></li><li><div><code>requestIdleCallback()</code> - Only runs when the browser is idle, not during active interaction</div></li><li><div><code>requestAnimationFrame()</code> - Designed for animations, not task scheduling</div></li><li><div>Web workers - Great for heavy computation, but can&#39;t access the DOM</div></li></ul><p>These have their place, but they&#39;re either too slow or too limiting for many scenarios.</p><h3>What is scheduler.yield()?</h3><p><a rel="noreferrer nofollow noopener" class="attrlink" target='_blank' title="https://developer.mozilla.org/en-US/docs/Web/API/Scheduler/yield" href="https://developer.mozilla.org/en-US/docs/Web/API/Scheduler/yield">scheduler.yield()</a> is a new API in Chromium-based browsers (Chrome 115+, Edge 115+) that provides cooperative task scheduling. It yields control back to the browser immediately, allowing it to handle pending user interactions, then resumes your task.</p><p>In plain terms, it’s a way of saying to the browser:</p><blockquote>“Hey, I’m doing some heavy work — go ahead and do your important stuff (like responding to user clicks or drawing the next frame) before I continue.”</blockquote><p>The key difference is that it&#39;s optimized for this specific use case. It has lower overhead than <code>setTimeout()</code> and resumes faster because the browser prioritizes continuation tasks.</p><p>When we think of JavaScript, we often imagine it running one thing after another — start a task, finish it completely, then move on to the next. But that model breaks down when users are involved.</p><h3>Browser support</h3><p>As of late 2025, <code>the scheduler.yield()</code> function is supported in various Chromium-based browsers, including Google Chrome, Microsoft Edge, Opera, Firefox, and Brave. However, as it is a relatively new API, support may still be limited in other browsers such as Webview and Safari. So you&#39;ll need a fallback:</p><pre><code>if (&#39;scheduler&#39; in window &amp;&amp; &#39;yield&#39; in scheduler) {
+        <article id="article-container">
+          <div class="padd-15">
+            <img id="article-cover" class="animate-fade-up delay-100"
+              src="https://us-east-1.graphassets.com/AWYz8mgJ4TE6CiHk9uB7pz/cmkrjp7kd7vea07k9fddgp5h1"
+              style="display: block; width: 100%; object-fit: cover; border-radius: var(--border-radius); margin-bottom: 2rem;"
+              alt="Improve INP and web performance with `scheduler.yield()` in Chromium browsers">
+            <h1 id="article-title" class="section-title animate-fade-up delay-200" style="margin-bottom: 1rem;">Improve
+              INP and web performance with `scheduler.yield()` in Chromium browsers</h1>
+            <div class="article-meta animate-fade-up delay-300"
+              style="margin-bottom: 2rem; color: var(--text-color); opacity: 0.8;">
+              <span id="article-date">December 20, 2025</span> &bull;
+              <span id="article-tags"></span>
+            </div>
+          </div>
+          <div id="article-body" class="padd-15 article-body-content animate-fade-up delay-400">
+            <p>If your web app feels sluggish despite having clean code, the problem isn&#39;t what you&#39;re doing,
+              it&#39;s when you&#39;re doing it. Long-running JavaScript blocks the main thread, freezing your UI and
+              destroying your Interaction to Next Paint (INP) scores. The new scheduler.yield() API solves this by
+              letting you break up heavy tasks without the overhead of traditional techniques.</p>
+            <p>This tutorial shows you exactly how to use <code>scheduler.yield()</code> to keep your apps responsive,
+              with real code examples that demonstrate the measurable difference it makes.</p>
+            <h3>What&#39;s the problem?</h3>
+            <p>JavaScript is single-threaded. When you run a heavy operation, parsing large datasets, complex
+              calculations, DOM manipulations, the browser can&#39;t respond to user input, clicks don&#39;t register,
+              and scrolling stutters. Your INP metric skyrockets.</p>
+            <p>INP (Interaction to Next Paint) measures the time between a user interaction and when the browser paints
+              the next frame. Google&#39;s Core Web Vitals considers anything over 200ms poor. Long tasks (&gt;50ms) are
+              the primary culprit.</p>
+            <p><br>Traditional solutions:</p>
+            <ul>
+              <li>
+                <div><code>setTimeout(fn, 0)</code> - Works, but adds 4ms+ delay per yield</div>
+              </li>
+              <li>
+                <div><code>requestIdleCallback()</code> - Only runs when the browser is idle, not during active
+                  interaction</div>
+              </li>
+              <li>
+                <div><code>requestAnimationFrame()</code> - Designed for animations, not task scheduling</div>
+              </li>
+              <li>
+                <div>Web workers - Great for heavy computation, but can&#39;t access the DOM</div>
+              </li>
+            </ul>
+            <p>These have their place, but they&#39;re either too slow or too limiting for many scenarios.</p>
+            <h3>What is scheduler.yield()?</h3>
+            <p><a rel="noreferrer nofollow noopener" class="attrlink" target='_blank'
+                title="https://developer.mozilla.org/en-US/docs/Web/API/Scheduler/yield"
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Scheduler/yield">scheduler.yield()</a> is a new
+              API in Chromium-based browsers (Chrome 115+, Edge 115+) that provides cooperative task scheduling. It
+              yields control back to the browser immediately, allowing it to handle pending user interactions, then
+              resumes your task.</p>
+            <p>In plain terms, it’s a way of saying to the browser:</p>
+            <blockquote>“Hey, I’m doing some heavy work — go ahead and do your important stuff (like responding to user
+              clicks or drawing the next frame) before I continue.”</blockquote>
+            <p>The key difference is that it&#39;s optimized for this specific use case. It has lower overhead
+              than <code>setTimeout()</code> and resumes faster because the browser prioritizes continuation tasks.</p>
+            <p>When we think of JavaScript, we often imagine it running one thing after another — start a task, finish
+              it completely, then move on to the next. But that model breaks down when users are involved.</p>
+            <h3>Browser support</h3>
+            <p>As of late 2025, <code>the scheduler.yield()</code> function is supported in various Chromium-based
+              browsers, including Google Chrome, Microsoft Edge, Opera, Firefox, and Brave. However, as it is a
+              relatively new API, support may still be limited in other browsers such as Webview and Safari. So
+              you&#39;ll need a fallback:</p>
+            <pre><code>if (&#39;scheduler&#39; in window &amp;&amp; &#39;yield&#39; in scheduler) {
   // scheduler.yield() is supported
 } else {
   // Fall back to setTimeout
-}</code></pre><h3>Basic usage</h3><p>Here&#39;s the simplest way to use it:</p><pre><code>async function processLargeDataset(items) {
+}</code></pre>
+            <h3>Basic usage</h3>
+            <p>Here&#39;s the simplest way to use it:</p>
+            <pre><code>async function processLargeDataset(items) {
   const results = [];
   
   for (let i = 0; i &lt; items.length; i++) {
@@ -144,7 +204,31 @@
   }
   
   return results;
-}</code></pre><p>What happens here:</p><ol><li><div>Every 10 iterations, <code>scheduler.yield()</code> pauses execution</div></li><li><div>The browser processes any pending input events (clicks, scrolls, typing)</div></li><li><div>The browser repaints if needed</div></li><li><div>Your function resumes from exactly where it left off</div></li><li><div>The entire process remains in one async function—no complex state management</div></li></ol><h3>Data table rendering</h3><p>Let&#39;s build something practical, like rendering a large data table without freezing the UI. We&#39;ll compare both without scheduler.yield() and with scheduler.yield() so you can see the difference.</p><h4>Create the HTML structure</h4><p>Create a new file named <code>index.html</code> and add the following:</p><pre><code>&lt;!DOCTYPE html&gt;
+}</code></pre>
+            <p>What happens here:</p>
+            <ol>
+              <li>
+                <div>Every 10 iterations, <code>scheduler.yield()</code> pauses execution</div>
+              </li>
+              <li>
+                <div>The browser processes any pending input events (clicks, scrolls, typing)</div>
+              </li>
+              <li>
+                <div>The browser repaints if needed</div>
+              </li>
+              <li>
+                <div>Your function resumes from exactly where it left off</div>
+              </li>
+              <li>
+                <div>The entire process remains in one async function—no complex state management</div>
+              </li>
+            </ol>
+            <h3>Data table rendering</h3>
+            <p>Let&#39;s build something practical, like rendering a large data table without freezing the UI. We&#39;ll
+              compare both without scheduler.yield() and with scheduler.yield() so you can see the difference.</p>
+            <h4>Create the HTML structure</h4>
+            <p>Create a new file named <code>index.html</code> and add the following:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
   &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -191,7 +275,14 @@
   &lt;/table&gt;
 &lt;/body&gt;
 &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/html&gt;</code></pre><p>This sets up the structure for both tests: a table, buttons to trigger both approaches, and metrics to track how smooth the UI feels during rendering.</p><img src="https://us-east-1.graphassets.com/AWYz8mgJ4TE6CiHk9uB7pz/cmjct4o3t32p207iv1buqueoe" alt="boilerplate.gif" title="boilerplate.gif" width="800" height="429" /><h4>The blocking Approach</h4><p>Let&#39;s start with how most developers naturally write this code. Create a script.js file and add:</p><pre><code>
+&lt;/html&gt;</code></pre>
+            <p>This sets up the structure for both tests: a table, buttons to trigger both approaches, and metrics to
+              track how smooth the UI feels during rendering.</p><img
+              src="https://us-east-1.graphassets.com/AWYz8mgJ4TE6CiHk9uB7pz/cmjct4o3t32p207iv1buqueoe"
+              alt="boilerplate.gif" title="boilerplate.gif" width="800" height="429" />
+            <h4>The blocking Approach</h4>
+            <p>Let&#39;s start with how most developers naturally write this code. Create a script.js file and add:</p>
+            <pre><code>
 // Add a counter to visually show blocking
   let counter = 0;
     setInterval(() =&gt; {
@@ -260,7 +351,17 @@ document.getElementById(&#39;render-blocking&#39;).addEventListener(&#39;click&#
 document.getElementById(&#39;clear&#39;).addEventListener(&#39;click&#39;, () =&gt; {
   document.getElementById(&#39;data-table tbody&#39;).innerHTML = &#39;&#39;;
   updateMetrics(0, 0, &#39;-&#39;);
-});</code></pre><p>Open your page and click &quot;Render 5000 Rows (Blocking)&quot;. While it&#39;s rendering, you will see a pause in the animation, which means the page is frozen before it restarts after rendering</p><img src="https://us-east-1.graphassets.com/AWYz8mgJ4TE6CiHk9uB7pz/cmjctakwu34kl07j0hevfq7ou" alt="bolier.gif" title="bolier.gif" width="800" height="388" /><p>Look at the metrics, you&#39;ll see something like 259.50ms-259.30ms for both the last operation and longest task. During that entire period, the browser couldn&#39;t respond to anything. This is what kills user experience and INP scores.</p><h4>The scheduler.yield() approach</h4><p>Now let&#39;s fix it. Add this code:</p><pre><code>// The yielding approach
+});</code></pre>
+            <p>Open your page and click &quot;Render 5000 Rows (Blocking)&quot;. While it&#39;s rendering, you will see
+              a pause in the animation, which means the page is frozen before it restarts after rendering</p><img
+              src="https://us-east-1.graphassets.com/AWYz8mgJ4TE6CiHk9uB7pz/cmjctakwu34kl07j0hevfq7ou" alt="bolier.gif"
+              title="bolier.gif" width="800" height="388" />
+            <p>Look at the metrics, you&#39;ll see something like 259.50ms-259.30ms for both the last operation and
+              longest task. During that entire period, the browser couldn&#39;t respond to anything. This is what kills
+              user experience and INP scores.</p>
+            <h4>The scheduler.yield() approach</h4>
+            <p>Now let&#39;s fix it. Add this code:</p>
+            <pre><code>// The yielding approach
 async function renderTableWithYield(data) {
   const tbody = document.getElementById(&#39;data-table tbody&#39;);
   const startTime = performance.now();
@@ -299,7 +400,33 @@ async function renderTableWithYield(data) {
 document.getElementById(&#39;render-yielding&#39;).addEventListener(&#39;click&#39;, async () =&gt; {
   const data = generateData(5000);
   await renderTableYielding(data);
-});</code></pre><p>What changed:</p><ul><li><div>Total time increases from 259ms to ~518.00ms</div></li><li><div>The UI responds to the animation within 50-100ms throughout</div></li><li><div>INP stays under 100ms, which is good</div></li><li><div>The user perceives the app as faster because they can interact immediately</div></li></ul><p>Why this works is that in each loop iteration, it processes 50 rows (~35ms of work), calls await yieldToMain(), the browser handles any clicks or events, the browser repaints the screen, and the loop resumes with the next chunk. </p><p>The key is that no single task blocks the thread for more than 50ms. The browser gets regular opportunities to respond to user input, making the app feel fast even though total execution time increased slightly.</p><img src="https://us-east-1.graphassets.com/AWYz8mgJ4TE6CiHk9uB7pz/cmjctrmlp3dso07ivv4kbsfuh" alt="1.gif" title="1.gif" width="800" height="388" /><h3>Adding a Progress Indicator</h3><p>Since we&#39;re yielding regularly, we can easily update progress:</p><pre><code>async function renderTableWithProgress(data) {
+});</code></pre>
+            <p>What changed:</p>
+            <ul>
+              <li>
+                <div>Total time increases from 259ms to ~518.00ms</div>
+              </li>
+              <li>
+                <div>The UI responds to the animation within 50-100ms throughout</div>
+              </li>
+              <li>
+                <div>INP stays under 100ms, which is good</div>
+              </li>
+              <li>
+                <div>The user perceives the app as faster because they can interact immediately</div>
+              </li>
+            </ul>
+            <p>Why this works is that in each loop iteration, it processes 50 rows (~35ms of work), calls await
+              yieldToMain(), the browser handles any clicks or events, the browser repaints the screen, and the loop
+              resumes with the next chunk. </p>
+            <p>The key is that no single task blocks the thread for more than 50ms. The browser gets regular
+              opportunities to respond to user input, making the app feel fast even though total execution time
+              increased slightly.</p><img
+              src="https://us-east-1.graphassets.com/AWYz8mgJ4TE6CiHk9uB7pz/cmjctrmlp3dso07ivv4kbsfuh" alt="1.gif"
+              title="1.gif" width="800" height="388" />
+            <h3>Adding a Progress Indicator</h3>
+            <p>Since we&#39;re yielding regularly, we can easily update progress:</p>
+            <pre><code>async function renderTableWithProgress(data) {
   const tbody = document.getElementById(&#39;data-table tbody&#39;);
   const progressBar = document.getElementById(&#39;progress&#39;);
   const progressText = document.getElementById(&#39;progress-text&#39;);
@@ -331,7 +458,10 @@ document.getElementById(&#39;render-yielding&#39;).addEventListener(&#39;click&#
   progressBar.style.width = &#39;100%&#39;;
   progressText.textContent = &#39;Complete!&#39;;
 }
-</code></pre><p>This would be nearly impossible with the blocking approach; you&#39;d see 0% jump to 100% instantly. </p><p>Now add some CSS to make the progress bar visible. Add this to your <code>&lt;head&gt;</code>:</p><pre><code>&lt;style&gt;
+</code></pre>
+            <p>This would be nearly impossible with the blocking approach; you&#39;d see 0% jump to 100% instantly. </p>
+            <p>Now add some CSS to make the progress bar visible. Add this to your <code>&lt;head&gt;</code>:</p>
+            <pre><code>&lt;style&gt;
   body {
     font-family: system-ui, sans-serif;
     max-width: 1200px;
@@ -412,7 +542,15 @@ document.getElementById(&#39;render-yielding&#39;).addEventListener(&#39;click&#
     background: #f8f9fa;
     font-weight: 600;
   }
-&lt;/style&gt;</code></pre><h3>Real measurement: Before and after</h3><p>Let&#39;s measure the actual INP impact so you can see the difference in Chrome DevTools. </p><p>Let’s say what if the user starts a new render while one is already running? If the user types &quot;john&quot; quickly, you might start rendering results for &quot;j&quot;, then &quot;jo&quot;, then &quot;joh&quot;, then &quot;john&quot;, all overlapping. Here&#39;s a search filter that processes results to test this out:</p><p><code><strong>Without scheduler.yield()</strong></code></p><pre><code>
+&lt;/style&gt;</code></pre>
+            <h3>Real measurement: Before and after</h3>
+            <p>Let&#39;s measure the actual INP impact so you can see the difference in Chrome DevTools. </p>
+            <p>Let’s say what if the user starts a new render while one is already running? If the user
+              types &quot;john&quot; quickly, you might start rendering results for &quot;j&quot;, then &quot;jo&quot;,
+              then &quot;joh&quot;, then &quot;john&quot;, all overlapping. Here&#39;s a search filter that processes
+              results to test this out:</p>
+            <p><code><strong>Without scheduler.yield()</strong></code></p>
+            <pre><code>
 function filterAndRenderBlocking(items, searchTerm) {
   const startTime = performance.now();
   
@@ -445,7 +583,29 @@ function filterAndRenderBlocking(items, searchTerm) {
 // With 10,000 items: ~563.30ms blocked time
 searchInput.addEventListener(&#39;input&#39;, (e) =&gt; {
   filterAndRenderBlocking(allItems, e.target.value);
-});</code></pre><p>Using Chrome DevTools Performance panel, this shows:</p><ul><li><div>Total time -  563.30ms</div></li><li><div>Longest task - 563.30ms (the entire operation is one blocking task)</div></li><li><div>INP - 2248ms (red - Poor)</div></li><li><div>UI responsive: No (blocked)</div></li></ul><p>During those 563.30ms, the browser cannot process any user input. The animation freezes, clicks and interaction don&#39;t register, and the INP score suffers because input events queue up behind the blocking task.</p><img src="https://us-east-1.graphassets.com/AWYz8mgJ4TE6CiHk9uB7pz/cmjfmcspualyj07ivvxp9m3sf" alt="2.gif" title="2.gif" width="800" height="457" /><p><code><strong>With schedule.yield()</strong></code></p><pre><code>
+});</code></pre>
+            <p>Using Chrome DevTools Performance panel, this shows:</p>
+            <ul>
+              <li>
+                <div>Total time -  563.30ms</div>
+              </li>
+              <li>
+                <div>Longest task - 563.30ms (the entire operation is one blocking task)</div>
+              </li>
+              <li>
+                <div>INP - 2248ms (red - Poor)</div>
+              </li>
+              <li>
+                <div>UI responsive: No (blocked)</div>
+              </li>
+            </ul>
+            <p>During those 563.30ms, the browser cannot process any user input. The animation freezes, clicks and
+              interaction don&#39;t register, and the INP score suffers because input events queue up behind the
+              blocking task.</p><img
+              src="https://us-east-1.graphassets.com/AWYz8mgJ4TE6CiHk9uB7pz/cmjfmcspualyj07ivvxp9m3sf" alt="2.gif"
+              title="2.gif" width="800" height="457" />
+            <p><code><strong>With schedule.yield()</strong></code></p>
+            <pre><code>
 async function filterAndRenderYielding(items, searchTerm) {
   const startTime = performance.now();
   const container = document.querySelector(&#39;#results&#39;);
@@ -491,7 +651,36 @@ async function filterAndRenderYielding(items, searchTerm) {
 // With 10,000 items: ~181.00ms total, but broken into small tasks
 searchInput.addEventListener(&#39;input&#39;, (e) =&gt; {
   filterAndRenderYielding(allItems, e.target.value);
-});</code></pre><p>Type quickly in the search box. Notice how previous renders get cancelled automatically? Only the latest search completes. Here are the measurement results:</p><ul><li><div>Total time - 181.00ms (It can also take a longer time overhead due to yielding)</div></li><li><div>Longest task - 6.80ms (huge reduction in longest task)</div></li><li><div>INP- 186ms (green - Good)</div></li><li><div>UI responsive: Yes</div></li></ul><p>The user experience is dramatically better. The UI remains responsive throughout because no single task gets blocked for long, the animation continues smoothly, and user interactions are processed immediately. The user experiences this as dramatically faster.</p><img src="https://us-east-1.graphassets.com/AWYz8mgJ4TE6CiHk9uB7pz/cmjfmfak5pfa007k7nym7zsej" alt="3.gif" title="3.gif" width="800" height="457" /><p>Here’s a link to the full code on <a rel="noreferrer nofollow noopener" class="attrlink" target='_blank' title="https://github.com/am-miracle/schedule-yield-tutorial" href="https://github.com/am-miracle/schedule-yield-tutorial">GitHub</a></p><h3>Advanced pattern</h3><h5>Adaptive yielding</h5><p>Not all operations are equal. Sometimes you want to yield more or less frequently based on the work being done:</p><pre><code>
+});</code></pre>
+            <p>Type quickly in the search box. Notice how previous renders get cancelled automatically? Only the latest
+              search completes. Here are the measurement results:</p>
+            <ul>
+              <li>
+                <div>Total time - 181.00ms (It can also take a longer time overhead due to yielding)</div>
+              </li>
+              <li>
+                <div>Longest task - 6.80ms (huge reduction in longest task)</div>
+              </li>
+              <li>
+                <div>INP- 186ms (green - Good)</div>
+              </li>
+              <li>
+                <div>UI responsive: Yes</div>
+              </li>
+            </ul>
+            <p>The user experience is dramatically better. The UI remains responsive throughout because no single task
+              gets blocked for long, the animation continues smoothly, and user interactions are processed immediately.
+              The user experiences this as dramatically faster.</p><img
+              src="https://us-east-1.graphassets.com/AWYz8mgJ4TE6CiHk9uB7pz/cmjfmfak5pfa007k7nym7zsej" alt="3.gif"
+              title="3.gif" width="800" height="457" />
+            <p>Here’s a link to the full code on <a rel="noreferrer nofollow noopener" class="attrlink" target='_blank'
+                title="https://github.com/am-miracle/schedule-yield-tutorial"
+                href="https://github.com/am-miracle/schedule-yield-tutorial">GitHub</a></p>
+            <h3>Advanced pattern</h3>
+            <h5>Adaptive yielding</h5>
+            <p>Not all operations are equal. Sometimes you want to yield more or less frequently based on the work being
+              done:</p>
+            <pre><code>
 async function processWithAdaptiveYield(items) {
   const results = [];
   let operationCount = 0;
@@ -513,7 +702,14 @@ async function processWithAdaptiveYield(items) {
   }
   
   return results;
-}</code></pre><p>The reason this matters is that if each operation is fast (1ms), yielding every 10 items is wasteful. If each operation is slow (20ms), yielding every 10 items means 200ms blocks. Time-based yielding adapts automatically.</p><h5>Prioritizing user-initiated work</h5><p>User-initiated actions (like clicking a button) should take priority over background work (like preloading data). You can build a simple priority system:</p><pre><code>
+}</code></pre>
+            <p>The reason this matters is that if each operation is fast (1ms), yielding every 10 items is wasteful. If
+              each operation is slow (20ms), yielding every 10 items means 200ms blocks. Time-based yielding adapts
+              automatically.</p>
+            <h5>Prioritizing user-initiated work</h5>
+            <p>User-initiated actions (like clicking a button) should take priority over background work (like
+              preloading data). You can build a simple priority system:</p>
+            <pre><code>
 class TaskScheduler {
   constructor() {
     this.queue = [];
@@ -566,7 +762,13 @@ document.querySelector(&#39;#low-priority-btn&#39;).addEventListener(&#39;click&
     console.log(&#39;Low priority task running&#39;);
     await preloadAdditionalData();
   }, 1); // Low priority
-});</code></pre><p>This ensures user actions always jump to the front of the queue, even if background tasks are already queued.</p><h5>Cross-browser fallback</h5><p><code>scheduler.yield()</code> isn&#39;t universally supported yet. Here&#39;s a production-ready abstraction:</p><pre><code>
+});</code></pre>
+            <p>This ensures user actions always jump to the front of the queue, even if background tasks are already
+              queued.</p>
+            <h5>Cross-browser fallback</h5>
+            <p><code>scheduler.yield()</code> isn&#39;t universally supported yet. Here&#39;s a production-ready
+              abstraction:</p>
+            <pre><code>
 // Feature detection and fallback
 const yieldToMain = (() =&gt; {
   if (&#39;scheduler&#39; in window &amp;&amp; &#39;yield&#39; in scheduler) {
@@ -583,7 +785,9 @@ async function processItems(items) {
     // ... do work ...
     await yieldToMain();
   }
-}</code></pre><p>For even better fallback behavior, you can use requestIdleCallback with a timeout:</p><pre><code>const yieldToMain = (() =&gt; {
+}</code></pre>
+            <p>For even better fallback behavior, you can use requestIdleCallback with a timeout:</p>
+            <pre><code>const yieldToMain = (() =&gt; {
   if (&#39;scheduler&#39; in window &amp;&amp; &#39;yield&#39; in scheduler) {
     return () =&gt; scheduler.yield();
   }
@@ -595,13 +799,19 @@ async function processItems(items) {
   }
   
   return () =&gt; new Promise(resolve =&gt; setTimeout(resolve, 0));
-})();</code></pre><h3>Common mistakes and how to avoid them</h3><h5>Mistake 1: Yielding inside tight loops</h5><pre><code>// DON&#39;T DO THIS
+})();</code></pre>
+            <h3>Common mistakes and how to avoid them</h3>
+            <h5>Mistake 1: Yielding inside tight loops</h5>
+            <pre><code>// DON&#39;T DO THIS
 async function processItemsBadly(items) {
   for (const item of items) {
     await processItem(item);
     await scheduler.yield(); // Yielding after EVERY item!
   }
-}</code></pre><p>If you have 10,000 items and each takes 1ms, you&#39;ll yield 10,000 times. The overhead from yielding (even if small) adds up to seconds of wasted time.</p><pre><code>// DO THIS INSTEAD
+}</code></pre>
+            <p>If you have 10,000 items and each takes 1ms, you&#39;ll yield 10,000 times. The overhead from
+              yielding (even if small) adds up to seconds of wasted time.</p>
+            <pre><code>// DO THIS INSTEAD
 async function processItemsWell(items) {
   for (let i = 0; i &lt; items.length; i++) {
     await processItem(items[i]);
@@ -610,7 +820,9 @@ async function processItemsWell(items) {
       await scheduler.yield();
     }
   }
-}</code></pre><h5>Mistake 2: Not handling errors</h5><pre><code>// FRAGILE - Errors break the entire operation
+}</code></pre>
+            <h5>Mistake 2: Not handling errors</h5>
+            <pre><code>// FRAGILE - Errors break the entire operation
 async function renderWithoutErrorHandling(data) {
   for (let i = 0; i &lt; data.length; i += CHUNK_SIZE) {
     renderChunk(data.slice(i, i + CHUNK_SIZE)); // What if this throws?
@@ -635,7 +847,10 @@ async function renderWithErrorHandling(data) {
   if (errors.length &gt; 0) {
     console.warn(`Completed with ${errors.length} errors`);
   }
-}</code></pre><h5>Mistake 3: Forgetting about memory</h5><p>When processing huge datasets, you might run into memory issues:</p><pre><code>// MEMORY HOG - Creates thousands of DOM elements at once
+}</code></pre>
+            <h5>Mistake 3: Forgetting about memory</h5>
+            <p>When processing huge datasets, you might run into memory issues:</p>
+            <pre><code>// MEMORY HOG - Creates thousands of DOM elements at once
 async function renderAllAtOnce(data) {
   const fragment = document.createDocumentFragment();
   
@@ -665,7 +880,17 @@ async function renderInChunks(data) {
     container.appendChild(fragment); // Add each chunk to DOM
     await scheduler.yield();
   }
-}</code></pre><h5>When and when NOT to use <code>scheduler.yield()</code></h5><p>When deciding whether to use scheduler.yield(), think about the task you are handling. This method is helpful when dealing with large datasets, rendering many DOM elements, performing complex calculations in loops, or processing user-generated content, like parsing and validation. If a task takes longer than 50 milliseconds, you should use scheduler.yield() to improve performance.</p><p>However, not every task needs yielding. If a task is expected to finish in less than 50 milliseconds or if you are already using a Web Worker, you can skip this method. Also, avoid using it for tasks that need to be completed in one go, like database transactions or important calculations, where it&#39;s essential to finish them without interruption.</p><pre><code>// This doesn&#39;t need yielding - it&#39;s already fast
+}</code></pre>
+            <h5>When and when NOT to use <code>scheduler.yield()</code></h5>
+            <p>When deciding whether to use scheduler.yield(), think about the task you are handling. This method is
+              helpful when dealing with large datasets, rendering many DOM elements, performing complex calculations in
+              loops, or processing user-generated content, like parsing and validation. If a task takes longer than 50
+              milliseconds, you should use scheduler.yield() to improve performance.</p>
+            <p>However, not every task needs yielding. If a task is expected to finish in less than 50 milliseconds or
+              if you are already using a Web Worker, you can skip this method. Also, avoid using it for tasks that need
+              to be completed in one go, like database transactions or important calculations, where it&#39;s essential
+              to finish them without interruption.</p>
+            <pre><code>// This doesn&#39;t need yielding - it&#39;s already fast
 function quickCalculation(numbers) {
   return numbers.reduce((sum, n) =&gt; sum + n, 0);
 }
@@ -676,82 +901,91 @@ async function buildComplexUI(data) {
     renderSection(section);
     await scheduler.yield();
   }
-}</code></pre><h3>Conclusion</h3><p><code>scheduler.yield()</code> gives you a simple, performant way to keep your UI responsive during heavy operations. You break up long tasks without sacrificing code clarity or adding much overhead.</p><p>The API is straightforward, the fallback is simple, and the performance gains are measurable. If you&#39;re building JavaScript-heavy applications and care about user experience, this should be in your toolkit.</p><p>The web is getting more interactive and complex. Tools like <code>scheduler.yield()</code> help us build that complexity without sacrificing the snappy, responsive feel users expect. Start using it today, your INP scores will thank you.</p>
-</div>
-                </article>
+}</code></pre>
+            <h3>Conclusion</h3>
+            <p><code>scheduler.yield()</code> gives you a simple, performant way to keep your UI responsive during heavy
+              operations. You break up long tasks without sacrificing code clarity or adding much overhead.</p>
+            <p>The API is straightforward, the fallback is simple, and the performance gains are measurable. If
+              you&#39;re building JavaScript-heavy applications and care about user experience, this should be in your
+              toolkit.</p>
+            <p>The web is getting more interactive and complex. Tools like <code>scheduler.yield()</code> help us build
+              that complexity without sacrificing the snappy, responsive feel users expect. Start using it today, your
+              INP scores will thank you.</p>
+          </div>
+        </article>
 
-                <div class="padd-15" style="margin-top: 2rem;">
-                    <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="copyright">
-                    © developed by Miracle Jude with ♥
-                </div>
-            </div>
+        <div class="padd-15" style="margin-top: 2rem;">
+          <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <!-- Theme customization  -->
-    <div class="customize-theme">
-        <div class="card">
-            <h2>Customize your view</h2>
-            <p>Manage your font size, color, and background</p>
-            <!-- font size  -->
-            <div class="font-size">
-                <h3>Font size</h3>
-                <div>
-                    <h6>Aa</h6>
-                    <div class="choose-size">
-                        <span class="font-size-1"></span>
-                        <span class="font-size-2"></span>
-                        <span class="font-size-3"></span>
-                        <span class="font-size-4"></span>
-                    </div>
-                    <h3>Aa</h3>
-                </div>
-            </div>
-            <!-- color  -->
-            <div class="color">
-                <h3>Color</h3>
-                <div class="choose-color">
-                    <span class="color-1"></span>
-                    <span class="color-2"></span>
-                    <span class="color-3"></span>
-                    <span class="color-4"></span>
-                    <span class="color-5"></span>
-                </div>
-            </div>
-            <!-- background  -->
-            <div class="background">
-                <h3>Background</h3>
-                <div class="choose-bg">
-                    <div class="bg-1">
-                        <span></span>
-                        <h5 for="bg-1">Light</h5>
-                    </div>
-                    <div class="bg-2">
-                        <span></span>
-                        <h5 for="bg-2">Dim</h5>
-                    </div>
-                    <div class="bg-3">
-                        <span></span>
-                        <h5 for="bg-3">Dark</h5>
-                    </div>
-                </div>
-            </div>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="copyright">
+          © developed by Miracle Jude with ♥
         </div>
+      </div>
     </div>
+  </footer>
 
-    <!-- Scripts -->
-    <script src="/static/js/index.js" defer></script>
-    <script src="/static/js/config.js" defer></script>
-    
+  <!-- Theme customization  -->
+  <div class="customize-theme">
+    <div class="card">
+      <h2>Customize your view</h2>
+      <p>Manage your font size, color, and background</p>
+      <!-- font size  -->
+      <div class="font-size">
+        <h3>Font size</h3>
+        <div>
+          <h6>Aa</h6>
+          <div class="choose-size">
+            <span class="font-size-1"></span>
+            <span class="font-size-2"></span>
+            <span class="font-size-3"></span>
+            <span class="font-size-4"></span>
+          </div>
+          <h3>Aa</h3>
+        </div>
+      </div>
+      <!-- color  -->
+      <div class="color">
+        <h3>Color</h3>
+        <div class="choose-color">
+          <span class="color-1"></span>
+          <span class="color-2"></span>
+          <span class="color-3"></span>
+          <span class="color-4"></span>
+          <span class="color-5"></span>
+        </div>
+      </div>
+      <!-- background  -->
+      <div class="background">
+        <h3>Background</h3>
+        <div class="choose-bg">
+          <div class="bg-1">
+            <span></span>
+            <h5 for="bg-1">Light</h5>
+          </div>
+          <div class="bg-2">
+            <span></span>
+            <h5 for="bg-2">Dim</h5>
+          </div>
+          <div class="bg-3">
+            <span></span>
+            <h5 for="bg-3">Dark</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/static/js/index.js" defer></script>
+  <script src="/static/js/config.js" defer></script>
+
 </body>
 
 </html>
