@@ -87,7 +87,7 @@
     background-color: var(--color-white);
     overflow: hidden;
     width: 100%;
-    min-height: 34rem;
+    height: 100%;
     transform: translateY(0);
     transition: 0.3s;
     display: flex;
@@ -440,10 +440,6 @@
         margin-bottom: var(--m-2-5);
     }
 
-    .project-item-inner {
-        min-height: 32rem;
-    }
-
     .services .service-item {
         flex: 0 0 50%;
         max-width: 50%;
@@ -503,10 +499,6 @@
 
     .text a {
         font-size: 0.6rem;
-    }
-
-    .project-item-inner {
-        min-height: auto;
     }
 }
 
