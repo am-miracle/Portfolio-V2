@@ -5,6 +5,8 @@ const QUERY_POSTS = `
       slug
       title
       date
+      excerpt
+      tags
     }
   }
 `;
@@ -20,6 +22,7 @@ const QUERY_POST_BY_SLUG = `
       }
       content {
         html
+        text
       }
     }
   }
@@ -29,6 +32,18 @@ const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('en-US', options);
 };
+
+const readingTime = (text) => {
+    if (!text) return null;
+    const words = text.trim().split(/\s+/).filter(Boolean).length;
+    if (!words) return null;
+    return Math.max(1, Math.round(words / 200));
+};
+
+const escapeHtml = (str) =>
+    String(str).replace(/[&<>"']/g, (c) => (
+        { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+    ));
 
 async function fetchHygraph(query, variables = {}) {
     try {
@@ -58,30 +73,21 @@ async function fetchHygraph(query, variables = {}) {
 }
 
 async function initBlogList() {
-    const container = document.querySelector('.card-container');
-    if (!container) {
-        return;
-    }
-
     const dynamicContainer = document.getElementById('dynamic-posts-container');
     if (!dynamicContainer) {
         return;
     }
 
-    dynamicContainer.innerHTML = `
-        <div class="skeleton-card">
-            <div class="skeleton skeleton-title"></div>
-            <div class="skeleton skeleton-date"></div>
-        </div>
-        <div class="skeleton-card">
-            <div class="skeleton skeleton-title"></div>
-            <div class="skeleton skeleton-date"></div>
-        </div>
-        <div class="skeleton-card">
-            <div class="skeleton skeleton-title"></div>
-            <div class="skeleton skeleton-date"></div>
-        </div>
-    `;
+    const skeletonCard = `
+        <div class="post-card" aria-hidden="true">
+            <div class="post-card__link">
+                <div class="skeleton skeleton-tag"></div>
+                <div class="skeleton skeleton-title"></div>
+                <div class="skeleton skeleton-line"></div>
+                <div class="skeleton skeleton-line skeleton-line--short"></div>
+            </div>
+        </div>`;
+    dynamicContainer.innerHTML = skeletonCard.repeat(4);
 
     const data = await fetchHygraph(QUERY_POSTS);
 
@@ -92,26 +98,21 @@ async function initBlogList() {
 
     dynamicContainer.innerHTML = '';
 
-    data.posts.forEach((post, index) => {
-        const articleDiv = document.createElement('div');
-        const firstTag = post.tags && post.tags.length > 0 ? post.tags[0] : 'General';
+    data.posts.forEach((post) => {
+        const iso = new Date(post.date).toISOString().split('T')[0];
 
-        articleDiv.className = `filterDiv ${firstTag} animate-section show in-view`;
+        const card = document.createElement('article');
+        card.className = 'post-card animate-section in-view';
 
-        articleDiv.style.display = 'block';
-        articleDiv.style.opacity = '1';
-        articleDiv.style.transform = 'translateY(0)';
-
-        articleDiv.innerHTML = `
-            <a href="/articles/${post.slug}.html">
-                <h1 class="article-title">${post.title}</h1>
-            </a>
-            <div class="article-details">
-                <p>${formatDate(post.date)}</p>
-            </div>
-            <hr>
-        `;
-        dynamicContainer.appendChild(articleDiv);
+        card.innerHTML = `
+            <a href="/articles/${encodeURIComponent(post.slug)}.html" class="post-card__link">
+                <h3 class="post-card__title">${escapeHtml(post.title)}</h3>
+                ${post.excerpt ? `<p class="post-card__excerpt">${escapeHtml(post.excerpt)}</p>` : ''}
+                <div class="post-card__meta">
+                    <time datetime="${iso}">${formatDate(post.date)}</time>
+                </div>
+            </a>`;
+        dynamicContainer.appendChild(card);
     });
 }
 
@@ -145,6 +146,11 @@ async function initBlogPost() {
     titleEl.innerText = post.title;
     document.getElementById('article-date').innerText = formatDate(post.date);
     document.getElementById('article-tags').innerText = post.tags.join(', ');
+    const mins = readingTime(post.content && post.content.text);
+    const readingTimeEl = document.getElementById('article-reading-time');
+    if (readingTimeEl && mins) {
+        readingTimeEl.innerText = `${mins} min read`;
+    }
 
     if (post.coverImage && post.coverImage.url) {
         const img = document.getElementById('article-cover');

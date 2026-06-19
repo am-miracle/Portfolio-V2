@@ -41,6 +41,7 @@ const QUERY_ALL_POSTS = `
       }
       content {
         html
+        text
       }
       updatedAt
     }
@@ -88,6 +89,13 @@ function fetchHygraphData() {
 function formatDate(dateString) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('en-US', options);
+}
+
+function readingTime(text) {
+    if (!text) return null;
+    const words = text.trim().split(/\s+/).filter(Boolean).length;
+    if (!words) return null;
+    return Math.max(1, Math.round(words / 200));
 }
 
 async function main() {
@@ -144,8 +152,10 @@ async function main() {
 
         const date = formatDate(post.date);
         const tags = post.tags.join(', ');
+        const mins = readingTime(post.content && post.content.text);
         html = html.replace(/<span\s+id="article-date">\s*<\/span>/, `<span id="article-date">${date}</span>`);
         html = html.replace(/<span\s+id="article-tags">\s*<\/span>/, `<span id="article-tags">${tags}</span>`);
+        html = html.replace(/<span\s+id="article-reading-time">\s*<\/span>/, `<span id="article-reading-time">${mins ? `${mins} min read` : ''}</span>`);
 
         if (post.coverImage && post.coverImage.url) {
             const imgRegex = /<img\s+id="article-cover"\s+class="animate-fade-up\s+delay-100"\s+src=""\s+alt=""[\s\S]*?>/;

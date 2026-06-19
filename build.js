@@ -72,6 +72,7 @@ function main() {
     clean();
     runScript('generate-config.sh');
     runScript('generate-static-articles.js');
+    runScript('inject-theme-init.js');
     runScript('generate-sitemap.js');
     runScript('minify_assets.py');
     copyAssets();

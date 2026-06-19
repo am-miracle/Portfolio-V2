@@ -7,14 +7,8 @@ const navClose = document.getElementById('nav-close')
 const navLinks = document.querySelectorAll('.nav-link');
 const main = document.querySelector("main");
 const theme = document.querySelector("#theme-button");
-const themeModal = document.querySelector('.customize-theme');
-let fontSizes = document.querySelectorAll('.choose-size span');
-const colorPalette = document.querySelectorAll('.choose-color span');
 const topOfMain = main.getBoundingClientRect().top;
 var root = document.querySelector(":root");
-const Bg1 = document.querySelector(".bg-1");
-const Bg2 = document.querySelector(".bg-2");
-const Bg3 = document.querySelector(".bg-3");
 
 
 
@@ -90,269 +84,102 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// ==== Theme customization ===
+// ==== Display & accessibility panel ====
+const dpPanel = document.getElementById('display-panel');
+const dpSheet = dpPanel ? dpPanel.querySelector('.display-panel__sheet') : null;
 
-// open modal
-const openThemeModal = () => {
-  themeModal.classList.add('show-modal');
-}
-// close modal
-const closeThemeModal = (e) => {
-  if (e.target.classList.contains('customize-theme')) {
-    themeModal.classList.remove('show-modal');
-  }
-}
-if (theme) {
-  theme.addEventListener('click', openThemeModal);
-}
-if (themeModal) {
-  themeModal.addEventListener('click', closeThemeModal);
-}
+const displayPreferences = window.displayPreferences;
+const applyTheme = (choice) => displayPreferences.applyTheme(choice);
 
-// Choose Fonts
+// --- state (defaults: dark theme, rose accent, 16px text) ---
+const savedPreferences = displayPreferences.read();
+let themeChoice = savedPreferences.theme;
+let accentHue = savedPreferences.accentHue;
+let textSize = savedPreferences.textSize;
+displayPreferences.apply(savedPreferences);
 
-// remove active class from font size selectors
-const removeSizeSelector = () => {
-  fontSizes.forEach(size => {
-    size.classList.remove("active");
-  })
-}
+// reflect saved choices onto the radios
+const checkRadio = (name, value) => {
+  const el = document.querySelector(`input[name="${name}"][value="${value}"]`);
+  if (el) el.checked = true;
+};
+checkRadio('dp-theme', themeChoice);
+checkRadio('dp-accent', accentHue);
+checkRadio('dp-size', textSize);
 
-fontSizes.forEach(size => {
-  size.addEventListener('click', () => {
-    removeSizeSelector();
-
-    let fontSize;
-    size.classList.add('active');
-
-    if (size.classList.contains('font-size-1')) {
-      fontSize = '12px';
-    }
-    else if (size.classList.contains('font-size-2')) {
-      fontSize = '14px';
-    }
-    else if (size.classList.contains('font-size-3')) {
-      fontSize = '16px';
-    }
-    else if (size.classList.contains('font-size-4')) {
-      fontSize = '18px';
-    }
-
-    // change font size of the root html element
-    document.querySelector('html').style.fontSize = fontSize;
-
-    // Store active font size and active class to localStorage
-    localStorage.setItem('activeFontSize', fontSize);
-    localStorage.setItem('activeSizeSelector', size.id);
-
-  })
-
-  // Add ID attributes to font size selectors
-  if (size.classList.contains('font-size-1')) {
-    size.id = 'size-1';
-  }
-  else if (size.classList.contains('font-size-2')) {
-    size.id = 'size-2';
-  }
-  else if (size.classList.contains('font-size-3')) {
-    size.id = 'size-3';
-  }
-  else if (size.classList.contains('font-size-4')) {
-    size.id = 'size-4';
-  }
-})
-
-// Check if there is an active font size stored in localStorage
-const activeFontSize = localStorage.getItem('activeFontSize');
-const activeSizeSelector = localStorage.getItem('activeSizeSelector');
-
-// If there is an active font size, set it as active
-if (activeFontSize && activeSizeSelector) {
-  fontSizes.forEach(size => {
-    if (size.id === activeSizeSelector) {
-      size.classList.add('active');
-    }
-  })
-  document.querySelector('html').style.fontSize = activeFontSize;
-}
-
-
-// choose color
-
-const changeActiveColorClass = () => {
-  colorPalette.forEach(colorPicker => {
-    colorPicker.classList.remove('active')
-  })
-}
-colorPalette.forEach(color => {
-  color.addEventListener('click', () => {
-    changeActiveColorClass();
-
-    let primaryHue;
-    let activeClass = '';
-
-    if (color.classList.contains('color-1')) {
-      primaryHue = 252;
-      activeClass = 'color-1';
-    }
-    else if (color.classList.contains('color-2')) {
-      primaryHue = 52;
-      activeClass = 'color-2';
-    }
-    else if (color.classList.contains('color-3')) {
-      primaryHue = 352;
-      activeClass = 'color-3';
-    }
-    else if (color.classList.contains('color-4')) {
-      primaryHue = 152;
-      activeClass = 'color-4';
-    }
-    else if (color.classList.contains('color-5')) {
-      primaryHue = 202;
-      activeClass = 'color-5';
-    }
-
-    localStorage.setItem('color', primaryHue);
-    localStorage.setItem('activeColor', activeClass);
-    color.classList.add('active');
-
-    root.style.setProperty("--primary-color-hue", localStorage.getItem('color'));
-  })
-})
-
-if (localStorage.color) {
-  root.style.setProperty("--primary-color-hue", localStorage.getItem('color'));
-  const activeColorClass = localStorage.getItem('activeColor');
-  const activeColorElement = document.querySelector(`.${activeColorClass}`);
-  if (activeColorElement) {
-    activeColorElement.classList.add('active');
-  }
-}
-
-// Theme backgrounds
-let lightColorLightness;
-let whiteColorLightness;
-let darkColorLightness;
-
-// change background color
-const changeBG = () => {
-  root.style.setProperty('--light-color-lightness', lightColorLightness);
-  localStorage.setItem('lightBg', lightColorLightness);
-  root.style.setProperty('--white-color-lightness', whiteColorLightness);
-  localStorage.setItem('whiteBg', whiteColorLightness);
-  root.style.setProperty('--dark-color-lightness', darkColorLightness);
-  localStorage.setItem('darkBg', darkColorLightness);
-}
-
-// Set initial active states from localStorage
-const setInitialActiveStates = () => {
-  // Set active font size
-  const activeFontSize = localStorage.getItem('activeSizeSelector');
-  if (activeFontSize) {
-    fontSizes.forEach(size => {
-      if (size.id === activeFontSize) {
-        size.classList.add('active');
-      }
-    });
-  } else {
-    // Set default font size (size-3)
-    fontSizes[2].classList.add('active');
-    localStorage.setItem('activeSizeSelector', 'size-3');
-    localStorage.setItem('activeFontSize', '16px');
-  }
-
-  // Set active color
-  const activeColor = localStorage.getItem('activeColor');
-  if (activeColor) {
-    colorPalette.forEach(color => {
-      if (color.classList.contains(activeColor)) {
-        color.classList.add('active');
-      }
-    });
-  } else {
-    // Set default color (color-3)
-    colorPalette[2].classList.add('active');
-    localStorage.setItem('activeColor', 'color-3');
-    localStorage.setItem('color', '352');
-  }
-}
-
-// Call the function to set initial states
-setInitialActiveStates();
-
-if (localStorage.lightBg && localStorage.whiteBg && localStorage.darkBg) {
-  root.style.setProperty('--light-color-lightness', localStorage.getItem('lightBg'));
-  root.style.setProperty('--white-color-lightness', localStorage.getItem('whiteBg'));
-  root.style.setProperty('--dark-color-lightness', localStorage.getItem('darkBg'));
-} else {
-  // Set dim theme as default
-  darkColorLightness = '95%';
-  whiteColorLightness = '20%';
-  lightColorLightness = '15%';
-  changeBG();
-  if (Bg2) Bg2.classList.add('active');
-  if (Bg1) Bg1.classList.remove('active');
-  if (Bg3) Bg3.classList.remove('active');
-  localStorage.setItem('activeBg', 'Bg2');
-}
-
-Bg1.addEventListener('click', () => {
-  darkColorLightness = '17%';
-  whiteColorLightness = '100%';
-  lightColorLightness = '92%';
-
-  // add active class and store in local storage
-  Bg1.classList.add('active');
-  localStorage.setItem('activeBg', 'Bg1');
-  // remove active class from the others and remove from local storage
-  Bg2.classList.remove('active');
-  Bg3.classList.remove('active');
-  changeBG();
+document.querySelectorAll('input[name="dp-theme"]').forEach((input) => {
+  input.addEventListener('change', () => {
+    themeChoice = input.value;
+    localStorage.setItem('themeChoice', themeChoice);
+    applyTheme(themeChoice);
+  });
 });
 
-
-
-Bg2.addEventListener('click', () => {
-  darkColorLightness = '95%';
-  whiteColorLightness = '20%';
-  lightColorLightness = '15%';
-
-
-  // add active class and store in local storage
-  Bg2.classList.add('active');
-  localStorage.setItem('activeBg', 'Bg2');
-  // remove active class from the others and remove from local storage
-  Bg1.classList.remove('active');
-  Bg3.classList.remove('active');
-  changeBG();
-})
-
-
-Bg3.addEventListener('click', () => {
-  darkColorLightness = '95%';
-  whiteColorLightness = '10%';
-  lightColorLightness = '0%';
-
-  // add active class and store in local storage
-  Bg3.classList.add('active');
-  localStorage.setItem('activeBg', 'Bg3');
-  // remove active class from the others and remove from local storage
-  Bg1.classList.remove('active');
-  Bg2.classList.remove('active');
-  changeBG();
+document.querySelectorAll('input[name="dp-accent"]').forEach((input) => {
+  input.addEventListener('change', () => {
+    accentHue = input.value;
+    localStorage.setItem('accentHue', accentHue);
+    root.style.setProperty('--primary-color-hue', accentHue);
+  });
 });
 
-// check if there is an active background in local storage and set the active class accordingly
-if (localStorage.activeBg) {
-  const activeBg = localStorage.getItem('activeBg');
-  if (activeBg === 'Bg1') {
-    Bg1.classList.add('active');
-  } else if (activeBg === 'Bg2') {
-    Bg2.classList.add('active');
-  } else if (activeBg === 'Bg3') {
-    Bg3.classList.add('active');
-  }
+document.querySelectorAll('input[name="dp-size"]').forEach((input) => {
+  input.addEventListener('change', () => {
+    textSize = input.value;
+    localStorage.setItem('textSize', textSize);
+    document.documentElement.style.fontSize = textSize + 'px';
+  });
+});
+
+let dpLastFocused = null;
+const dpFocusable = () =>
+  dpSheet ? dpSheet.querySelectorAll('button, input, [href], [tabindex]:not([tabindex="-1"])') : [];
+
+const openPanel = () => {
+  if (!dpPanel) return;
+  dpLastFocused = document.activeElement;
+  dpPanel.classList.add('show');
+  dpPanel.setAttribute('aria-hidden', 'false');
+  if (theme) theme.setAttribute('aria-expanded', 'true');
+  const first = dpFocusable()[0];
+  if (first) first.focus();
+};
+
+const closePanel = () => {
+  if (!dpPanel) return;
+  dpPanel.classList.remove('show');
+  dpPanel.setAttribute('aria-hidden', 'true');
+  if (theme) theme.setAttribute('aria-expanded', 'false');
+  if (dpLastFocused && dpLastFocused.focus) dpLastFocused.focus();
+};
+
+if (theme) theme.addEventListener('click', openPanel);
+if (dpPanel) {
+  dpPanel.querySelectorAll('[data-dp-close]').forEach((el) =>
+    el.addEventListener('click', closePanel)
+  );
+  document.addEventListener('keydown', (e) => {
+    if (!dpPanel.classList.contains('show')) return;
+    if (e.key === 'Escape') {
+      closePanel();
+      return;
+    }
+    if (e.key === 'Tab') {
+      const f = Array.from(dpFocusable());
+      if (!f.length) return;
+      const first = f[0];
+      const last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
 }
+
 
 const tabs = document.querySelectorAll('[data-tab-target]')
 const tabContents = document.querySelectorAll('[data-tab-content]')

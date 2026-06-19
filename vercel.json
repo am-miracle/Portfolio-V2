@@ -1,4 +1,4 @@
 {
-    "buildCommand": "./generate-config.sh && node generate-static-articles.js && node generate-sitemap.js && python3 minify_assets.py",
+    "buildCommand": "./generate-config.sh && node generate-static-articles.js && node inject-theme-init.js && node generate-sitemap.js && python3 minify_assets.py",
     "outputDirectory": "."
 }
