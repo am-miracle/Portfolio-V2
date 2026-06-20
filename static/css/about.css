@@ -136,9 +136,6 @@ html {
 .timeline-content a {
   font-style: italic;
 }
-.timeline-content h3 {
-  font-family: var(--title-font);
-}
 .timeline-item.visible {
   opacity: 1;
   transform: translateY(0);
